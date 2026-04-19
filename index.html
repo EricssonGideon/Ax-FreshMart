@@ -198,7 +198,7 @@ img{max-width:100%;display:block}
 }
 .deal-card:hover::after,.product-card:hover::after{transform:translateX(120%)}
 .deal-card:hover{transform:translateY(-6px);box-shadow:0 24px 44px rgba(29,34,25,0.11)}
-.deal-card img{width:100%;height:150px;object-fit:contain;object-position:center;border-radius:18px;background:linear-gradient(135deg,#f7f1e6,#ece3d2);padding:8px;filter:drop-shadow(0 10px 14px rgba(30,36,32,0.10))}
+.deal-card img{width:100%;height:150px;border-radius:18px;background:linear-gradient(135deg,#f7f1e6,#ece3d2);padding:0;filter:drop-shadow(0 10px 14px rgba(30,36,32,0.10))}
 .deal-card strong{font-size:15px}
 .deal-card span{font-size:12px;color:var(--muted)}
 .deal-price{display:flex;align-items:center;gap:8px}
@@ -222,7 +222,16 @@ img{max-width:100%;display:block}
 .product-media{position:relative;background:
   radial-gradient(circle at top,rgba(255,255,255,0.85),transparent 42%),
   linear-gradient(135deg,#f4efe5,#ece6d8);aspect-ratio:1/1;overflow:hidden;padding:12px;display:grid;place-items:center}
-.product-media img{width:100%;height:100%;object-fit:contain;object-position:center;filter:drop-shadow(0 12px 18px rgba(30,36,32,0.12))}
+.product-media img,.deal-card img,.td-product img,.stock-item img,.cart-item img{
+  --img-scale:1.14;
+  --img-pos:center;
+  transform:scale(var(--img-scale));
+  transform-origin:center;
+  object-fit:cover;
+  object-position:var(--img-pos);
+}
+.product-media img{width:100%;height:100%;filter:drop-shadow(0 12px 18px rgba(30,36,32,0.12));transition:transform .35s ease}
+.product-card:hover .product-media img{transform:scale(calc(var(--img-scale) + 0.03))}
 .badge-stack{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:6px}
 .badge{
   display:inline-flex;align-self:flex-start;padding:6px 10px;border-radius:999px;
@@ -267,7 +276,7 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)
 td{font-size:14px}
 tbody tr:hover{background:#fcf8f0}
 .td-product{display:flex;align-items:center;gap:12px;min-width:240px}
-.td-product img{width:48px;height:48px;border-radius:12px;object-fit:contain;object-position:center;background:linear-gradient(135deg,#f7f1e6,#ece3d2);padding:4px}
+.td-product img{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#f7f1e6,#ece3d2);padding:0;--img-scale:1.08}
 .mini-note{font-size:12px;color:var(--muted)}
 .status-pill{
   display:inline-flex;padding:6px 10px;border-radius:999px;font-size:11px;
@@ -282,7 +291,7 @@ tbody tr:hover{background:#fcf8f0}
   padding:12px;border-radius:18px;background:#faf6ee;border:1px solid #efe5d7;transition:.25s
 }
 .stock-item:hover{transform:translateY(-2px);box-shadow:0 16px 28px rgba(29,34,25,0.08)}
-.stock-item img{width:56px;height:56px;border-radius:14px;object-fit:contain;object-position:center;background:linear-gradient(135deg,#f7f1e6,#ece3d2);padding:5px}
+.stock-item img{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#f7f1e6,#ece3d2);padding:0;--img-scale:1.1}
 .stock-item strong{display:block;font-size:15px}
 .stock-item span{font-size:12px;color:var(--muted)}
 
@@ -309,7 +318,7 @@ tbody tr:hover{background:#fcf8f0}
   display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;
   padding:12px;border:1px solid #efe5d7;border-radius:18px;background:#fffaf2
 }
-.cart-item img{width:64px;height:64px;border-radius:14px;object-fit:contain;object-position:center;background:linear-gradient(135deg,#f7f1e6,#ece3d2);padding:6px}
+.cart-item img{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,#f7f1e6,#ece3d2);padding:0;--img-scale:1.1}
 .qty{
   display:flex;align-items:center;gap:8px;justify-content:flex-end;margin-top:8px
 }
@@ -861,6 +870,33 @@ const STOCK_OVERRIDES = {
   'Free Range Eggs.webp': 22,
 };
 
+const IMAGE_FOCUS_OVERRIDES = {
+  'Butter Croissants.jpg': { scale: 1.22, position: 'center' },
+  'Sourdough Loaf.jpg': { scale: 1.18, position: 'center' },
+  'Sea Salt Popcorn.jpeg': { scale: 1.2, position: 'center' },
+  'Oat Milk.jpg': { scale: 1.16, position: 'center top' },
+  'Sprite-1.5Litter.jpg': { scale: 1.18, position: 'center top' },
+  'CocaCola-1litter.jpg': { scale: 1.18, position: 'center top' },
+  'Kotmale-Vanilla-Milk-1litter.webp': { scale: 1.18, position: 'center top' },
+  'Kotmale-Chocolate-Milk-1litter.webp': { scale: 1.18, position: 'center top' },
+  'Kist-MixedFruit-Juice.jpeg': { scale: 1.17, position: 'center top' },
+  'Kist-AloeVera-Juice-500ml.webp': { scale: 1.17, position: 'center top' },
+  'Kitkat_new.png.webp': { scale: 1.2, position: 'center' },
+  'kitkat_new.png.webp': { scale: 1.2, position: 'center' },
+  'Maliban-Chocolate-Puff-Biscuit.png': { scale: 1.18, position: 'center' },
+  'Maliban-goldmarie-buscuit.jpeg': { scale: 1.18, position: 'center' },
+  'Maliban-chrisco-busicut.webp': { scale: 1.18, position: 'center' },
+  'maliban-lemonpuff-busicuit.jpeg': { scale: 1.18, position: 'center' },
+  'mars_chocholate.jpg': { scale: 1.2, position: 'center' },
+  'Dairymilk_chocho.jpg': { scale: 1.2, position: 'center' },
+  'Organic Avocado.webp': { scale: 1.22, position: 'center' },
+  'Dragonfruit.jpg': { scale: 1.18, position: 'center' },
+  'watermeloen_2.jpg': { scale: 1.22, position: 'center' },
+  'pineaple.png': { scale: 1.2, position: 'center' },
+  'Fresh Potato.png': { scale: 1.16, position: 'center' },
+  'fresh-potato-.png.webp': { scale: 1.16, position: 'center' },
+};
+
 const BADGE_OVERRIDES = {
   'Organic Avocado.webp': 'organic',
   'Butter Croissants.jpg': 'best',
@@ -1079,6 +1115,7 @@ const products = PRODUCT_FILES.map((file, index) => {
     sku: `FM-${String(index + 1).padStart(3, '0')}`,
     expiry: inferExpiry(category, index),
     image: imageUrl(file),
+    imageFocus: IMAGE_FOCUS_OVERRIDES[file] || { scale: 1.14, position: 'center' },
   };
 });
 
@@ -1150,7 +1187,7 @@ function renderProducts() {
     return `
       <article class="product-card" style="animation-delay:${Math.min(index * 0.04, 0.48)}s">
         <div class="product-media">
-          <img src="${product.image}" alt="${product.name}" loading="lazy">
+          <img src="${product.image}" alt="${product.name}" loading="lazy" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
           ${product.badge ? `<div class="badge-stack"><span class="badge ${product.badge}">${({fresh:'Fresh',sale:'Discount',organic:'Fresh',new:'New',best:'Best Seller'})[product.badge] || product.badge}</span></div>` : ''}
         </div>
         <div class="product-body">
@@ -1178,7 +1215,7 @@ function renderDeals() {
   const row = document.getElementById('deal-row');
   row.innerHTML = deals.map((product, index) => `
     <article class="deal-card" style="animation-delay:${Math.min(index * 0.06, 0.36)}s">
-      <img src="${product.image}" alt="${product.name}" loading="lazy">
+      <img src="${product.image}" alt="${product.name}" loading="lazy" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
       <div>
         <strong>${product.name}</strong>
         <span>${product.unit}</span>
@@ -1202,7 +1239,7 @@ function renderInventory() {
       <tr>
         <td>
           <div class="td-product">
-            <img src="${product.image}" alt="${product.name}" loading="lazy">
+            <img src="${product.image}" alt="${product.name}" loading="lazy" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
             <div>
               <strong>${product.name}</strong>
               <div class="mini-note">${product.unit} · ${product.expiry}</div>
@@ -1228,7 +1265,7 @@ function renderLowStock() {
   const container = document.getElementById('low-stock-list');
   container.innerHTML = list.map((product) => `
     <article class="stock-item">
-      <img src="${product.image}" alt="${product.name}" loading="lazy">
+      <img src="${product.image}" alt="${product.name}" loading="lazy" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
       <div>
         <strong>${product.name}</strong>
         <span>${CATEGORY_LABELS[product.category]} · ${product.unit}</span>
@@ -1294,7 +1331,7 @@ function updateCart() {
 
   items.innerHTML = cart.map((item) => `
     <article class="cart-item">
-      <img src="${item.image}" alt="${item.name}" loading="lazy">
+      <img src="${item.image}" alt="${item.name}" loading="lazy" style="--img-scale:${item.imageFocus.scale};--img-pos:${item.imageFocus.position};">
       <div>
         <strong>${item.name}</strong>
         <div class="mini-note">${item.unit}</div>
