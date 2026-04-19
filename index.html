@@ -3,563 +3,490 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FreshMart | Smart Supermarket Ecommerce</title>
+<title>FreshMart | Grocery Ecommerce System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#f5efe3;
-  --panel:rgba(255,253,248,0.88);
-  --panel-strong:rgba(255,253,248,0.96);
-  --panel-soft:#f3ecdf;
-  --text:#1e2420;
-  --muted:#6b7069;
-  --brand:#274734;
-  --brand-2:#476b53;
-  --brand-3:#d9e5d6;
-  --gold:#d8a74d;
-  --gold-soft:#f3dfb7;
-  --line:#e5dccd;
-  --danger:#c44a3d;
-  --warn:#cf8a24;
-  --success:#256338;
-  --shadow:0 24px 60px rgba(29,34,25,0.10);
-  --shadow-sm:0 10px 26px rgba(29,34,25,0.07);
-  --radius:22px;
-  --radius-sm:14px;
-  --surface-gradient:
-    radial-gradient(circle at top left,rgba(216,230,214,0.92),transparent 24%),
-    radial-gradient(circle at 85% 10%,rgba(243,223,183,0.56),transparent 18%),
-    linear-gradient(180deg,#fbf7f0 0%,var(--bg) 100%);
+  --bg:#f4eee1;
+  --bg-soft:#faf6ee;
+  --panel:rgba(255,253,248,.9);
+  --panel-strong:rgba(255,253,248,.96);
+  --surface:#ffffff;
+  --text:#1f2622;
+  --muted:#6e756d;
+  --brand:#244734;
+  --brand-2:#416a52;
+  --brand-3:#d8e6d8;
+  --accent:#d8a84c;
+  --line:#e4dbc9;
+  --danger:#c54b3e;
+  --warn:#c98722;
+  --success:#2a7a48;
+  --info:#2a69d8;
+  --shadow:0 24px 58px rgba(28,36,28,.1);
+  --shadow-sm:0 12px 26px rgba(28,36,28,.07);
 }
 body.dark-mode{
-  --bg:#0f1614;
-  --panel:rgba(20,28,25,0.84);
-  --panel-strong:rgba(18,24,22,0.96);
-  --panel-soft:#15201c;
-  --text:#ecf1ed;
-  --muted:#a4b2aa;
-  --brand:#8dc09a;
-  --brand-2:#6ea37c;
-  --brand-3:#1f322a;
-  --gold:#dfbb71;
-  --gold-soft:#3d3015;
-  --line:#24352e;
-  --danger:#f07f72;
-  --warn:#f1b656;
-  --success:#7ed094;
-  --shadow:0 24px 60px rgba(0,0,0,0.36);
-  --shadow-sm:0 10px 26px rgba(0,0,0,0.22);
-  --surface-gradient:
-    radial-gradient(circle at top left,rgba(49,83,63,0.32),transparent 24%),
-    radial-gradient(circle at 85% 10%,rgba(126,95,46,0.22),transparent 18%),
-    linear-gradient(180deg,#121917 0%,var(--bg) 100%);
+  --bg:#101715;
+  --bg-soft:#15201d;
+  --panel:rgba(18,25,22,.9);
+  --panel-strong:rgba(18,24,22,.96);
+  --surface:#18211d;
+  --text:#e9f0eb;
+  --muted:#9faea5;
+  --brand:#8dc59e;
+  --brand-2:#6da985;
+  --brand-3:#213229;
+  --accent:#e0bc70;
+  --line:#263730;
+  --danger:#f28173;
+  --warn:#f0b659;
+  --success:#7ed598;
+  --info:#78a9ff;
+  --shadow:0 24px 58px rgba(0,0,0,.34);
+  --shadow-sm:0 12px 26px rgba(0,0,0,.24);
 }
 html{scroll-behavior:smooth}
 body{
-  font-family:'Outfit',sans-serif;background:var(--surface-gradient);color:var(--text);
-  min-height:100vh;overflow-x:hidden;transition:background .3s ease,color .3s ease
+  font-family:'Outfit',sans-serif;color:var(--text);min-height:100vh;overflow-x:hidden;
+  background:
+    radial-gradient(circle at top left,rgba(216,230,214,.9),transparent 22%),
+    radial-gradient(circle at 80% 8%,rgba(243,223,183,.5),transparent 18%),
+    linear-gradient(180deg,var(--bg-soft),var(--bg))
 }
-body::before,body::after{
-  content:'';position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(10px);opacity:.55
-}
-body::before{
-  width:320px;height:320px;top:110px;right:-120px;
-  background:radial-gradient(circle,rgba(216,167,77,0.18),transparent 68%);
-  animation:orbFloat 14s ease-in-out infinite
-}
-body::after{
-  width:280px;height:280px;left:-90px;bottom:40px;
-  background:radial-gradient(circle,rgba(71,107,83,0.16),transparent 68%);
-  animation:orbFloat 18s ease-in-out infinite reverse
+body.dark-mode{
+  background:
+    radial-gradient(circle at top left,rgba(61,105,75,.28),transparent 22%),
+    radial-gradient(circle at 80% 8%,rgba(117,90,39,.22),transparent 18%),
+    linear-gradient(180deg,var(--bg-soft),var(--bg))
 }
 a{text-decoration:none;color:inherit}
-button,input,select,textarea{font:inherit}
-button,input,select,textarea{border:none;background:none}
-img{max-width:100%;display:block}
-.shell{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:0 22px 48px}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;border:none;background:none}
+.shell{position:relative;z-index:1;max-width:1460px;margin:0 auto;padding:0 22px 50px}
 .visually-hidden{
   position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
   clip:rect(0,0,0,0);white-space:nowrap;border:0
 }
 
-@keyframes orbFloat{
-  0%,100%{transform:translate3d(0,0,0) scale(1)}
-  50%{transform:translate3d(0,-22px,0) scale(1.05)}
+@keyframes revealUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes sweep{0%{transform:translateX(-120%)}100%{transform:translateX(130%)}}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+@keyframes toastIn{from{opacity:0;transform:translateX(-50%) translateY(14px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes fly{0%{opacity:1;transform:translate3d(0,0,0) scale(1)}100%{opacity:0;transform:translate3d(var(--fx),var(--fy),0) scale(.2)}}
+
+.panel,.stat,.summary-card,.section-card,.deal-card,.product-card,.mini-card,.admin-item,.favorite-card{
+  background:var(--panel);border:1px solid color-mix(in srgb,var(--line) 88%,transparent);border-radius:20px;
+  box-shadow:var(--shadow-sm);backdrop-filter:blur(12px)
 }
-@keyframes softLift{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
-}
-@keyframes softTilt{
-  0%,100%{transform:translateY(0) rotate(0)}
-  50%{transform:translateY(-10px) rotate(-1.2deg)}
-}
-@keyframes revealUp{
-  from{opacity:0;transform:translateY(26px)}
-  to{opacity:1;transform:translateY(0)}
-}
-@keyframes glowSweep{
-  0%{transform:translateX(-120%)}
-  100%{transform:translateX(140%)}
-}
-@keyframes pressIn{
-  0%{transform:scale(1)}
-  50%{transform:scale(.97)}
-  100%{transform:scale(1)}
-}
-@keyframes cartPulse{
-  0%{transform:scale(1)}
-  45%{transform:scale(1.07)}
-  100%{transform:scale(1)}
-}
-@keyframes addFlash{
-  0%{box-shadow:0 0 0 0 rgba(71,107,83,0)}
-  35%{box-shadow:0 0 0 10px rgba(71,107,83,0.12)}
-  100%{box-shadow:0 0 0 0 rgba(71,107,83,0)}
-}
-@keyframes toastIn{
-  from{opacity:0;transform:translateX(-50%) translateY(18px)}
-  to{opacity:1;transform:translateX(-50%) translateY(0)}
-}
-@keyframes modalIn{
-  from{opacity:0;transform:translateY(24px) scale(.98)}
-  to{opacity:1;transform:translateY(0) scale(1)}
-}
-@keyframes flyToCart{
-  0%{opacity:1;transform:translate3d(0,0,0) scale(1)}
-  100%{opacity:0;transform:translate3d(var(--fly-x),var(--fly-y),0) scale(.2)}
-}
+.pressable:active,.nav-link:active,.chip:active,.btn-primary:active,.btn-secondary:active,.cart-btn:active,.tool-btn:active,.theme-toggle:active,.close-btn:active,.icon-btn:active,.add-btn:active,.ghost-btn:active,.qty-btn:active,.remove-btn:active,.star-btn:active{transform:scale(.98)}
 
 .nav{
-  position:sticky;top:0;z-index:30;
-  display:flex;align-items:center;gap:18px;
-  margin:16px auto 0;padding:14px 18px;
-  background:color-mix(in srgb,var(--panel-strong) 82%,transparent);
-  backdrop-filter:blur(20px);border:1px solid color-mix(in srgb,var(--line) 88%,transparent);
-  border-radius:22px;box-shadow:var(--shadow-sm)
+  position:sticky;top:0;z-index:35;display:flex;align-items:center;gap:16px;margin:16px auto 0;padding:14px 18px;
+  background:color-mix(in srgb,var(--panel-strong) 84%,transparent);border:1px solid color-mix(in srgb,var(--line) 86%,transparent);
+  border-radius:24px;backdrop-filter:blur(18px);box-shadow:var(--shadow-sm)
 }
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
-.brand-mark{
-  width:48px;height:48px;border-radius:14px;overflow:hidden;background:#07111d;box-shadow:0 14px 28px rgba(7,17,29,0.22);
-  flex-shrink:0;animation:softLift 7s ease-in-out infinite
-}
+.brand-mark{width:48px;height:48px;border-radius:15px;overflow:hidden;flex-shrink:0;background:#09111b;box-shadow:0 14px 28px rgba(7,17,29,.22);animation:lift 7s ease-in-out infinite}
 .brand-mark img{width:100%;height:100%;object-fit:cover}
-.brand-copy h1{font-family:'Playfair Display',serif;font-size:24px;line-height:1;color:var(--brand)}
-.brand-copy p{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.brand-copy h1{font-family:'Playfair Display',serif;font-size:24px;color:var(--brand);line-height:1}
+.brand-copy p{font-size:11px;letter-spacing:1.7px;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .mobile-menu-btn{
-  display:none;align-items:center;justify-content:center;width:46px;height:46px;margin-left:auto;
-  border-radius:14px;background:rgba(255,255,255,0.78);color:var(--brand);cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,0.7),0 8px 20px rgba(29,34,25,0.06)
+  display:none;width:46px;height:46px;border-radius:14px;align-items:center;justify-content:center;cursor:pointer;
+  color:var(--brand);background:rgba(255,255,255,.78);box-shadow:var(--shadow-sm)
 }
-.mobile-menu-btn svg{width:18px;height:18px}
 .nav-links{display:flex;gap:8px;flex-wrap:wrap}
 .nav-link,.chip{
-  border:1px solid transparent;background:transparent;color:var(--muted);cursor:pointer;padding:10px 14px;border-radius:999px;font-weight:500;transition:.25s
+  cursor:pointer;padding:10px 14px;border-radius:999px;color:var(--muted);transition:.22s;border:1px solid transparent
 }
-.nav-link:hover,.nav-link.active,.chip:hover,.chip.active{
-  background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border-color:transparent;box-shadow:0 12px 22px rgba(39,71,52,0.18)
+.nav-link.active,.nav-link:hover,.chip.active,.chip:hover{
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:0 12px 22px rgba(36,71,52,.18)
 }
 .nav-tools{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-.search,.tool-select,.theme-toggle,.tool-btn,.icon-btn{
-  display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgba(255,255,255,0.82);
-  padding:12px 14px;border-radius:14px;min-height:48px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),0 10px 20px rgba(29,34,25,0.04)
+.search-shell{position:relative;min-width:300px}
+.search,.tool-select,.theme-toggle,.tool-btn,.icon-btn,.field{
+  display:flex;align-items:center;gap:10px;min-height:48px;padding:12px 14px;border-radius:15px;
+  border:1px solid var(--line);background:rgba(255,255,255,.82);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 10px 18px rgba(28,36,28,.04)
 }
-body.dark-mode .search,
-body.dark-mode .tool-select,
-body.dark-mode .theme-toggle,
-body.dark-mode .tool-btn,
-body.dark-mode .icon-btn,
-body.dark-mode .mobile-menu-btn{background:rgba(22,31,27,0.9)}
-.search{min-width:240px}
-.search input,.tool-select select,.checkout-field input,.checkout-field textarea{width:100%;outline:none;color:var(--text);background:transparent}
-.search:focus-within,.tool-select:focus-within,.checkout-field:focus-within{border-color:#bfd3bf;box-shadow:0 0 0 4px rgba(71,107,83,0.10),inset 0 1px 0 rgba(255,255,255,0.6)}
+body.dark-mode .search,body.dark-mode .tool-select,body.dark-mode .theme-toggle,body.dark-mode .tool-btn,body.dark-mode .icon-btn,body.dark-mode .field,body.dark-mode .mobile-menu-btn{background:rgba(23,31,27,.9)}
+.search{width:100%}
+.search input,.tool-select select,.field input,.field textarea{width:100%;outline:none;color:var(--text);background:transparent}
 .tool-select select{appearance:none;cursor:pointer}
+.search:focus-within,.tool-select:focus-within,.field:focus-within{border-color:#bfd4c1;box-shadow:0 0 0 4px rgba(72,108,84,.12),inset 0 1px 0 rgba(255,255,255,.6)}
 .theme-toggle,.tool-btn,.icon-btn{justify-content:center;cursor:pointer;color:var(--brand);font-weight:600}
-.theme-toggle .toggle-text{font-size:13px}
 .cart-btn{
-  position:relative;display:flex;align-items:center;gap:10px;border:none;cursor:pointer;
-  padding:12px 18px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;
-  box-shadow:0 16px 28px rgba(39,71,52,0.26);transition:.25s;min-height:48px
+  display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:15px;min-height:48px;cursor:pointer;color:#fff;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 16px 26px rgba(36,71,52,.24);transition:.22s
 }
-.cart-btn:hover,.btn-primary:hover,.btn-secondary:hover,.checkout:hover,.hero-mini-card:hover,.deal-card:hover,.product-card:hover,.favorite-card:hover,.stock-item:hover{transform:translateY(-2px)}
-.cart-btn.cart-bump,.mobile-bottom-btn.cart-bump{animation:cartPulse .42s ease}
-.cart-count,.mobile-bottom-count,.favorite-count{
+.cart-btn:hover,.btn-primary:hover,.btn-secondary:hover,.deal-card:hover,.product-card:hover,.mini-card:hover,.summary-card:hover,.favorite-card:hover,.admin-item:hover{transform:translateY(-2px)}
+.cart-btn.bump,.mobile-bottom-btn.bump{animation:pulse .4s ease}
+.counter{
   min-width:24px;height:24px;border-radius:999px;background:#fff;color:var(--brand);font-size:12px;font-weight:700;display:grid;place-items:center
 }
+.search-suggestions{
+  position:absolute;left:0;right:0;top:calc(100% + 8px);display:none;z-index:40;padding:8px;border-radius:18px;background:var(--panel-strong);
+  border:1px solid color-mix(in srgb,var(--line) 88%,transparent);box-shadow:var(--shadow)
+}
+.search-suggestions.open{display:grid}
+.suggestion-item{
+  display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;cursor:pointer;transition:.18s
+}
+.suggestion-item:hover{background:rgba(255,255,255,.48)}
+.suggestion-item img{width:42px;height:42px;border-radius:12px;object-fit:cover;object-position:var(--img-pos,center);transform:scale(var(--img-scale,1.1));background:linear-gradient(135deg,#f5efdf,#ece4d5)}
+.suggestion-item strong{display:block;font-size:14px}
+.suggestion-item span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
 
 .hero{
-  position:relative;overflow:hidden;margin-top:24px;padding:32px;border-radius:32px;background:
-    radial-gradient(circle at right top,rgba(255,255,255,0.78),transparent 28%),
-    linear-gradient(135deg,#e3eed8 0%,#d8e5d2 35%,#f7f0e1 100%);
-  border:1px solid #d8e1d0;box-shadow:var(--shadow);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:28px;align-items:center;animation:revealUp .8s ease both
+  position:relative;overflow:hidden;margin-top:24px;padding:32px;border-radius:34px;background:
+    radial-gradient(circle at right top,rgba(255,255,255,.78),transparent 30%),
+    linear-gradient(135deg,#e4eed8 0%,#d7e3cf 36%,#f8f2e5 100%);
+  border:1px solid #d9e3d1;box-shadow:var(--shadow);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:28px;align-items:center;animation:revealUp .75s ease both
 }
 body.dark-mode .hero{
   background:
-    radial-gradient(circle at right top,rgba(255,255,255,0.08),transparent 28%),
-    linear-gradient(135deg,#15221d 0%,#1b2a24 35%,#1d241e 100%);
+    radial-gradient(circle at right top,rgba(255,255,255,.08),transparent 30%),
+    linear-gradient(135deg,#14211c 0%,#1b2a24 36%,#1b231f 100%);
   border-color:#294036
 }
-.hero::before,.hero::after{content:'';position:absolute;border-radius:999px;pointer-events:none}
 .hero::before{
-  width:220px;height:220px;top:-70px;right:-30px;background:radial-gradient(circle,rgba(255,255,255,0.7),transparent 72%);
-  animation:orbFloat 12s ease-in-out infinite
+  content:'';position:absolute;inset:-40% auto 0 -12%;width:42%;transform:skewX(-22deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.24),transparent);animation:sweep 8s linear infinite
 }
-.hero::after{width:360px;height:1px;left:-40px;bottom:46px;box-shadow:0 0 0 1px rgba(216,167,77,0.18);transform:rotate(-8deg)}
 .hero-copy .eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--brand-2)}
-.hero-copy h2{font-family:'Playfair Display',serif;font-size:52px;line-height:1.02;color:var(--brand);margin:14px 0}
-.hero-copy h2 span{color:#9d6b18}
-.hero-copy p{max-width:640px;font-size:16px;line-height:1.75;color:var(--muted)}
+.hero-copy h2{font-family:'Playfair Display',serif;font-size:52px;line-height:1.02;color:var(--brand);margin:12px 0}
+.hero-copy h2 span{color:#9a6817}
+.hero-copy p{max-width:620px;color:var(--muted);font-size:16px;line-height:1.7}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-.btn-primary,.btn-secondary{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;border:none;border-radius:14px;padding:13px 18px;cursor:pointer;font-weight:600;transition:.25s
+.btn-primary,.btn-secondary,.add-btn,.ghost-btn,.qty-btn,.remove-btn,.close-btn,.star-btn{
+  cursor:pointer;transition:.22s;border-radius:14px
 }
-.btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:0 14px 30px rgba(39,71,52,0.22)}
-.btn-secondary{background:rgba(255,255,255,0.8);color:var(--brand);border:1px solid #ccd9ca}
-.hero-panel{
-  position:relative;overflow:hidden;background:rgba(255,255,255,0.58);border:1px solid rgba(255,255,255,0.86);
-  border-radius:24px;padding:24px;backdrop-filter:blur(14px);animation:softTilt 9s ease-in-out infinite
-}
-body.dark-mode .hero-panel{background:rgba(16,22,19,0.62);border-color:rgba(255,255,255,0.06)}
-.hero-panel::before{
-  content:'';position:absolute;inset:-40% auto 0 -20%;width:50%;transform:skewX(-20deg);
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.42),transparent);animation:glowSweep 8s linear infinite
-}
+.btn-primary,.btn-secondary,.add-btn,.ghost-btn{padding:13px 18px;min-height:46px}
+.btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:0 14px 28px rgba(36,71,52,.22)}
+.btn-secondary,.ghost-btn{background:rgba(255,255,255,.82);color:var(--brand);border:1px solid var(--line)}
+.hero-panel{position:relative;overflow:hidden;padding:24px;border-radius:24px;background:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.86);backdrop-filter:blur(16px)}
+body.dark-mode .hero-panel{background:rgba(17,22,19,.62);border-color:rgba(255,255,255,.08)}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.stat,.hero-mini-card,.summary-card,.deal-card,.product-card,.inventory-card,.favorite-card{
-  background:var(--panel);border:1px solid color-mix(in srgb,var(--line) 88%,transparent);border-radius:18px;box-shadow:var(--shadow-sm);backdrop-filter:blur(12px)
-}
-.stat{padding:18px;text-align:center;animation:softLift 8s ease-in-out infinite}
-.stat strong,.summary-card strong{display:block;font-family:'Playfair Display',serif;font-size:28px;color:var(--brand)}
+.stat{padding:18px;text-align:center;animation:lift 8s ease-in-out infinite}
+.stat strong,.summary-card strong{display:block;font-family:'Playfair Display',serif;font-size:30px;color:var(--brand)}
 .stat span,.summary-card span{font-size:12px;color:var(--muted)}
 .hero-note{
-  margin-top:18px;padding:16px 18px;border-radius:18px;background:linear-gradient(135deg,rgba(32,53,41,0.96),rgba(63,107,77,0.92));
-  color:#fff;box-shadow:0 18px 34px rgba(39,71,52,0.18)
+  margin-top:16px;padding:16px 18px;border-radius:18px;color:#fff;background:linear-gradient(135deg,rgba(26,47,36,.96),rgba(56,97,71,.92));
+  box-shadow:0 16px 28px rgba(36,71,52,.18)
 }
-.hero-note small{display:block;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;opacity:.72;margin-bottom:6px}
-.hero-note p{font-size:14px;line-height:1.6;opacity:.92}
-.hero-mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
-.hero-mini-card{padding:14px 16px;transition:.25s}
-.hero-mini-card strong{display:block;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
-.hero-mini-card span{display:block;margin-top:6px;font-size:20px;font-weight:700;color:var(--text)}
+.hero-note small{display:block;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;opacity:.76;margin-bottom:6px}
+.hero-note p{font-size:14px;line-height:1.6;opacity:.94}
+.mini-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.mini-card{padding:14px 16px}
+.mini-card strong{display:block;font-size:12px;letter-spacing:.9px;text-transform:uppercase;color:var(--muted)}
+.mini-card span{display:block;margin-top:6px;font-size:20px;font-weight:700}
 
-.section{margin-top:32px}
-.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
-.section-head h3{font-family:'Playfair Display',serif;font-size:32px;color:var(--text)}
+.section{margin-top:34px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:18px}
+.section-head h3{font-family:'Playfair Display',serif;font-size:32px}
 .section-head p{color:var(--muted);margin-top:4px}
-.summary-grid,.deal-row,.product-grid,.favorites-grid{display:grid;gap:16px}
-.summary-grid{grid-template-columns:repeat(3,1fr)}
-.summary-card{padding:20px;animation:revealUp .7s ease both}
-.deal-row{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
-.deal-card{
-  position:relative;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:12px;transition:.28s;animation:revealUp .7s ease both
+.summary-grid,.deal-row,.horizontal-scroll,.product-grid,.favorites-grid,.admin-grid{display:grid;gap:16px}
+.summary-grid{grid-template-columns:repeat(4,1fr)}
+.summary-card{padding:20px}
+.summary-card b{display:block;margin-top:8px;font-size:13px;color:var(--muted);font-weight:500}
+.deal-row,.horizontal-scroll{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.deal-card{position:relative;overflow:hidden;padding:16px;display:grid;gap:12px}
+.deal-card img,.product-media img,.favorite-card img,.modal-visual img,.inventory-thumb img,.recent-card img,.admin-item img{
+  width:100%;height:100%;object-fit:cover;object-position:var(--img-pos,center);transform:scale(var(--img-scale,1.12));
+  background:linear-gradient(135deg,#f5efdf,#ece4d5)
 }
-.deal-card::after,.product-card::after{
-  content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent 10%,rgba(255,255,255,0.22) 35%,transparent 55%);
-  transform:translateX(-120%);transition:transform .8s ease;pointer-events:none
-}
-.deal-card:hover::after,.product-card:hover::after{transform:translateX(120%)}
-.deal-card img,.td-product img,.stock-item img,.cart-item img,.favorite-card img,.modal-visual img{
-  background:linear-gradient(135deg,#f7f1e6,#ece3d2);padding:0;object-fit:cover;object-position:var(--img-pos,center);transform:scale(var(--img-scale,1.1))
-}
-.deal-card img{width:100%;height:150px;border-radius:18px;filter:drop-shadow(0 10px 14px rgba(30,36,32,0.10))}
+.deal-card img{height:160px;border-radius:18px}
 .deal-card strong{font-size:15px}
 .deal-card span{font-size:12px;color:var(--muted)}
-.deal-price{display:flex;align-items:center;gap:8px}
-.deal-price b{font-size:20px;color:var(--brand)}
-.deal-price s{font-size:13px;color:#8c8f89}
-.deal-save{
-  display:inline-flex;align-self:flex-start;padding:6px 10px;border-radius:999px;background:linear-gradient(135deg,#fff3df,var(--gold-soft));
-  color:#8a5810;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px
-}
-
-.shop-toolbar{display:grid;gap:14px;margin-bottom:18px}
-.shop-toolbar-top,.toolbar-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.filters{display:flex;gap:10px;flex-wrap:wrap}
-.chip{border-color:var(--line);background:rgba(255,255,255,0.66)}
-.product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-.product-card{
-  position:relative;overflow:hidden;display:flex;flex-direction:column;transition:.3s;animation:revealUp .7s ease both;min-height:100%
-}
-.product-card.card-pop{animation:addFlash .45s ease}
-.product-media{
-  position:relative;background:radial-gradient(circle at top,rgba(255,255,255,0.85),transparent 42%),linear-gradient(135deg,#f4efe5,#ece6d8);
-  aspect-ratio:1/1;overflow:hidden;padding:12px;display:grid;place-items:center
-}
-.product-media img{width:100%;height:100%;filter:drop-shadow(0 12px 18px rgba(30,36,32,0.12));transition:transform .35s ease}
-.product-card:hover .product-media img{transform:scale(calc(var(--img-scale,1.14) + 0.03))}
-.badge-stack{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:6px}
-.badge,.status-pill,.pill{
+.price-line{display:flex;align-items:center;gap:8px}
+.price-line b{font-size:20px;color:var(--brand)}
+.price-line s{font-size:13px;color:var(--muted)}
+.save-pill,.badge,.pill,.status-pill{
   display:inline-flex;align-self:flex-start;padding:6px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase
 }
-.badge.fresh,.status-pill.good,.pill.good{background:#e8f6eb;color:#256338}
-.badge.organic{background:#eef5e4;color:#546b22}
-.badge.sale,.status-pill.low,.pill.low{background:#fff1de;color:#b06d12}
-.badge.new{background:#e7f1ff;color:#1f66d6}
-.badge.best{background:linear-gradient(135deg,#fff2d8,#f3dfb7);color:#8e5b06}
-.status-pill.out,.pill.out{background:#fde8e5;color:#b73d2f}
-.product-favorite{
-  position:absolute;top:12px;right:12px;z-index:2;width:40px;height:40px;border-radius:50%;cursor:pointer;
-  background:rgba(255,255,255,0.92);color:#b06565;display:grid;place-items:center;box-shadow:0 12px 18px rgba(0,0,0,0.08)
+.save-pill{background:linear-gradient(135deg,#fff2db,#f2dfb5);color:#8f5d10}
+.badge.fresh,.pill.good,.status-pill.good{background:#e9f7ed;color:#287345}
+.badge.sale,.pill.low,.status-pill.low{background:#fff2dd;color:#b47518}
+.badge.new{background:#e8f0ff;color:#2d69d1}
+.badge.best{background:linear-gradient(135deg,#fff2d8,#f4e3bb);color:#8f5d10}
+.badge.organic{background:#edf6e9;color:#5f7425}
+.pill.out,.status-pill.out{background:#fde9e5;color:#bb3e31}
+
+.toolbar{display:grid;gap:14px;margin-bottom:18px}
+.toolbar-top,.toolbar-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+.product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.product-card{position:relative;overflow:hidden;display:flex;flex-direction:column;transition:.24s;min-height:100%}
+.product-card.flash{box-shadow:0 0 0 10px rgba(70,108,84,.12)}
+.product-media{
+  position:relative;aspect-ratio:1/1;padding:12px;background:
+    radial-gradient(circle at top,rgba(255,255,255,.86),transparent 42%),
+    linear-gradient(135deg,#f4eee3,#ece5d7)
 }
-.product-favorite.active{background:#ffe4e2;color:#c44a3d}
+.product-media img{height:100%;border-radius:18px;filter:drop-shadow(0 12px 16px rgba(0,0,0,.1))}
+.badge-stack{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:6px}
+.favorite-btn{
+  position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;cursor:pointer;z-index:2;
+  background:rgba(255,255,255,.94);color:#b46363;box-shadow:0 10px 18px rgba(0,0,0,.08)
+}
+.favorite-btn.active{background:#ffe7e4;color:#ca4c3d}
 .product-body{padding:16px;display:flex;flex-direction:column;gap:10px;height:100%}
-.product-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-.product-top strong{font-size:17px;line-height:1.4;letter-spacing:-.01em}
-.category-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:var(--brand-2)}
-.meta{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted)}
-.stock.good{color:var(--success)}
-.stock.low{color:var(--warn)}
-.stock.out{color:var(--danger)}
-.product-copy{font-size:13px;line-height:1.6;color:var(--muted)}
-.product-footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.product-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.product-head strong{font-size:17px;line-height:1.35}
+.category-tag{font-size:11px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:var(--brand-2)}
+.meta,.product-rating{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted)}
+.product-copy{font-size:13px;line-height:1.65;color:var(--muted)}
 .price{font-family:'Playfair Display',serif;font-size:24px;color:var(--brand)}
 .price small{display:block;font-family:'Outfit',sans-serif;font-size:12px;color:var(--muted);margin-top:2px}
+.product-footer{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
 .product-actions{display:flex;gap:8px;align-items:center}
-.add-btn,.ghost-btn,.qty-btn,.remove-btn,.details-btn{
-  border:none;border-radius:14px;padding:12px 14px;cursor:pointer;min-height:44px;transition:.25s
+.add-btn{background:linear-gradient(135deg,#e2eee0,#d2e3d0);color:var(--brand);font-weight:700;min-width:112px}
+.add-btn:disabled{background:#ece6dd;color:#a9a195;cursor:not-allowed}
+.star-row{display:flex;gap:4px;align-items:center}
+.star{color:#f0be5a}
+
+.skeleton-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.skeleton-card{
+  height:360px;border-radius:20px;border:1px solid color-mix(in srgb,var(--line) 88%,transparent);
+  background:linear-gradient(90deg,rgba(255,255,255,.35) 25%,rgba(255,255,255,.62) 50%,rgba(255,255,255,.35) 75%);
+  background-size:200% 100%;animation:shimmer 1.2s linear infinite
 }
-.add-btn{background:linear-gradient(135deg,#e3eedf,#d1e1d0);color:var(--brand);font-weight:700;min-width:110px}
-.details-btn,.ghost-btn{background:rgba(255,255,255,0.78);border:1px solid var(--line);color:var(--text)}
-.add-btn:hover:not(:disabled),.details-btn:hover,.ghost-btn:hover,.qty-btn:hover,.remove-btn:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(39,71,52,0.14)}
-.add-btn:disabled,.checkout:disabled{background:#efebe3;color:#aaa39a;cursor:not-allowed;box-shadow:none}
-.inventory-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
-.inventory-card{padding:20px;animation:revealUp .7s ease both}
+body.dark-mode .skeleton-card{
+  background:linear-gradient(90deg,rgba(36,48,42,.6) 25%,rgba(55,68,61,.82) 50%,rgba(36,48,42,.6) 75%);
+  background-size:200% 100%
+}
+
+.empty-state{padding:28px;text-align:center;border-radius:20px;background:var(--panel);border:1px dashed var(--line)}
+.empty-state strong{display:block;font-size:18px}
+.empty-state p{margin-top:8px;color:var(--muted);line-height:1.6}
+
+.recent-grid,.favorites-grid,.admin-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.recent-card,.favorite-card,.admin-item{padding:14px;display:grid;gap:12px}
+.recent-card,.favorite-card{grid-template-columns:84px 1fr auto;align-items:center}
+.recent-card img,.favorite-card img{width:84px;height:84px;border-radius:16px}
+.recent-card strong,.favorite-card strong,.admin-item strong{display:block}
+.recent-card p,.favorite-card p,.admin-item p{font-size:13px;color:var(--muted);line-height:1.55}
+
+.inventory-layout{display:grid;grid-template-columns:1.08fr .92fr;gap:18px}
+.section-card{padding:20px}
 .inventory-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
 .inventory-toolbar .search{min-width:0;flex:1}
-.table-scroll{overflow:auto}
+.table-wrap{overflow:auto}
 table{width:100%;border-collapse:collapse}
-th,td{padding:14px 12px;text-align:left;border-bottom:1px solid color-mix(in srgb,var(--line) 78%,transparent);vertical-align:middle}
-th{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+th,td{padding:14px 12px;text-align:left;border-bottom:1px solid color-mix(in srgb,var(--line) 80%,transparent);vertical-align:middle}
+th{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
 td{font-size:14px}
-tbody tr:hover{background:rgba(255,255,255,0.35)}
-.td-product{display:flex;align-items:center;gap:12px;min-width:240px}
-.td-product img{width:48px;height:48px;border-radius:12px;--img-scale:1.08}
-.mini-note{font-size:12px;color:var(--muted)}
+tbody tr:hover{background:rgba(255,255,255,.28)}
+.inventory-thumb{display:flex;align-items:center;gap:12px;min-width:240px}
+.inventory-thumb img{width:50px;height:50px;border-radius:12px}
 .stock-list{display:grid;gap:12px}
 .stock-item{
   display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:14px;padding:12px;border-radius:18px;
-  background:rgba(255,255,255,0.38);border:1px solid color-mix(in srgb,var(--line) 78%,transparent);transition:.25s
+  background:rgba(255,255,255,.38);border:1px solid color-mix(in srgb,var(--line) 76%,transparent)
 }
-.stock-item img{width:56px;height:56px;border-radius:14px;--img-scale:1.1}
-.stock-item strong{display:block;font-size:15px}
-.stock-item span{font-size:12px;color:var(--muted)}
-
-.favorites-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-.favorite-card{padding:14px;display:grid;grid-template-columns:84px 1fr auto;gap:14px;align-items:center}
-.favorite-card img{width:84px;height:84px;border-radius:16px;--img-scale:1.1}
-.favorite-card strong{display:block}
-.favorite-card p{font-size:13px;color:var(--muted);margin-top:4px}
+.stock-item img{width:56px;height:56px;border-radius:14px;object-fit:cover;background:linear-gradient(135deg,#f5efdf,#ece4d5)}
 
 .overlay{
-  position:fixed;inset:0;background:rgba(11,15,18,0.34);backdrop-filter:blur(5px);opacity:0;pointer-events:none;transition:.25s;z-index:50
+  position:fixed;inset:0;background:rgba(10,14,16,.36);backdrop-filter:blur(5px);opacity:0;pointer-events:none;transition:.22s;z-index:55
 }
 .overlay.open{opacity:1;pointer-events:auto}
 .cart-panel,.modal-card{
   background:var(--panel-strong);border:1px solid color-mix(in srgb,var(--line) 88%,transparent);box-shadow:var(--shadow)
 }
 .cart-panel{
-  position:absolute;right:18px;top:18px;bottom:18px;width:min(430px,calc(100vw - 36px));border-radius:28px;
-  display:flex;flex-direction:column;transform:translateX(20px);transition:.28s ease
+  position:absolute;right:18px;top:18px;bottom:18px;width:min(450px,calc(100vw - 36px));display:flex;flex-direction:column;border-radius:28px;
+  transform:translateX(18px);transition:.24s
 }
 .overlay.open .cart-panel{transform:translateX(0)}
 .cart-head,.cart-foot{padding:20px 22px}
 .cart-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:1px solid color-mix(in srgb,var(--line) 78%,transparent)}
 .cart-foot{border-top:1px solid color-mix(in srgb,var(--line) 78%,transparent);margin-top:auto}
-.close-btn{
-  width:40px;height:40px;border-radius:12px;background:var(--panel-soft);cursor:pointer;color:var(--muted);display:grid;place-items:center
+.close-btn,.icon-btn,.qty-btn,.remove-btn,.star-btn{
+  display:grid;place-items:center
 }
-.cart-items{padding:10px 22px 20px;overflow:auto;display:grid;gap:12px}
-.cart-empty,.empty-state{padding:42px 12px;text-align:center;color:var(--muted)}
+.close-btn,.icon-btn{width:40px;height:40px;background:var(--bg-soft);color:var(--muted)}
+.cart-items{padding:10px 22px 20px;display:grid;gap:12px;overflow:auto}
 .cart-item{
-  display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:12px;border:1px solid color-mix(in srgb,var(--line) 80%,transparent);
-  border-radius:18px;background:rgba(255,255,255,0.4)
+  display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:12px;border-radius:18px;
+  border:1px solid color-mix(in srgb,var(--line) 80%,transparent);background:rgba(255,255,255,.42)
 }
-.cart-item img{width:64px;height:64px;border-radius:14px;--img-scale:1.08}
+.cart-item img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:linear-gradient(135deg,#f5efdf,#ece4d5)}
 .cart-item-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.qty{display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap}
-.qty-btn{
-  width:30px;height:30px;padding:0;border-radius:10px;background:#ebe4d6;color:var(--text);display:grid;place-items:center;font-weight:700
+.qty{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px}
+.qty-btn{width:30px;height:30px;background:#ebe4d6;color:var(--text)}
+.remove-btn{padding:9px 12px;border-radius:999px;background:#fde7e3;color:#b73f33;font-size:12px;font-weight:700;min-height:auto}
+.coupon-box{
+  display:grid;grid-template-columns:1fr auto;gap:10px;margin:14px 0 4px
 }
-.remove-btn{
-  background:#fde8e5;color:#b73d2f;font-size:12px;font-weight:700;padding:9px 12px;min-height:auto;border-radius:999px
+.coupon-box input{
+  min-height:46px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.72);outline:none;color:var(--text)
 }
-.cart-summary-line{display:flex;align-items:center;justify-content:space-between;color:var(--muted);margin-bottom:10px}
-.cart-summary-line.total{color:var(--text);font-weight:700;font-size:17px;margin-top:12px}
-.checkout{
-  width:100%;border:none;border-radius:16px;padding:14px 16px;cursor:pointer;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:700;transition:.25s
+.summary-line{display:flex;align-items:center;justify-content:space-between;color:var(--muted);margin-bottom:10px}
+.summary-line.total{margin-top:10px;color:var(--text);font-weight:700;font-size:18px}
+.summary-line.discount span:last-child,.summary-line.saved span:last-child{color:var(--success)}
+.checkout-btn{
+  width:100%;margin-top:8px;padding:14px 16px;border-radius:16px;cursor:pointer;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:700
 }
 
 .modal-wrap{position:fixed;inset:0;display:grid;place-items:center;padding:20px}
-.modal-card{
-  width:min(980px,100%);max-height:calc(100vh - 40px);overflow:auto;border-radius:28px;padding:24px;animation:modalIn .24s ease
-}
-.product-modal-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:24px}
+.modal-card{width:min(1020px,100%);max-height:calc(100vh - 40px);overflow:auto;border-radius:28px;padding:24px;animation:modalIn .22s ease}
+.product-modal-layout,.checkout-layout,.admin-layout{display:grid;grid-template-columns:minmax(0,.98fr) minmax(0,1.02fr);gap:22px}
 .modal-visual{
-  position:relative;border-radius:24px;padding:24px;background:linear-gradient(135deg,#f4efe5,#ece6d8);min-height:340px;display:grid;place-items:center
+  padding:24px;border-radius:24px;background:linear-gradient(135deg,#f4eee3,#ece5d7);min-height:360px;display:grid;place-items:center
 }
-.modal-visual img{width:100%;height:100%;max-height:430px;border-radius:20px}
+.modal-visual img{max-height:440px;border-radius:20px}
 .modal-body{display:grid;gap:16px}
 .modal-body h3{font-family:'Playfair Display',serif;font-size:38px;color:var(--brand)}
 .modal-copy{font-size:15px;line-height:1.75;color:var(--muted)}
-.modal-meta{display:flex;gap:10px;flex-wrap:wrap}
-.modal-action-row{display:flex;gap:10px;flex-wrap:wrap}
-.modal-summary{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px
+.detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.detail-item{padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.38);border:1px solid color-mix(in srgb,var(--line) 76%,transparent)}
+.detail-item strong{display:block;font-size:12px;letter-spacing:.9px;text-transform:uppercase;color:var(--muted)}
+.detail-item span{display:block;margin-top:6px;font-size:18px;font-weight:700}
+.reviews{display:grid;gap:10px}
+.review{
+  padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.36);border:1px solid color-mix(in srgb,var(--line) 76%,transparent)
 }
-.modal-summary .hero-mini-card{padding:12px 14px}
+.review strong{display:block}
+.review p{margin-top:6px;font-size:13px;line-height:1.65;color:var(--muted)}
+.rating-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.star-btn{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.72);color:#d8a84c;font-size:17px}
+.star-btn.active{background:#fff1d2;color:#b67b11}
 
-.checkout-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.9fr);gap:20px}
-.checkout-form{display:grid;gap:14px}
-.checkout-field{
-  display:grid;gap:8px;padding:14px 16px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,0.46)
-}
-.checkout-field label{font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
-.checkout-field textarea{resize:vertical;min-height:120px}
+.checkout-form,.admin-form{display:grid;gap:14px}
+.field{display:grid;gap:8px;padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.46)}
+.field label{font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
+.field textarea{resize:vertical;min-height:110px}
 .order-list{display:grid;gap:10px}
 .order-line{
   display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent)
 }
 .order-line small{display:block;color:var(--muted);margin-top:4px}
-.checkout-note{font-size:13px;color:var(--muted);line-height:1.6}
+.helper{font-size:13px;color:var(--muted);line-height:1.6}
+
+.admin-grid{margin-top:18px}
+.admin-item{grid-template-columns:72px 1fr auto;align-items:center}
+.admin-item img{width:72px;height:72px;border-radius:15px}
+.admin-actions{display:grid;gap:8px}
+.admin-banner{
+  margin-top:14px;padding:14px 16px;border-radius:18px;background:linear-gradient(135deg,rgba(36,71,52,.08),rgba(216,168,76,.1));
+  border:1px solid color-mix(in srgb,var(--line) 84%,transparent);color:var(--muted)
+}
 
 .toast-stack{
-  position:fixed;left:50%;bottom:24px;transform:translateX(-50%);display:grid;gap:10px;z-index:70;width:min(92vw,420px)
+  position:fixed;left:50%;bottom:22px;transform:translateX(-50%);display:grid;gap:10px;z-index:80;width:min(92vw,430px)
 }
 .toast{
-  display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border-radius:18px;background:#1c2621;color:#fff;
-  box-shadow:var(--shadow);animation:toastIn .24s ease
+  display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:18px;color:#fff;
+  box-shadow:var(--shadow);animation:toastIn .22s ease
 }
-.toast.success{background:#183324}
-.toast.info{background:#213147}
-.toast.warn{background:#4d3412}
-.toast.error{background:#4a1d17}
+.toast.success{background:#173325}
+.toast.info{background:#223246}
+.toast.warn{background:#513612}
+.toast.error{background:#4d1d18}
 
-.mobile-bottom-bar{
-  position:fixed;left:12px;right:12px;bottom:12px;z-index:35;display:none;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding:10px;
-  border:1px solid rgba(229,220,205,0.88);border-radius:20px;background:rgba(255,252,246,0.9);backdrop-filter:blur(18px);box-shadow:var(--shadow)
+.mobile-bottom{
+  position:fixed;left:12px;right:12px;bottom:12px;z-index:38;display:none;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding:10px;
+  border-radius:20px;border:1px solid color-mix(in srgb,var(--line) 86%,transparent);background:color-mix(in srgb,var(--panel-strong) 88%,transparent);backdrop-filter:blur(18px);box-shadow:var(--shadow)
 }
 .mobile-bottom-btn{
-  border:none;background:rgba(255,255,255,0.68);color:var(--muted);cursor:pointer;border-radius:16px;padding:10px 8px;display:grid;justify-items:center;gap:6px;
-  font-size:11px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;transition:.25s;position:relative
+  position:relative;display:grid;justify-items:center;gap:6px;padding:10px 8px;border-radius:16px;cursor:pointer;color:var(--muted);background:rgba(255,255,255,.64);
+  font-size:11px;font-weight:700;letter-spacing:.35px;text-transform:uppercase;transition:.22s
 }
-.mobile-bottom-btn svg{width:18px;height:18px}
 .mobile-bottom-btn.active,.mobile-bottom-btn:hover{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
-.mobile-sheet-handle{display:none}
 .flying-thumb{
-  position:fixed;z-index:90;width:54px;height:54px;border-radius:50%;object-fit:cover;pointer-events:none;box-shadow:0 12px 26px rgba(0,0,0,0.2);
-  animation:flyToCart .6s ease forwards
+  position:fixed;z-index:90;width:54px;height:54px;border-radius:50%;pointer-events:none;object-fit:cover;box-shadow:0 14px 24px rgba(0,0,0,.2);animation:fly .6s ease forwards
 }
-.pressable:active,.btn-primary:active,.btn-secondary:active,.mobile-bottom-btn:active,.nav-link:active,.chip:active,.cart-btn:active,.checkout:active,.qty-btn:active,.mobile-menu-btn:active,.add-btn:active,.details-btn:active,.product-favorite:active,.theme-toggle:active,.tool-btn:active,.close-btn:active,.remove-btn:active{animation:pressIn .16s ease}
 
 @media (max-width:1180px){
   .nav{gap:14px}
   .nav-tools{margin-left:0;width:100%;justify-content:space-between}
-  .search{flex:1;min-width:220px}
-  .hero,.inventory-wrap,.checkout-layout,.product-modal-layout{grid-template-columns:1fr}
-  .hero-panel{max-width:760px}
-  .summary-grid,.favorites-grid{grid-template-columns:1fr 1fr}
+  .search-shell{flex:1;min-width:220px}
+  .hero,.inventory-layout,.product-modal-layout,.checkout-layout,.admin-layout{grid-template-columns:1fr}
+  .summary-grid,.recent-grid,.favorites-grid,.admin-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
-  .shell{padding:0 16px 40px}
-  .nav{padding:14px;gap:12px}
+  .shell{padding:0 16px 42px}
   .brand{width:100%;justify-content:center}
   .nav-links,.nav-tools{width:100%}
   .nav-links{justify-content:center}
-  .nav-tools{justify-content:stretch}
-  .hero{padding:24px;border-radius:28px;gap:22px}
+  .hero{padding:24px;border-radius:28px}
   .hero-copy h2{font-size:42px}
-  .deal-row{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .summary-grid,.favorites-grid,.modal-summary{grid-template-columns:1fr}
-  .inventory-card{padding:16px}
-  .favorite-card{grid-template-columns:72px 1fr}
-  .favorite-card img{width:72px;height:72px}
+  .product-grid,.skeleton-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .summary-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
   body{padding-bottom:96px}
   .shell{padding:0 14px 36px}
-  .nav{top:0;margin-top:0;padding:12px 14px;border-radius:0 0 18px 18px;align-items:center;position:sticky}
+  .nav{top:0;margin-top:0;padding:12px 14px;border-radius:0 0 18px 18px}
+  .mobile-menu-btn{display:inline-flex;margin-left:auto}
   .brand{justify-content:flex-start;max-width:calc(100% - 58px)}
   .brand-copy h1{font-size:20px}
-  .brand-copy p{font-size:10px;letter-spacing:1.1px}
-  .mobile-menu-btn{display:inline-flex}
-  .nav-links,.nav-tools{width:100%;display:none}
-  .nav.open{position:fixed;left:0;right:0;top:0;bottom:0;z-index:45;border-radius:0;padding:22px 18px;align-content:flex-start;overflow:auto}
+  .nav-links,.nav-tools{display:none;width:100%}
+  .nav.open{position:fixed;left:0;right:0;top:0;bottom:0;border-radius:0;padding:22px 18px;align-content:flex-start;overflow:auto}
   .nav.open .brand{max-width:none;width:100%}
   .nav.open .nav-links,.nav.open .nav-tools{display:grid}
   .nav-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding-top:14px}
-  .nav-link{padding:14px 10px;text-align:center;font-size:14px;min-height:48px}
+  .nav-link{text-align:center;min-height:48px}
   .nav-tools{grid-template-columns:1fr;gap:12px}
-  .search,.tool-select,.theme-toggle,.tool-btn,.cart-btn{width:100%}
-  .hero{padding:18px;border-radius:20px;gap:18px;margin-top:16px}
-  .hero-copy h2{font-size:34px;line-height:1.08}
-  .hero-copy p{font-size:14px;line-height:1.6}
-  .hero-actions,.modal-action-row{display:grid;grid-template-columns:1fr;gap:10px}
-  .btn-primary,.btn-secondary,.add-btn,.details-btn,.ghost-btn{width:100%}
-  .hero-panel{padding:18px;border-radius:20px}
-  .stats,.summary-grid,.hero-mini-grid,.favorites-grid{grid-template-columns:1fr}
-  .section{margin-top:24px}
-  .section-head{flex-direction:column;align-items:flex-start;gap:8px}
-  .section-head h3{font-size:25px}
-  .shop-toolbar{position:sticky;top:76px;z-index:18;background:linear-gradient(180deg,var(--bg) 72%,rgba(245,239,227,0));padding:8px 0 12px;margin-bottom:8px}
-  .deal-row{grid-template-columns:1fr}
-  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  .product-body{padding:14px}
-  .product-footer{align-items:stretch;flex-direction:column}
-  .product-actions{width:100%;display:grid;grid-template-columns:1fr}
-  .filters{gap:8px;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;margin-right:-4px}
+  .search-shell,.tool-select,.theme-toggle,.tool-btn,.cart-btn{width:100%}
+  .hero{padding:18px;border-radius:22px;gap:18px}
+  .hero-copy h2{font-size:34px}
+  .hero-copy p{font-size:14px}
+  .hero-actions{display:grid;grid-template-columns:1fr}
+  .btn-primary,.btn-secondary,.add-btn,.ghost-btn{width:100%}
+  .mini-grid,.summary-grid,.detail-grid,.recent-grid,.favorites-grid,.admin-grid{grid-template-columns:1fr}
+  .section{margin-top:26px}
+  .section-head{flex-direction:column;align-items:flex-start}
+  .section-head h3{font-size:26px}
+  .toolbar{position:sticky;top:74px;z-index:18;padding:8px 0 12px;background:linear-gradient(180deg,var(--bg) 72%,rgba(0,0,0,0))}
+  .product-grid,.skeleton-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .product-footer{flex-direction:column;align-items:stretch}
+  .product-actions{display:grid;grid-template-columns:1fr}
+  .filters{gap:8px;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
   .filters::-webkit-scrollbar{display:none}
-  .chip{white-space:nowrap;flex:0 0 auto}
+  .chip{white-space:nowrap}
   .inventory-toolbar{flex-direction:column;align-items:stretch}
-  .stock-item{grid-template-columns:48px 1fr;align-items:start}
-  .stock-item img{width:48px;height:48px}
-  .stock-item .status-pill{grid-column:2}
-  .favorite-card{grid-template-columns:60px 1fr;gap:10px}
-  .favorite-card img{width:60px;height:60px}
-  .overlay{align-items:flex-end}
-  .cart-panel{right:0;left:0;bottom:0;top:auto;width:100%;height:min(82vh,720px);border-radius:22px 22px 0 0;transform:translateY(110%)}
+  .cart-panel{right:0;left:0;bottom:0;top:auto;width:100%;height:min(84vh,720px);border-radius:22px 22px 0 0;transform:translateY(110%)}
   .overlay.open .cart-panel{transform:translateY(0)}
-  .mobile-sheet-handle{display:block;width:56px;height:6px;border-radius:999px;background:#d8cebd;margin:10px auto 2px}
-  .cart-head,.cart-foot{padding:16px}
   .cart-items{padding:10px 16px 16px}
-  .cart-item{grid-template-columns:56px 1fr;gap:10px}
+  .cart-head,.cart-foot{padding:16px}
+  .cart-item{grid-template-columns:56px 1fr}
   .cart-item img{width:56px;height:56px}
-  .cart-item > strong{grid-column:2;justify-self:start}
   .modal-wrap{padding:10px}
   .modal-card{padding:18px;border-radius:22px;max-height:calc(100vh - 20px)}
   .modal-body h3{font-size:30px}
-  .modal-visual{min-height:240px;padding:18px}
+  .modal-visual{min-height:250px;padding:18px}
+  .mobile-bottom{display:grid}
 }
 @media (max-width:480px){
   .shell{padding:0 10px 28px}
   .nav{margin-top:10px;padding:10px;border-radius:16px}
   .brand-mark{width:42px;height:42px}
   .nav.open .nav-links{grid-template-columns:1fr}
-  .hero{padding:16px}
   .hero-copy h2{font-size:29px}
   .section-head h3{font-size:22px}
-  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .product-body{padding:12px;gap:8px}
-  .product-top strong{font-size:15px}
-  .price{font-size:20px}
-  .td-product{min-width:170px}
-  th,td{font-size:13px;padding:10px 8px}
+  .product-grid,.skeleton-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .product-body{padding:12px}
+  .product-head strong{font-size:15px}
+  .price{font-size:21px}
+  .recent-card,.favorite-card,.admin-item{grid-template-columns:60px 1fr}
+  .recent-card img,.favorite-card img,.admin-item img{width:60px;height:60px}
   .cart-panel{left:6px;right:6px;top:6px;bottom:6px;border-radius:18px}
-  .mobile-bottom-bar{left:8px;right:8px;bottom:8px;padding:8px;gap:8px}
+  .mobile-bottom{left:8px;right:8px;bottom:8px;padding:8px;gap:8px}
   .mobile-bottom-btn{padding:9px 6px;font-size:10px}
 }
-@media (max-width:760px){.mobile-bottom-bar{display:grid}}
 </style>
 </head>
 <body>
 <div class="shell">
   <header class="nav">
     <a class="brand" href="#top">
-      <div class="brand-mark">
-        <img src="images/ax-logo.png" alt="FreshMart logo" width="48" height="48">
-      </div>
+      <div class="brand-mark"><img src="images/ax-logo.png" alt="FreshMart logo" width="48" height="48"></div>
       <div class="brand-copy">
         <h1>FreshMart</h1>
         <p>Smart Supermarket</p>
@@ -567,82 +494,83 @@ tbody tr:hover{background:rgba(255,255,255,0.35)}
     </a>
 
     <button class="mobile-menu-btn pressable" id="mobile-menu-toggle" type="button" aria-label="Open mobile menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
     </button>
 
     <nav class="nav-links">
       <button class="nav-link active pressable" type="button" data-target="#shop">Shop</button>
+      <button class="nav-link pressable" type="button" data-target="#popular">Popular</button>
       <button class="nav-link pressable" type="button" data-target="#favorites">Favorites</button>
       <button class="nav-link pressable" type="button" data-target="#inventory">Inventory</button>
-      <button class="nav-link pressable" type="button" data-target="#overview">Overview</button>
+      <button class="nav-link pressable" type="button" data-target="#admin">Admin</button>
     </nav>
 
     <div class="nav-tools">
-      <label class="search" aria-label="Search products">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-        <input id="shop-search" type="search" placeholder="Search groceries, brands, SKU..." autocomplete="off">
-      </label>
+      <div class="search-shell">
+        <label class="search" aria-label="Search products">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          <input id="shop-search" type="search" placeholder="Search groceries, brands, SKU..." autocomplete="off">
+        </label>
+        <div class="search-suggestions" id="search-suggestions"></div>
+      </div>
 
       <label class="tool-select" aria-label="Sort products">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16"></path><path d="M7 12h10"></path><path d="M10 18h4"></path></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M7 12h10M10 18h4"></path></svg>
         <select id="sort-select">
-          <option value="popular">Popular Items</option>
+          <option value="popular">Popular</option>
+          <option value="trending">Trending</option>
           <option value="price-asc">Price low to high</option>
           <option value="price-desc">Price high to low</option>
+          <option value="rating">Top rated</option>
           <option value="name-asc">Name A-Z</option>
         </select>
       </label>
 
-      <button class="theme-toggle pressable" id="theme-toggle" type="button" aria-label="Toggle dark mode">
-        <span aria-hidden="true">◐</span>
-        <span class="toggle-text" id="theme-label">Dark Mode</span>
+      <button class="theme-toggle pressable" id="theme-toggle" type="button">
+        <span>◐</span>
+        <span id="theme-label">Dark Mode</span>
       </button>
 
       <button class="tool-btn pressable" id="open-favorites-top" type="button">
         <span>Favorites</span>
-        <span class="favorite-count" id="favorite-count">0</span>
+        <span class="counter" id="favorite-count">0</span>
       </button>
 
       <button class="cart-btn pressable" id="open-cart" type="button">
         <span>Cart</span>
-        <span class="cart-count" id="cart-count">0</span>
+        <span class="counter" id="cart-count">0</span>
       </button>
     </div>
   </header>
 
   <section class="hero" id="top">
     <div class="hero-copy">
-      <div class="eyebrow">Now upgraded into a real shopping experience</div>
-      <h2>Your FreshMart catalog now feels like a <span>modern grocery ecommerce app</span>.</h2>
+      <div class="eyebrow">Production-style grocery shopping frontend</div>
+      <h2>FreshMart now behaves like a <span>real supermarket ecommerce app</span>.</h2>
       <p>
-        Browse real products from your local image assets, filter by category, save favorites, inspect details,
-        manage a persistent cart, and complete a polished checkout flow with live feedback and dark mode support.
+        Search with suggestions, browse trending and popular aisles, manage a persistent cart with coupons and delivery logic,
+        save favorites, rate products, revisit recently viewed items, and simulate checkout and admin workflows without a backend.
       </p>
       <div class="hero-actions">
         <a class="btn-primary pressable" href="#shop">Start Shopping</a>
-        <button class="btn-secondary pressable" id="hero-open-checkout" type="button">Quick Checkout</button>
+        <button class="btn-secondary pressable" id="hero-open-checkout" type="button">Open Checkout</button>
       </div>
-      <div class="hero-mini-grid">
-        <article class="hero-mini-card">
-          <strong>Live Cart</strong>
-          <span id="hero-cart-items">0 items saved</span>
-        </article>
-        <article class="hero-mini-card">
-          <strong>Favorites</strong>
-          <span id="hero-favorites">0 products liked</span>
-        </article>
+      <div class="mini-grid">
+        <article class="mini-card"><strong>Cart</strong><span id="hero-cart-items">0 items</span></article>
+        <article class="mini-card"><strong>Favorites</strong><span id="hero-favorites">0 saved</span></article>
+        <article class="mini-card"><strong>Recently Viewed</strong><span id="hero-recent-count">0 items</span></article>
       </div>
     </div>
 
     <div class="hero-panel">
       <div class="stats">
-        <div class="stat"><strong id="stat-products">0</strong><span>Products</span></div>
-        <div class="stat"><strong id="stat-categories">0</strong><span>Categories</span></div>
-        <div class="stat"><strong id="stat-low">0</strong><span>Low Stock</span></div>
+        <article class="stat"><strong id="stat-products">0</strong><span>Products</span></article>
+        <article class="stat"><strong id="stat-categories">0</strong><span>Categories</span></article>
+        <article class="stat"><strong id="stat-low">0</strong><span>Low Stock</span></article>
       </div>
       <div class="hero-note">
-        <small>Store Upgrade</small>
-        <p>The same generated catalog is still here, but now it’s backed by persistent cart and wishlist state, richer inventory messaging, advanced browsing controls, and checkout simulation.</p>
+        <small>What Changed</small>
+        <p>The original generated catalog still powers the site, but now it’s wrapped in richer shopping logic: coupon discounts, dynamic delivery, ratings, reviews, favorites, recently viewed items, and a frontend admin panel.</p>
       </div>
     </div>
   </section>
@@ -651,53 +579,66 @@ tbody tr:hover{background:rgba(255,255,255,0.35)}
     <div class="section-head">
       <div>
         <h3>Store Overview</h3>
-        <p>Quick summary of the catalog generated from your image assets.</p>
+        <p>Live metrics from the current in-browser catalog and user activity.</p>
       </div>
     </div>
     <div class="summary-grid">
-      <article class="summary-card">
-        <strong id="summary-fruit">0</strong>
-        <span>Fruit and vegetable items available</span>
-      </article>
-      <article class="summary-card">
-        <strong id="summary-dairy">0</strong>
-        <span>Dairy, chilled, and pantry essentials</span>
-      </article>
-      <article class="summary-card">
-        <strong id="summary-drink">0</strong>
-        <span>Drinks, treats, and snack products</span>
-      </article>
+      <article class="summary-card"><strong id="summary-fresh">0</strong><span>Fresh produce</span><b>Fruit and vegetables ready for same-day orders</b></article>
+      <article class="summary-card"><strong id="summary-dairy">0</strong><span>Dairy and chilled</span><b>Milk products, ice creams, curd, and cheese</b></article>
+      <article class="summary-card"><strong id="summary-treats">0</strong><span>Snacks and drinks</span><b>Pantry treats, beverages, and quick picks</b></article>
+      <article class="summary-card"><strong id="summary-rated">0.0</strong><span>Average rating</span><b>Calculated from the storefront rating experience</b></article>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="popular">
     <div class="section-head">
       <div>
-        <h3>Featured Deals</h3>
-        <p>Picked from the live catalog automatically.</p>
+        <h3>Popular Right Now</h3>
+        <p>Best-performing products based on popularity, ratings, and availability.</p>
       </div>
     </div>
-    <div class="deal-row" id="deal-row"></div>
+    <div class="horizontal-scroll" id="popular-row"></div>
+  </section>
+
+  <section class="section" id="trending">
+    <div class="section-head">
+      <div>
+        <h3>Trending Picks</h3>
+        <p>Fast-moving items with good ratings and strong current demand.</p>
+      </div>
+    </div>
+    <div class="horizontal-scroll" id="trending-row"></div>
+  </section>
+
+  <section class="section" id="recently-viewed">
+    <div class="section-head">
+      <div>
+        <h3>Recently Viewed</h3>
+        <p>Your recently opened product details stay available in this browser.</p>
+      </div>
+    </div>
+    <div class="recent-grid" id="recent-grid"></div>
   </section>
 
   <section class="section" id="shop">
     <div class="section-head">
       <div>
         <h3>Shop Products</h3>
-        <p id="product-count">0 products</p>
+        <p id="product-count">0 products shown</p>
       </div>
     </div>
-
-    <div class="shop-toolbar">
-      <div class="shop-toolbar-top">
-        <label class="search" aria-label="Search products in catalog">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-          <input id="shop-search-mobile" type="search" placeholder="Search fresh groceries..." autocomplete="off">
-        </label>
+    <div class="toolbar">
+      <div class="toolbar-top">
+        <div class="search-shell" style="width:min(100%,520px)">
+          <label class="search" aria-label="Search products in catalog">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+            <input id="shop-search-mobile" type="search" placeholder="Search fresh groceries..." autocomplete="off">
+          </label>
+        </div>
       </div>
       <div class="toolbar-row">
         <div class="filters" id="category-filters">
-          <button class="chip active pressable" type="button" data-category="all">All Products</button>
+          <button class="chip active pressable" type="button" data-category="all">All</button>
           <button class="chip pressable" type="button" data-category="fruit">Fruits</button>
           <button class="chip pressable" type="button" data-category="veg">Vegetables</button>
           <button class="chip pressable" type="button" data-category="dairy">Dairy</button>
@@ -707,15 +648,18 @@ tbody tr:hover{background:rgba(255,255,255,0.35)}
         </div>
       </div>
     </div>
-
-    <div class="product-grid" id="product-grid"></div>
+    <div class="skeleton-grid" id="product-skeleton" aria-hidden="true">
+      <div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div>
+      <div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div>
+    </div>
+    <div class="product-grid" id="product-grid" style="display:none"></div>
   </section>
 
   <section class="section" id="favorites">
     <div class="section-head">
       <div>
         <h3>Favorites</h3>
-        <p>Saved with local storage so your picks stay here after refresh.</p>
+        <p>Saved in local storage so your shortlist remains after refresh.</p>
       </div>
       <button class="btn-secondary pressable" id="favorites-open-shop" type="button">Browse More</button>
     </div>
@@ -726,12 +670,11 @@ tbody tr:hover{background:rgba(255,255,255,0.35)}
     <div class="section-head">
       <div>
         <h3>Inventory View</h3>
-        <p>Same catalog, same images, now connected to shopping actions and stock-aware UI.</p>
+        <p>Stock-aware shopping data connected to the storefront and admin tools.</p>
       </div>
     </div>
-
-    <div class="inventory-wrap">
-      <article class="inventory-card">
+    <div class="inventory-layout">
+      <article class="section-card">
         <div class="inventory-toolbar">
           <label class="search" aria-label="Search inventory">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
@@ -741,7 +684,7 @@ tbody tr:hover{background:rgba(255,255,255,0.35)}
           <button class="chip pressable" type="button" data-stock-filter="low">Low Stock</button>
           <button class="chip pressable" type="button" data-stock-filter="out">Out of Stock</button>
         </div>
-        <div class="table-scroll">
+        <div class="table-wrap">
           <table>
             <thead>
               <tr>
@@ -758,59 +701,91 @@ tbody tr:hover{background:rgba(255,255,255,0.35)}
         </div>
       </article>
 
-      <article class="inventory-card">
+      <article class="section-card">
         <div class="section-head" style="margin-bottom:14px">
           <div>
             <h3 style="font-size:24px">Attention Needed</h3>
-            <p>Items with the lowest available stock.</p>
+            <p>Products with the tightest stock positions.</p>
           </div>
         </div>
-        <div class="stock-list" id="low-stock-list"></div>
+        <div class="stock-list" id="stock-list"></div>
       </article>
     </div>
   </section>
+
+  <section class="section" id="admin">
+    <div class="section-head">
+      <div>
+        <h3>Admin Panel</h3>
+        <p>Frontend-only product management for adding, editing, deleting, and reviewing inventory status.</p>
+      </div>
+    </div>
+    <article class="section-card">
+      <div class="admin-layout">
+        <form class="admin-form" id="admin-form">
+          <input type="hidden" id="admin-product-id">
+          <div class="field"><label for="admin-name">Product Name</label><input id="admin-name" type="text" placeholder="Ex: Fresh Kiwi Pack" required></div>
+          <div class="field"><label for="admin-category">Category</label>
+            <select id="admin-category" required>
+              <option value="fruit">Fruits</option>
+              <option value="veg">Vegetables</option>
+              <option value="dairy">Dairy</option>
+              <option value="bakery">Bakery</option>
+              <option value="drink">Drinks</option>
+              <option value="snack">Snacks</option>
+            </select>
+          </div>
+          <div class="field"><label for="admin-price">Price</label><input id="admin-price" type="number" min="0" step="0.01" placeholder="3.99" required></div>
+          <div class="field"><label for="admin-unit">Unit</label><input id="admin-unit" type="text" placeholder="500g pack" required></div>
+          <div class="field"><label for="admin-stock">Stock</label><input id="admin-stock" type="number" min="0" step="1" placeholder="18" required></div>
+          <div class="field"><label for="admin-image">Image Path</label><input id="admin-image" type="text" placeholder="images/my-product.jpg or leave blank"></div>
+          <div class="field"><label for="admin-description">Description</label><textarea id="admin-description" placeholder="Short product description"></textarea></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn-primary pressable" type="submit" id="admin-save-btn">Add Product</button>
+            <button class="btn-secondary pressable" type="button" id="admin-reset-btn">Reset</button>
+          </div>
+        </form>
+        <div>
+          <div class="admin-banner">
+            Use this panel to simulate catalog management. Changes are stored in your browser via local storage, so edits survive refreshes without needing a backend.
+          </div>
+          <div class="admin-grid" id="admin-grid"></div>
+        </div>
+      </div>
+    </article>
+  </section>
 </div>
 
-<nav class="mobile-bottom-bar" aria-label="Mobile quick actions">
-  <button class="mobile-bottom-btn active pressable" type="button" data-target="#top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5 10.5V20h14v-9.5"></path></svg>
-    <span>Home</span>
-  </button>
-  <button class="mobile-bottom-btn pressable" type="button" data-target="#shop">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>
-    <span>Shop</span>
-  </button>
-  <button class="mobile-bottom-btn pressable" type="button" data-target="#favorites">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 21-1.1-1C5.1 14.8 2 12 2 8.5A4.5 4.5 0 0 1 6.5 4c1.7 0 3.4.8 4.5 2.1A6 6 0 0 1 15.5 4 4.5 4.5 0 0 1 20 8.5c0 3.5-3.1 6.3-8.9 11.5z"></path></svg>
-    <span>Saved</span>
-  </button>
-  <button class="mobile-bottom-btn pressable" id="open-cart-mobile" type="button">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h9.9a1 1 0 0 0 1-.8L21 7H7"></path></svg>
-    <span>Cart</span>
-    <span class="mobile-bottom-count" id="mobile-cart-count">0</span>
-  </button>
-  <button class="mobile-bottom-btn pressable" type="button" data-target="#inventory">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 8h10"></path><path d="M7 12h10"></path><path d="M7 16h6"></path></svg>
-    <span>Stock</span>
-  </button>
+<nav class="mobile-bottom" aria-label="Mobile quick actions">
+  <button class="mobile-bottom-btn active pressable" type="button" data-target="#top"><span>Home</span></button>
+  <button class="mobile-bottom-btn pressable" type="button" data-target="#shop"><span>Shop</span></button>
+  <button class="mobile-bottom-btn pressable" type="button" data-target="#popular"><span>Popular</span></button>
+  <button class="mobile-bottom-btn pressable" id="open-cart-mobile" type="button"><span>Cart</span><span class="counter" id="mobile-cart-count">0</span></button>
+  <button class="mobile-bottom-btn pressable" type="button" data-target="#admin"><span>Admin</span></button>
 </nav>
 
 <div class="overlay" id="cart-overlay" aria-hidden="true">
   <aside class="cart-panel" aria-label="Shopping cart">
-    <div class="mobile-sheet-handle"></div>
     <div class="cart-head">
       <div>
         <h3 style="font-family:'Playfair Display',serif;font-size:28px;color:var(--brand)">Your Cart</h3>
-        <p class="mini-note" id="cart-items-label">0 items selected</p>
+        <p style="color:var(--muted);margin-top:4px" id="cart-items-label">0 items selected</p>
       </div>
       <button class="close-btn pressable" id="close-cart" type="button" aria-label="Close cart">✕</button>
     </div>
     <div class="cart-items" id="cart-items"></div>
     <div class="cart-foot">
-      <div class="cart-summary-line"><span>Subtotal</span><span id="cart-subtotal">$0.00</span></div>
-      <div class="cart-summary-line"><span>Delivery</span><span id="cart-delivery">$2.99</span></div>
-      <div class="cart-summary-line total"><span>Total</span><span id="cart-total">$2.99</span></div>
-      <button class="checkout pressable" id="checkout-btn" type="button">Proceed to Checkout</button>
+      <div class="coupon-box">
+        <input id="coupon-input" type="text" placeholder="Coupon code: SAVE10 / FRESH5 / FREESHIP">
+        <button class="btn-secondary pressable" id="apply-coupon" type="button">Apply</button>
+      </div>
+      <div class="summary-line"><span>Subtotal</span><span id="cart-subtotal">$0.00</span></div>
+      <div class="summary-line discount"><span>Discount</span><span id="cart-discount">$0.00</span></div>
+      <div class="summary-line"><span>Delivery</span><span id="cart-delivery">$0.00</span></div>
+      <div class="summary-line saved"><span>You Saved</span><span id="cart-saved">$0.00</span></div>
+      <div class="summary-line total"><span>Payable</span><span id="cart-total">$0.00</span></div>
+      <p class="helper" id="coupon-status" style="margin:8px 0 0"></p>
+      <button class="checkout-btn pressable" id="checkout-btn" type="button">Proceed to Checkout</button>
     </div>
   </aside>
 </div>
@@ -821,34 +796,39 @@ tbody tr:hover{background:rgba(255,255,255,0.35)}
   </div>
 </div>
 
-<div class="overlay" id="checkout-modal-overlay" aria-hidden="true">
+<div class="overlay" id="checkout-overlay" aria-hidden="true">
   <div class="modal-wrap">
-    <section class="modal-card" aria-label="Checkout">
+    <section class="modal-card">
       <div class="section-head" style="margin-bottom:18px">
         <div>
           <h3>Checkout</h3>
-          <p>Frontend simulation with saved cart summary and customer details.</p>
+          <p>Frontend simulation with delivery choices, slot selection, and full order summary.</p>
         </div>
         <button class="close-btn pressable" id="close-checkout" type="button" aria-label="Close checkout">✕</button>
       </div>
       <div class="checkout-layout">
         <form class="checkout-form" id="checkout-form">
-          <div class="checkout-field">
-            <label for="customer-name">Name</label>
-            <input id="customer-name" name="name" type="text" placeholder="Enter full name" required>
+          <div class="field"><label for="customer-name">Name</label><input id="customer-name" name="name" type="text" placeholder="Enter full name" required></div>
+          <div class="field"><label for="customer-address">Address</label><textarea id="customer-address" name="address" placeholder="Delivery address" required></textarea></div>
+          <div class="field"><label for="customer-phone">Phone Number</label><input id="customer-phone" name="phone" type="tel" placeholder="07X XXX XXXX" required></div>
+          <div class="field"><label for="delivery-type">Delivery Type</label>
+            <select id="delivery-type" name="deliveryType">
+              <option value="standard">Standard Delivery</option>
+              <option value="express">Express Delivery</option>
+            </select>
           </div>
-          <div class="checkout-field">
-            <label for="customer-address">Address</label>
-            <textarea id="customer-address" name="address" placeholder="Delivery address" required></textarea>
+          <div class="field"><label for="delivery-slot">Delivery Time Slot</label>
+            <select id="delivery-slot" name="slot">
+              <option value="8:00 AM - 10:00 AM">8:00 AM - 10:00 AM</option>
+              <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM</option>
+              <option value="1:00 PM - 3:00 PM">1:00 PM - 3:00 PM</option>
+              <option value="5:00 PM - 7:00 PM">5:00 PM - 7:00 PM</option>
+            </select>
           </div>
-          <div class="checkout-field">
-            <label for="customer-phone">Phone number</label>
-            <input id="customer-phone" name="phone" type="tel" placeholder="07X XXX XXXX" required>
-          </div>
-          <p class="checkout-note">No payment gateway is connected here. This flow is for a polished ecommerce-style ordering experience only.</p>
-          <button class="checkout pressable" type="submit" id="place-order-btn">Place Order</button>
+          <p class="helper">No payment integration is attached. This is a polished frontend ordering flow designed to behave like a real grocery platform.</p>
+          <button class="checkout-btn pressable" type="submit">Place Order</button>
         </form>
-        <aside class="inventory-card">
+        <aside class="section-card">
           <div class="section-head" style="margin-bottom:14px">
             <div>
               <h3 style="font-size:24px">Order Summary</h3>
@@ -856,9 +836,11 @@ tbody tr:hover{background:rgba(255,255,255,0.35)}
             </div>
           </div>
           <div class="order-list" id="checkout-order-list"></div>
-          <div class="cart-summary-line" style="margin-top:16px"><span>Subtotal</span><span id="checkout-subtotal">$0.00</span></div>
-          <div class="cart-summary-line"><span>Delivery</span><span>$2.99</span></div>
-          <div class="cart-summary-line total"><span>Total</span><span id="checkout-total">$2.99</span></div>
+          <div class="summary-line"><span>Subtotal</span><span id="checkout-subtotal">$0.00</span></div>
+          <div class="summary-line discount"><span>Discount</span><span id="checkout-discount">$0.00</span></div>
+          <div class="summary-line"><span>Delivery</span><span id="checkout-delivery">$0.00</span></div>
+          <div class="summary-line saved"><span>You Saved</span><span id="checkout-saved">$0.00</span></div>
+          <div class="summary-line total"><span>Total</span><span id="checkout-total">$0.00</span></div>
         </aside>
       </div>
     </section>
@@ -869,827 +851,640 @@ tbody tr:hover{background:rgba(255,255,255,0.35)}
 
 <script>
 const STORAGE_KEYS = {
-  cart: 'freshmart_cart_v2',
-  favorites: 'freshmart_favorites_v2',
-  theme: 'freshmart_theme_v2'
+  cart: 'freshmart_cart_v3',
+  favorites: 'freshmart_favorites_v3',
+  theme: 'freshmart_theme_v3',
+  recent: 'freshmart_recent_v3',
+  ratings: 'freshmart_ratings_v3',
+  catalog: 'freshmart_catalog_v3',
+  coupon: 'freshmart_coupon_v3'
 };
 
 const PRODUCT_FILES = [
-  'Aged Cheddar.jpg',
-  'Anchor-MilkPowder-1kg.jpg',
-  'Anchor-MilkPowder-200g.jpeg',
-  'Anchor-MilkPowder-400g.webp',
-  'Baby Carrots.jpg',
-  'Broccoli Crown.webp',
-  'Butter Croissants.jpg',
-  'Cavendish Bananas.jpeg',
-  'Cherry Tomatoes.webp',
-  'ChocoIce-1litter.png',
-  'CocaCola-1litter.jpg',
-  'Dairymilk_chocho.jpg',
-  'Dragonfruit.jpg',
-  'Elephant House-Necto-1.5litter.jpeg',
-  'Free Range Eggs.webp',
-  'Grapes.jpg',
-  'Kist-AloeVera-Juice-500ml.webp',
-  'Kist-GraanApple-Juice-1litter.jpeg',
-  'Kist-Grape-Juicce-1litter.png',
-  'Kist-Mango-Jam-510g.webp',
-  'Kist-MixedFruit-Juice.jpeg',
-  'Kist-Mixedfruit-Jam-300g.jpeg',
-  'Kist-Strawberry-Jam-500g.jpeg',
-  'Kist-WoodApple-Juice.webp',
-  'Kist-Woodapple-Jam-510g.webp',
-  'Kotamale-Curd-900g.jpg',
-  'Kotmale-Butter.jpeg',
-  'Kotmale-Chocolate-Milk-1litter.webp',
-  'Kotmale-Faluda-Milk-1litter.webp',
-  'Kotmale-FreshCream-Mil-1litter.jpg',
-  'Kotmale-Vanilla-Milk-170ml.jpg',
-  'Kotmale-Vanilla-Milk-1litter.webp',
-  'Kotmale-strawberry-milk-170ml.webp',
-  'Kulfi-Ice.jpg',
-  'Malibam_chochoalate-biscut.jpeg',
-  'Maliban-Chocolate-Puff-Biscuit.png',
-  'Maliban-chrisco-busicut.webp',
-  'Maliban-goldmarie-buscuit.jpeg',
-  'Mango\\.jpg',
-  'Milo-ChocholateDrinkPowder-400g.jpg',
-  'Nestomalt-Milkpowder-400g.jpeg',
-  'Nestomalt-Milkpowder-800g.jpg',
-  'Oat Milk.jpg',
-  'Orange Juice.webp',
-  'Orange.webp',
-  'Organic Avocado.webp',
-  'Pink Lady Apples.jpg',
-  'Richlife-Cheese-100g.jpeg',
-  'Richlife-Cheese-120g.webp',
-  'Richlife-cheesepanerr-200g.jpg',
-  'Sea Salt Popcorn.jpeg',
-  'Sourdough Loaf.jpg',
-  'Sprite-1.5Litter.jpg',
-  'StrawberryIce1litter.webp',
-  'Sunquick-Blackcurrant-juice-700ml.jpg',
-  'Sunquick-Orange-Juice-700ml.jpg',
-  'Sweet Onions.webp',
-  'VERRY_BERRY_ICE_CREAM_1litter.jpg',
-  'Vanila_Ice-cream1litter.png',
-  'Wild Blueberries.jpg',
-  'cadbury-dairy-milk-silk-valentine-special-gift-pack-heart-pop.jpg.webp',
-  'corn-ice.png',
-  'cup-ice.png',
-  'fresh-potato-.png.webp',
-  'guavafruits.jpg.webp',
-  'kitkat_new.png.webp',
-  'kotmale-chocolate-milk-170ml.jpg',
-  'maliban-lemonpuff-busicuit.jpeg',
-  'mars_chocholate.jpg',
-  'papayajpg.jpg',
-  'pineaple.png',
-  'strawberries.png',
-  'watermeloen_2.jpg',
-  'wonder_bar_vanila-lice.png'
+  'Aged Cheddar.jpg','Anchor-MilkPowder-1kg.jpg','Anchor-MilkPowder-200g.jpeg','Anchor-MilkPowder-400g.webp','Baby Carrots.jpg',
+  'Broccoli Crown.webp','Butter Croissants.jpg','Cavendish Bananas.jpeg','Cherry Tomatoes.webp','ChocoIce-1litter.png','CocaCola-1litter.jpg',
+  'Dairymilk_chocho.jpg','Dragonfruit.jpg','Elephant House-Necto-1.5litter.jpeg','Free Range Eggs.webp','Grapes.jpg',
+  'Kist-AloeVera-Juice-500ml.webp','Kist-GraanApple-Juice-1litter.jpeg','Kist-Grape-Juicce-1litter.png','Kist-Mango-Jam-510g.webp',
+  'Kist-MixedFruit-Juice.jpeg','Kist-Mixedfruit-Jam-300g.jpeg','Kist-Strawberry-Jam-500g.jpeg','Kist-WoodApple-Juice.webp',
+  'Kist-Woodapple-Jam-510g.webp','Kotamale-Curd-900g.jpg','Kotmale-Butter.jpeg','Kotmale-Chocolate-Milk-1litter.webp',
+  'Kotmale-Faluda-Milk-1litter.webp','Kotmale-FreshCream-Mil-1litter.jpg','Kotmale-Vanilla-Milk-170ml.jpg','Kotmale-Vanilla-Milk-1litter.webp',
+  'Kotmale-strawberry-milk-170ml.webp','Kulfi-Ice.jpg','Malibam_chochoalate-biscut.jpeg','Maliban-Chocolate-Puff-Biscuit.png',
+  'Maliban-chrisco-busicut.webp','Maliban-goldmarie-buscuit.jpeg','Mango\\.jpg','Milo-ChocholateDrinkPowder-400g.jpg',
+  'Nestomalt-Milkpowder-400g.jpeg','Nestomalt-Milkpowder-800g.jpg','Oat Milk.jpg','Orange Juice.webp','Orange.webp',
+  'Organic Avocado.webp','Pink Lady Apples.jpg','Richlife-Cheese-100g.jpeg','Richlife-Cheese-120g.webp','Richlife-cheesepanerr-200g.jpg',
+  'Sea Salt Popcorn.jpeg','Sourdough Loaf.jpg','Sprite-1.5Litter.jpg','StrawberryIce1litter.webp','Sunquick-Blackcurrant-juice-700ml.jpg',
+  'Sunquick-Orange-Juice-700ml.jpg','Sweet Onions.webp','VERRY_BERRY_ICE_CREAM_1litter.jpg','Vanila_Ice-cream1litter.png','Wild Blueberries.jpg',
+  'cadbury-dairy-milk-silk-valentine-special-gift-pack-heart-pop.jpg.webp','corn-ice.png','cup-ice.png','fresh-potato-.png.webp','guavafruits.jpg.webp',
+  'kitkat_new.png.webp','kotmale-chocolate-milk-170ml.jpg','maliban-lemonpuff-busicuit.jpeg','mars_chocholate.jpg','papayajpg.jpg',
+  'pineaple.png','strawberries.png','watermeloen_2.jpg','wonder_bar_vanila-lice.png'
 ];
 
 const NAME_OVERRIDES = {
-  'Dairymilk_chocho.jpg': 'Dairy Milk Chocolate',
-  'Elephant House-Necto-1.5litter.jpeg': 'Elephant House Necto',
-  'Kist-AloeVera-Juice-500ml.webp': 'Kist Aloe Vera Juice',
-  'Kist-GraanApple-Juice-1litter.jpeg': 'Kist Green Apple Juice',
-  'Kist-Grape-Juicce-1litter.png': 'Kist Grape Juice',
-  'Kist-Mango-Jam-510g.webp': 'Kist Mango Jam',
-  'Kist-MixedFruit-Juice.jpeg': 'Kist Mixed Fruit Juice',
-  'Kist-Mixedfruit-Jam-300g.jpeg': 'Kist Mixed Fruit Jam',
-  'Kist-Strawberry-Jam-500g.jpeg': 'Kist Strawberry Jam',
-  'Kist-WoodApple-Juice.webp': 'Kist Wood Apple Juice',
-  'Kist-Woodapple-Jam-510g.webp': 'Kist Wood Apple Jam',
-  'Kotamale-Curd-900g.jpg': 'Kotmale Curd',
-  'Kotmale-Butter.jpeg': 'Kotmale Butter',
-  'Kotmale-Chocolate-Milk-1litter.webp': 'Kotmale Chocolate Milk',
-  'Kotmale-Faluda-Milk-1litter.webp': 'Kotmale Faluda Milk',
-  'Kotmale-FreshCream-Mil-1litter.jpg': 'Kotmale Fresh Cream Milk',
-  'Kotmale-Vanilla-Milk-170ml.jpg': 'Kotmale Vanilla Milk',
-  'Kotmale-Vanilla-Milk-1litter.webp': 'Kotmale Vanilla Milk',
-  'Kotmale-strawberry-milk-170ml.webp': 'Kotmale Strawberry Milk',
-  'Malibam_chochoalate-biscut.jpeg': 'Maliban Chocolate Biscuit',
-  'Maliban-Chocolate-Puff-Biscuit.png': 'Maliban Chocolate Puff Biscuit',
-  'Maliban-chrisco-busicut.webp': 'Maliban Chrisco Biscuit',
-  'Maliban-goldmarie-buscuit.jpeg': 'Maliban Gold Marie Biscuit',
-  'Mango\\.jpg': 'Mango',
-  'Milo-ChocholateDrinkPowder-400g.jpg': 'Milo Chocolate Drink Powder',
-  'Nestomalt-Milkpowder-400g.jpeg': 'Nestomalt Milk Powder',
-  'Nestomalt-Milkpowder-800g.jpg': 'Nestomalt Milk Powder',
-  'Orange Juice.webp': 'Orange Juice',
-  'Richlife-Cheese-100g.jpeg': 'Richlife Cheese',
-  'Richlife-Cheese-120g.webp': 'Richlife Cheese',
-  'Richlife-cheesepanerr-200g.jpg': 'Richlife Cheese Paneer',
-  'Sprite-1.5Litter.jpg': 'Sprite',
-  'StrawberryIce1litter.webp': 'Strawberry Ice Cream',
-  'Sunquick-Blackcurrant-juice-700ml.jpg': 'Sunquick Blackcurrant Juice',
-  'Sunquick-Orange-Juice-700ml.jpg': 'Sunquick Orange Juice',
-  'VERRY_BERRY_ICE_CREAM_1litter.jpg': 'Very Berry Ice Cream',
-  'Vanila_Ice-cream1litter.png': 'Vanilla Ice Cream',
-  'cadbury-dairy-milk-silk-valentine-special-gift-pack-heart-pop.jpg.webp': 'Cadbury Dairy Milk Silk Gift Pack',
-  'corn-ice.png': 'Corn Ice Cream',
-  'cup-ice.png': 'Cup Ice Cream',
-  'fresh-potato-.png.webp': 'Fresh Potato',
-  'guavafruits.jpg.webp': 'Guava Fruits',
-  'kitkat_new.png.webp': 'KitKat',
-  'kotmale-chocolate-milk-170ml.jpg': 'Kotmale Chocolate Milk',
-  'maliban-lemonpuff-busicuit.jpeg': 'Maliban Lemon Puff Biscuit',
-  'mars_chocholate.jpg': 'Mars Chocolate',
-  'papayajpg.jpg': 'Papaya',
-  'pineaple.png': 'Pineapple',
-  'strawberries.png': 'Strawberries',
-  'watermeloen_2.jpg': 'Watermelon',
-  'wonder_bar_vanila-lice.png': 'Wonder Bar Vanilla Ice',
-  'CocaCola-1litter.jpg': 'Coca-Cola'
+  'Dairymilk_chocho.jpg':'Dairy Milk Chocolate','Elephant House-Necto-1.5litter.jpeg':'Elephant House Necto','Kist-AloeVera-Juice-500ml.webp':'Kist Aloe Vera Juice',
+  'Kist-GraanApple-Juice-1litter.jpeg':'Kist Green Apple Juice','Kist-Grape-Juicce-1litter.png':'Kist Grape Juice','Kist-Mango-Jam-510g.webp':'Kist Mango Jam',
+  'Kist-MixedFruit-Juice.jpeg':'Kist Mixed Fruit Juice','Kist-Mixedfruit-Jam-300g.jpeg':'Kist Mixed Fruit Jam','Kist-Strawberry-Jam-500g.jpeg':'Kist Strawberry Jam',
+  'Kist-WoodApple-Juice.webp':'Kist Wood Apple Juice','Kist-Woodapple-Jam-510g.webp':'Kist Wood Apple Jam','Kotamale-Curd-900g.jpg':'Kotmale Curd',
+  'Kotmale-Butter.jpeg':'Kotmale Butter','Kotmale-Chocolate-Milk-1litter.webp':'Kotmale Chocolate Milk','Kotmale-Faluda-Milk-1litter.webp':'Kotmale Faluda Milk',
+  'Kotmale-FreshCream-Mil-1litter.jpg':'Kotmale Fresh Cream Milk','Kotmale-Vanilla-Milk-170ml.jpg':'Kotmale Vanilla Milk',
+  'Kotmale-Vanilla-Milk-1litter.webp':'Kotmale Vanilla Milk','Kotmale-strawberry-milk-170ml.webp':'Kotmale Strawberry Milk',
+  'Malibam_chochoalate-biscut.jpeg':'Maliban Chocolate Biscuit','Maliban-Chocolate-Puff-Biscuit.png':'Maliban Chocolate Puff Biscuit',
+  'Maliban-chrisco-busicut.webp':'Maliban Chrisco Biscuit','Maliban-goldmarie-buscuit.jpeg':'Maliban Gold Marie Biscuit','Mango\\.jpg':'Mango',
+  'Milo-ChocholateDrinkPowder-400g.jpg':'Milo Chocolate Drink Powder','Nestomalt-Milkpowder-400g.jpeg':'Nestomalt Milk Powder',
+  'Nestomalt-Milkpowder-800g.jpg':'Nestomalt Milk Powder','Orange Juice.webp':'Orange Juice','Richlife-Cheese-100g.jpeg':'Richlife Cheese',
+  'Richlife-Cheese-120g.webp':'Richlife Cheese','Richlife-cheesepanerr-200g.jpg':'Richlife Cheese Paneer','Sprite-1.5Litter.jpg':'Sprite',
+  'StrawberryIce1litter.webp':'Strawberry Ice Cream','Sunquick-Blackcurrant-juice-700ml.jpg':'Sunquick Blackcurrant Juice',
+  'Sunquick-Orange-Juice-700ml.jpg':'Sunquick Orange Juice','VERRY_BERRY_ICE_CREAM_1litter.jpg':'Very Berry Ice Cream',
+  'Vanila_Ice-cream1litter.png':'Vanilla Ice Cream','cadbury-dairy-milk-silk-valentine-special-gift-pack-heart-pop.jpg.webp':'Cadbury Dairy Milk Silk Gift Pack',
+  'corn-ice.png':'Corn Ice Cream','cup-ice.png':'Cup Ice Cream','fresh-potato-.png.webp':'Fresh Potato','guavafruits.jpg.webp':'Guava Fruits',
+  'kitkat_new.png.webp':'KitKat','kotmale-chocolate-milk-170ml.jpg':'Kotmale Chocolate Milk','maliban-lemonpuff-busicuit.jpeg':'Maliban Lemon Puff Biscuit',
+  'mars_chocholate.jpg':'Mars Chocolate','papayajpg.jpg':'Papaya','pineaple.png':'Pineapple','strawberries.png':'Strawberries',
+  'watermeloen_2.jpg':'Watermelon','wonder_bar_vanila-lice.png':'Wonder Bar Vanilla Ice','CocaCola-1litter.jpg':'Coca-Cola'
 };
 
-const UNIT_OVERRIDES = {
-  'Aged Cheddar.jpg': '200g block',
-  'Anchor-MilkPowder-1kg.jpg': '1 kg pack',
-  'Anchor-MilkPowder-200g.jpeg': '200g pack',
-  'Anchor-MilkPowder-400g.webp': '400g pack',
-  'Baby Carrots.jpg': '500g pack',
-  'Broccoli Crown.webp': '1 crown',
-  'Butter Croissants.jpg': '4 pack',
-  'Cavendish Bananas.jpeg': '1 kg',
-  'Cherry Tomatoes.webp': '250g punnet',
-  'Dragonfruit.jpg': 'each',
-  'Free Range Eggs.webp': '12 pack',
-  'Grapes.jpg': '500g pack',
-  'Kotmale-Butter.jpeg': '250g pack',
-  'Kulfi-Ice.jpg': '1 pack',
-  'Oat Milk.jpg': '1 litre',
-  'Orange.webp': '1 kg',
-  'Organic Avocado.webp': 'each',
-  'Pink Lady Apples.jpg': '1 kg',
-  'Sea Salt Popcorn.jpeg': '100g bag',
-  'Sourdough Loaf.jpg': '800g loaf',
-  'Sweet Onions.webp': '1 kg',
-  'Wild Blueberries.jpg': '250g punnet',
-  'fresh-potato-.png.webp': '1 kg',
-  'guavafruits.jpg.webp': '500g pack',
-  'papayajpg.jpg': 'whole',
-  'pineaple.png': 'whole',
-  'strawberries.png': '250g punnet',
-  'watermeloen_2.jpg': 'whole'
+const CATEGORY_LABELS = {fruit:'Fruits',veg:'Vegetables',dairy:'Dairy',bakery:'Bakery',drink:'Drinks',snack:'Snacks'};
+
+const CATEGORY_OVERRIDES = {
+  'Aged Cheddar.jpg':'dairy','Anchor-MilkPowder-1kg.jpg':'dairy','Anchor-MilkPowder-200g.jpeg':'dairy','Anchor-MilkPowder-400g.webp':'dairy',
+  'ChocoIce-1litter.png':'dairy','Dairymilk_chocho.jpg':'snack','Free Range Eggs.webp':'dairy','Kist-AloeVera-Juice-500ml.webp':'drink',
+  'Kist-GraanApple-Juice-1litter.jpeg':'drink','Kist-Grape-Juicce-1litter.png':'drink','Kist-Mango-Jam-510g.webp':'snack',
+  'Kist-MixedFruit-Juice.jpeg':'drink','Kist-Mixedfruit-Jam-300g.jpeg':'snack','Kist-Strawberry-Jam-500g.jpeg':'snack',
+  'Kist-WoodApple-Juice.webp':'drink','Kist-Woodapple-Jam-510g.webp':'snack','Kotamale-Curd-900g.jpg':'dairy','Kotmale-Butter.jpeg':'dairy',
+  'Kotmale-Chocolate-Milk-1litter.webp':'dairy','Kotmale-Faluda-Milk-1litter.webp':'dairy','Kotmale-FreshCream-Mil-1litter.jpg':'dairy',
+  'Kotmale-Vanilla-Milk-170ml.jpg':'dairy','Kotmale-Vanilla-Milk-1litter.webp':'dairy','Kotmale-strawberry-milk-170ml.webp':'dairy',
+  'Kulfi-Ice.jpg':'dairy','Malibam_chochoalate-biscut.jpeg':'snack','Maliban-Chocolate-Puff-Biscuit.png':'snack','Maliban-chrisco-busicut.webp':'snack',
+  'Maliban-goldmarie-buscuit.jpeg':'snack','Milo-ChocholateDrinkPowder-400g.jpg':'dairy','Nestomalt-Milkpowder-400g.jpeg':'dairy','Nestomalt-Milkpowder-800g.jpg':'dairy',
+  'Orange Juice.webp':'drink','Richlife-Cheese-100g.jpeg':'dairy','Richlife-Cheese-120g.webp':'dairy','Richlife-cheesepanerr-200g.jpg':'dairy',
+  'Sprite-1.5Litter.jpg':'drink','StrawberryIce1litter.webp':'dairy','Sunquick-Blackcurrant-juice-700ml.jpg':'drink','Sunquick-Orange-Juice-700ml.jpg':'drink',
+  'VERRY_BERRY_ICE_CREAM_1litter.jpg':'dairy','Vanila_Ice-cream1litter.png':'dairy','cadbury-dairy-milk-silk-valentine-special-gift-pack-heart-pop.jpg.webp':'snack',
+  'corn-ice.png':'dairy','cup-ice.png':'dairy','kitkat_new.png.webp':'snack','kotmale-chocolate-milk-170ml.jpg':'dairy',
+  'maliban-lemonpuff-busicuit.jpeg':'snack','mars_chocholate.jpg':'snack','wonder_bar_vanila-lice.png':'dairy'
 };
 
 const PRICE_OVERRIDES = {
-  'Organic Avocado.webp': 1.99,
-  'Butter Croissants.jpg': 3.60,
-  'Sourdough Loaf.jpg': 5.20,
-  'Oat Milk.jpg': 4.50,
-  'Sea Salt Popcorn.jpeg': 1.80,
-  'Aged Cheddar.jpg': 3.80,
-  'Free Range Eggs.webp': 4.20,
-  'Cavendish Bananas.jpeg': 2.30,
-  'Wild Blueberries.jpg': 3.20,
-  'Pink Lady Apples.jpg': 3.50,
-  'Baby Carrots.jpg': 2.40,
-  'Broccoli Crown.webp': 2.90,
-  'Cherry Tomatoes.webp': 2.50,
-  'Sweet Onions.webp': 2.10,
-  'fresh-potato-.png.webp': 1.85,
-  'Orange.webp': 2.70,
-  'Dragonfruit.jpg': 2.80,
-  'Mango\\.jpg': 2.40,
-  'pineaple.png': 3.40,
-  'watermeloen_2.jpg': 5.90
+  'Organic Avocado.webp':1.99,'Butter Croissants.jpg':3.6,'Sourdough Loaf.jpg':5.2,'Oat Milk.jpg':4.5,'Sea Salt Popcorn.jpeg':1.8,
+  'Aged Cheddar.jpg':3.8,'Free Range Eggs.webp':4.2,'Cavendish Bananas.jpeg':2.3,'Wild Blueberries.jpg':3.2,'Pink Lady Apples.jpg':3.5,
+  'Baby Carrots.jpg':2.4,'Broccoli Crown.webp':2.9,'Cherry Tomatoes.webp':2.5,'Sweet Onions.webp':2.1,'fresh-potato-.png.webp':1.85,
+  'Orange.webp':2.7,'Dragonfruit.jpg':2.8,'Mango\\.jpg':2.4,'pineaple.png':3.4,'watermeloen_2.jpg':5.9
 };
 
 const STOCK_OVERRIDES = {
-  'Organic Avocado.webp': 8,
-  'Butter Croissants.jpg': 9,
-  'Oat Milk.jpg': 0,
-  'fresh-potato-.png.webp': 6,
-  'Sourdough Loaf.jpg': 11,
-  'Kotmale-Butter.jpeg': 7,
-  'Free Range Eggs.webp': 22,
-  'Sea Salt Popcorn.jpeg': 5,
-  'Dragonfruit.jpg': 4
-};
-
-const IMAGE_FOCUS_OVERRIDES = {
-  'Butter Croissants.jpg': { scale: 1.22, position: 'center' },
-  'Sourdough Loaf.jpg': { scale: 1.18, position: 'center' },
-  'Sea Salt Popcorn.jpeg': { scale: 1.2, position: 'center' },
-  'Oat Milk.jpg': { scale: 1.16, position: 'center top' },
-  'Sprite-1.5Litter.jpg': { scale: 1.18, position: 'center top' },
-  'CocaCola-1litter.jpg': { scale: 1.18, position: 'center top' },
-  'Kotmale-Vanilla-Milk-1litter.webp': { scale: 1.18, position: 'center top' },
-  'Kotmale-Chocolate-Milk-1litter.webp': { scale: 1.18, position: 'center top' },
-  'Kist-MixedFruit-Juice.jpeg': { scale: 1.17, position: 'center top' },
-  'Kist-AloeVera-Juice-500ml.webp': { scale: 1.17, position: 'center top' },
-  'kitkat_new.png.webp': { scale: 1.2, position: 'center' },
-  'Maliban-Chocolate-Puff-Biscuit.png': { scale: 1.18, position: 'center' },
-  'Maliban-goldmarie-buscuit.jpeg': { scale: 1.18, position: 'center' },
-  'Maliban-chrisco-busicut.webp': { scale: 1.18, position: 'center' },
-  'maliban-lemonpuff-busicuit.jpeg': { scale: 1.18, position: 'center' },
-  'mars_chocholate.jpg': { scale: 1.2, position: 'center' },
-  'Dairymilk_chocho.jpg': { scale: 1.2, position: 'center' },
-  'Organic Avocado.webp': { scale: 1.22, position: 'center' },
-  'Dragonfruit.jpg': { scale: 1.18, position: 'center' },
-  'watermeloen_2.jpg': { scale: 1.22, position: 'center' },
-  'pineaple.png': { scale: 1.2, position: 'center' },
-  'fresh-potato-.png.webp': { scale: 1.16, position: 'center' }
+  'Organic Avocado.webp':8,'Butter Croissants.jpg':9,'Oat Milk.jpg':0,'fresh-potato-.png.webp':6,'Sourdough Loaf.jpg':11,'Kotmale-Butter.jpeg':7,
+  'Free Range Eggs.webp':22,'Sea Salt Popcorn.jpeg':5,'Dragonfruit.jpg':4
 };
 
 const BADGE_OVERRIDES = {
-  'Organic Avocado.webp': 'organic',
-  'Butter Croissants.jpg': 'best',
-  'Sourdough Loaf.jpg': 'best',
-  'Sea Salt Popcorn.jpeg': 'sale',
-  'Aged Cheddar.jpg': 'new',
-  'Pink Lady Apples.jpg': 'fresh',
-  'Wild Blueberries.jpg': 'fresh',
-  'Baby Carrots.jpg': 'fresh',
-  'Broccoli Crown.webp': 'fresh',
-  'Cherry Tomatoes.webp': 'fresh',
-  'Sweet Onions.webp': 'fresh',
-  'Free Range Eggs.webp': 'best'
+  'Organic Avocado.webp':'organic','Butter Croissants.jpg':'best','Sourdough Loaf.jpg':'best','Sea Salt Popcorn.jpeg':'sale','Aged Cheddar.jpg':'new',
+  'Pink Lady Apples.jpg':'fresh','Wild Blueberries.jpg':'fresh','Baby Carrots.jpg':'fresh','Broccoli Crown.webp':'fresh','Cherry Tomatoes.webp':'fresh',
+  'Sweet Onions.webp':'fresh','Free Range Eggs.webp':'best'
 };
 
-const CATEGORY_OVERRIDES = {
-  'Aged Cheddar.jpg': 'dairy',
-  'Anchor-MilkPowder-1kg.jpg': 'dairy',
-  'Anchor-MilkPowder-200g.jpeg': 'dairy',
-  'Anchor-MilkPowder-400g.webp': 'dairy',
-  'ChocoIce-1litter.png': 'dairy',
-  'Dairymilk_chocho.jpg': 'snack',
-  'Free Range Eggs.webp': 'dairy',
-  'Kist-AloeVera-Juice-500ml.webp': 'drink',
-  'Kist-GraanApple-Juice-1litter.jpeg': 'drink',
-  'Kist-Grape-Juicce-1litter.png': 'drink',
-  'Kist-Mango-Jam-510g.webp': 'snack',
-  'Kist-MixedFruit-Juice.jpeg': 'drink',
-  'Kist-Mixedfruit-Jam-300g.jpeg': 'snack',
-  'Kist-Strawberry-Jam-500g.jpeg': 'snack',
-  'Kist-WoodApple-Juice.webp': 'drink',
-  'Kist-Woodapple-Jam-510g.webp': 'snack',
-  'Kotamale-Curd-900g.jpg': 'dairy',
-  'Kotmale-Butter.jpeg': 'dairy',
-  'Kotmale-Chocolate-Milk-1litter.webp': 'dairy',
-  'Kotmale-Faluda-Milk-1litter.webp': 'dairy',
-  'Kotmale-FreshCream-Mil-1litter.jpg': 'dairy',
-  'Kotmale-Vanilla-Milk-170ml.jpg': 'dairy',
-  'Kotmale-Vanilla-Milk-1litter.webp': 'dairy',
-  'Kotmale-strawberry-milk-170ml.webp': 'dairy',
-  'Kulfi-Ice.jpg': 'dairy',
-  'Malibam_chochoalate-biscut.jpeg': 'snack',
-  'Maliban-Chocolate-Puff-Biscuit.png': 'snack',
-  'Maliban-chrisco-busicut.webp': 'snack',
-  'Maliban-goldmarie-buscuit.jpeg': 'snack',
-  'Milo-ChocholateDrinkPowder-400g.jpg': 'dairy',
-  'Nestomalt-Milkpowder-400g.jpeg': 'dairy',
-  'Nestomalt-Milkpowder-800g.jpg': 'dairy',
-  'Orange Juice.webp': 'drink',
-  'Richlife-Cheese-100g.jpeg': 'dairy',
-  'Richlife-Cheese-120g.webp': 'dairy',
-  'Richlife-cheesepanerr-200g.jpg': 'dairy',
-  'Sprite-1.5Litter.jpg': 'drink',
-  'StrawberryIce1litter.webp': 'dairy',
-  'Sunquick-Blackcurrant-juice-700ml.jpg': 'drink',
-  'Sunquick-Orange-Juice-700ml.jpg': 'drink',
-  'VERRY_BERRY_ICE_CREAM_1litter.jpg': 'dairy',
-  'Vanila_Ice-cream1litter.png': 'dairy',
-  'cadbury-dairy-milk-silk-valentine-special-gift-pack-heart-pop.jpg.webp': 'snack',
-  'corn-ice.png': 'dairy',
-  'cup-ice.png': 'dairy',
-  'kitkat_new.png.webp': 'snack',
-  'kotmale-chocolate-milk-170ml.jpg': 'dairy',
-  'maliban-lemonpuff-busicuit.jpeg': 'snack',
-  'mars_chocholate.jpg': 'snack',
-  'wonder_bar_vanila-lice.png': 'dairy'
+const IMAGE_FOCUS_OVERRIDES = {
+  'Butter Croissants.jpg':{scale:1.22,position:'center'},'Sourdough Loaf.jpg':{scale:1.18,position:'center'},'Sea Salt Popcorn.jpeg':{scale:1.2,position:'center'},
+  'Oat Milk.jpg':{scale:1.16,position:'center top'},'Sprite-1.5Litter.jpg':{scale:1.18,position:'center top'},'CocaCola-1litter.jpg':{scale:1.18,position:'center top'},
+  'Kotmale-Vanilla-Milk-1litter.webp':{scale:1.18,position:'center top'},'Kotmale-Chocolate-Milk-1litter.webp':{scale:1.18,position:'center top'},
+  'Kist-MixedFruit-Juice.jpeg':{scale:1.17,position:'center top'},'Kist-AloeVera-Juice-500ml.webp':{scale:1.17,position:'center top'},
+  'kitkat_new.png.webp':{scale:1.2,position:'center'},'Maliban-Chocolate-Puff-Biscuit.png':{scale:1.18,position:'center'},
+  'Maliban-goldmarie-buscuit.jpeg':{scale:1.18,position:'center'},'Maliban-chrisco-busicut.webp':{scale:1.18,position:'center'},
+  'maliban-lemonpuff-busicuit.jpeg':{scale:1.18,position:'center'},'mars_chocholate.jpg':{scale:1.2,position:'center'},'Dairymilk_chocho.jpg':{scale:1.2,position:'center'},
+  'Organic Avocado.webp':{scale:1.22,position:'center'},'Dragonfruit.jpg':{scale:1.18,position:'center'},'watermeloen_2.jpg':{scale:1.22,position:'center'},
+  'pineaple.png':{scale:1.2,position:'center'},'fresh-potato-.png.webp':{scale:1.16,position:'center'}
 };
 
-const CATEGORY_LABELS = {
-  fruit: 'Fruits',
-  veg: 'Vegetables',
-  dairy: 'Dairy',
-  bakery: 'Bakery',
-  drink: 'Drinks',
-  snack: 'Snacks'
+const UNIT_OVERRIDES = {
+  'Aged Cheddar.jpg':'200g block','Anchor-MilkPowder-1kg.jpg':'1 kg pack','Anchor-MilkPowder-200g.jpeg':'200g pack','Anchor-MilkPowder-400g.webp':'400g pack',
+  'Baby Carrots.jpg':'500g pack','Broccoli Crown.webp':'1 crown','Butter Croissants.jpg':'4 pack','Cavendish Bananas.jpeg':'1 kg','Cherry Tomatoes.webp':'250g punnet',
+  'Dragonfruit.jpg':'each','Free Range Eggs.webp':'12 pack','Grapes.jpg':'500g pack','Kotmale-Butter.jpeg':'250g pack','Kulfi-Ice.jpg':'1 pack',
+  'Oat Milk.jpg':'1 litre','Orange.webp':'1 kg','Organic Avocado.webp':'each','Pink Lady Apples.jpg':'1 kg','Sea Salt Popcorn.jpeg':'100g bag',
+  'Sourdough Loaf.jpg':'800g loaf','Sweet Onions.webp':'1 kg','Wild Blueberries.jpg':'250g punnet','fresh-potato-.png.webp':'1 kg',
+  'guavafruits.jpg.webp':'500g pack','papayajpg.jpg':'whole','pineaple.png':'whole','strawberries.png':'250g punnet','watermeloen_2.jpg':'whole'
 };
 
-const CATEGORY_DESCRIPTIONS = {
-  fruit: 'Fresh handpicked fruit that works well for healthy snacking and breakfast prep.',
-  veg: 'Daily vegetables chosen for freshness, weeknight cooking, and kitchen staples.',
-  dairy: 'Chilled essentials, milk products, frozen treats, and breakfast basics.',
-  bakery: 'Freshly baked products with short shelf life and high same-day demand.',
-  drink: 'Juices, fizzy drinks, and ready-to-serve refreshments for every cart.',
-  snack: 'Pantry treats, biscuits, chocolates, spreads, and comfort picks.'
+const MOCK_REVIEWS = [
+  {name:'Nimal',rating:5,text:'Fresh quality and arrived neatly packed. Great for weekly grocery restocks.'},
+  {name:'Kasuni',rating:4,text:'Good value and consistent quality. Delivery-friendly packaging.'},
+  {name:'Amal',rating:5,text:'Looks premium and feels like a supermarket app favorite item.'}
+];
+
+const COUPONS = {
+  SAVE10: { type:'percent', value:10, min:20, label:'10% off orders above $20' },
+  FRESH5: { type:'flat', value:5, min:35, label:'$5 off orders above $35' },
+  FREESHIP: { type:'ship', value:100, min:15, label:'Free delivery above $15' }
 };
-
-function imageUrl(file) {
-  return `images/${encodeURIComponent(file)}`;
-}
-
-function stripExtensions(file) {
-  let value = file;
-  while (/\.(jpg|jpeg|png|webp|jxl)$/i.test(value)) {
-    value = value.replace(/\.(jpg|jpeg|png|webp|jxl)$/i, '');
-  }
-  return value;
-}
-
-function titleCase(value) {
-  return value.split(' ').filter(Boolean).map((part) => /^\d/.test(part) ? part : `${part.charAt(0).toUpperCase()}${part.slice(1).toLowerCase()}`).join(' ');
-}
-
-function fallbackName(file) {
-  const withoutExt = stripExtensions(file).replace(/\\/g, ' ').replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim();
-  const cleaned = withoutExt
-    .replace(/\b(\d+(?:\.\d+)?)\s*(kg|g|ml|litter|litre)\b/ig, '')
-    .replace(/\bnew\b/ig, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-  return titleCase(cleaned);
-}
-
-function getName(file) {
-  return NAME_OVERRIDES[file] || fallbackName(file);
-}
-
-function inferCategory(name, file) {
-  if (CATEGORY_OVERRIDES[file]) return CATEGORY_OVERRIDES[file];
-  if (/(croissant|loaf|bread|bun)/i.test(name)) return 'bakery';
-  if (/(juice|sprite|coca|necto|sunquick|drink)/i.test(name)) return 'drink';
-  if (/(ice cream|ice|milk|curd|cheese|butter|paneer|powder|eggs|cream)/i.test(name)) return 'dairy';
-  if (/(jam|biscuit|chocolate|kitkat|mars|popcorn)/i.test(name)) return 'snack';
-  if (/(banana|apple|orange|grape|mango|dragonfruit|avocado|blueberries|strawberries|papaya|pineapple|watermelon|guava)/i.test(name)) return 'fruit';
-  if (/(carrot|broccoli|tomato|onion|potato)/i.test(name)) return 'veg';
-  return 'snack';
-}
-
-function inferUnit(file, name, category) {
-  if (UNIT_OVERRIDES[file]) return UNIT_OVERRIDES[file];
-  const sizeMatch = stripExtensions(file).match(/(\d+(?:\.\d+)?)\s*(kg|g|ml|litter|litre)/i);
-  if (sizeMatch) {
-    const amount = sizeMatch[1];
-    const unit = sizeMatch[2].toLowerCase() === 'litter' ? 'litre' : sizeMatch[2].toLowerCase();
-    return `${amount} ${unit}`;
-  }
-  if (/egg/i.test(name)) return '12 pack';
-  if (/jam/i.test(name)) return '1 jar';
-  if (/ice|biscuit|chocolate|kitkat|mars|popcorn/i.test(name)) return '1 pack';
-  if (/apple|banana|orange|onion|potato/i.test(name)) return '1 kg';
-  if (/blueberries|strawberries|grapes|guava/i.test(name)) return '500g pack';
-  if (/avocado|dragonfruit|mango/i.test(name)) return 'each';
-  if (/papaya|pineapple|watermelon/i.test(name)) return 'whole';
-  return category === 'fruit' || category === 'veg' ? '1 pack' : '1 pack';
-}
-
-function inferPrice(file, category, unit, index) {
-  if (PRICE_OVERRIDES[file] != null) return PRICE_OVERRIDES[file];
-  let price = { fruit:2.4, veg:1.9, dairy:3.7, bakery:3.4, drink:2.8, snack:2.2 }[category];
-  if (/1\.5 litre/i.test(unit)) price += 1.6;
-  else if (/1 litre/i.test(unit)) price += 1.1;
-  else if (/900g|800g|1 kg/i.test(unit)) price += 1.8;
-  else if (/500g/i.test(unit)) price += 0.8;
-  else if (/400g/i.test(unit)) price += 0.6;
-  else if (/200g|170ml|100g/i.test(unit)) price += 0.1;
-  else if (/whole/i.test(unit)) price += 2.0;
-  price += (index % 6) * 0.23;
-  return Number(price.toFixed(2));
-}
-
-function inferBadge(file, category, stock, index) {
-  if (BADGE_OVERRIDES[file]) return BADGE_OVERRIDES[file];
-  if (category === 'fruit' || category === 'veg') return 'fresh';
-  if (stock < 8) return 'sale';
-  if (index % 7 === 0) return 'best';
-  if (index % 9 === 0) return 'new';
-  return '';
-}
-
-function inferStock(file, category, index) {
-  if (STOCK_OVERRIDES[file] != null) return STOCK_OVERRIDES[file];
-  const base = ((index * 7) % 28) + 5;
-  if (category === 'bakery') return Math.max(6, base - 6);
-  if (category === 'fruit' || category === 'veg') return base + 3;
-  return base;
-}
-
-function inferExpiry(category, index) {
-  const dates = {
-    fruit: ['Apr 21', 'Apr 22', 'Apr 23', 'Apr 24'],
-    veg: ['Apr 20', 'Apr 21', 'Apr 22', 'Apr 23'],
-    dairy: ['Apr 26', 'Apr 28', 'May 02', 'May 04'],
-    bakery: ['Apr 19', 'Apr 20', 'Apr 21', 'Apr 22'],
-    drink: ['May 16', 'May 22', 'Jun 02', 'Jun 08'],
-    snack: ['Jun 10', 'Jun 22', 'Jul 08', 'Jul 21']
-  };
-  return dates[category][index % dates[category].length];
-}
-
-function createDescription(product) {
-  const stockMessage = product.stock === 0 ? 'Currently unavailable for checkout.' : product.stock < 10 ? 'Limited inventory, so it may sell out soon.' : 'Available for regular daily orders.';
-  return `${CATEGORY_DESCRIPTIONS[product.category]} Packed as ${product.unit.toLowerCase()} and tagged under ${CATEGORY_LABELS[product.category].toLowerCase()}. ${stockMessage}`;
-}
-
-const products = PRODUCT_FILES.map((file, index) => {
-  const name = getName(file);
-  const category = inferCategory(name, file);
-  const unit = inferUnit(file, name, category);
-  const stock = inferStock(file, category, index);
-  const price = inferPrice(file, category, unit, index);
-  const popularity = 100 - index + (stock > 0 ? 12 : -10) + (BADGE_OVERRIDES[file] ? 8 : 0) + (category === 'fruit' || category === 'veg' ? 6 : 0);
-  const product = {
-    id: index + 1,
-    file,
-    name,
-    category,
-    unit,
-    price,
-    stock,
-    popularity,
-    badge: inferBadge(file, category, stock, index),
-    sku: `FM-${String(index + 1).padStart(3, '0')}`,
-    expiry: inferExpiry(category, index),
-    image: imageUrl(file),
-    imageFocus: IMAGE_FOCUS_OVERRIDES[file] || { scale: 1.14, position: 'center' }
-  };
-  product.description = createDescription(product);
-  return product;
-});
-
-const deals = products
-  .filter((product) => product.stock > 0)
-  .sort((a, b) => {
-    const order = { sale: 0, organic: 1, fresh: 2, new: 3, best: 4, '': 5 };
-    return (order[a.badge] ?? 6) - (order[b.badge] ?? 6);
-  })
-  .slice(0, 8)
-  .map((product, index) => ({ ...product, oldPrice: Number((product.price + 0.7 + (index % 3) * 0.25).toFixed(2)) }));
 
 const state = {
+  catalog: [],
   activeCategory: 'all',
+  sortOrder: 'popular',
   shopSearch: '',
   inventorySearch: '',
   inventoryFilter: 'all',
-  sortOrder: 'popular',
   cart: [],
   favorites: [],
-  selectedProductId: null
+  recent: [],
+  ratings: {},
+  couponCode: '',
+  deliveryType: 'standard',
+  selectedProductId: null,
+  editingProductId: null,
+  hasLoadedProducts: false
 };
 
-function saveState(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
+function imageUrl(file){return `images/${encodeURIComponent(file)}`;}
+function stripExtensions(file){let value=file;while(/\.(jpg|jpeg|png|webp|jxl)$/i.test(value)){value=value.replace(/\.(jpg|jpeg|png|webp|jxl)$/i,'');}return value;}
+function titleCase(value){return value.split(' ').filter(Boolean).map((part)=>/^\d/.test(part)?part:part.charAt(0).toUpperCase()+part.slice(1).toLowerCase()).join(' ');}
+function fallbackName(file){
+  const withoutExt=stripExtensions(file).replace(/\\/g,' ').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim();
+  const cleaned=withoutExt.replace(/\b(\d+(?:\.\d+)?)\s*(kg|g|ml|litter|litre)\b/ig,'').replace(/\bnew\b/ig,'').replace(/\s+/g,' ').trim();
+  return titleCase(cleaned);
 }
-
-function loadJSON(key, fallback) {
-  try {
-    const raw = localStorage.getItem(key);
-    return raw ? JSON.parse(raw) : fallback;
-  } catch {
-    return fallback;
-  }
+function getName(file){return NAME_OVERRIDES[file] || fallbackName(file);}
+function inferCategory(name,file){
+  if(CATEGORY_OVERRIDES[file]) return CATEGORY_OVERRIDES[file];
+  if(/(croissant|loaf|bread|bun)/i.test(name)) return 'bakery';
+  if(/(juice|sprite|coca|necto|sunquick|drink)/i.test(name)) return 'drink';
+  if(/(ice cream|ice|milk|curd|cheese|butter|paneer|powder|eggs|cream)/i.test(name)) return 'dairy';
+  if(/(jam|biscuit|chocolate|kitkat|mars|popcorn)/i.test(name)) return 'snack';
+  if(/(banana|apple|orange|grape|mango|dragonfruit|avocado|blueberries|strawberries|papaya|pineapple|watermelon|guava)/i.test(name)) return 'fruit';
+  if(/(carrot|broccoli|tomato|onion|potato)/i.test(name)) return 'veg';
+  return 'snack';
 }
-
-function stockState(stock) {
-  if (stock === 0) return 'out';
-  if (stock < 10) return 'low';
-  return 'good';
+function inferUnit(file,name,category){
+  if(UNIT_OVERRIDES[file]) return UNIT_OVERRIDES[file];
+  const match=stripExtensions(file).match(/(\d+(?:\.\d+)?)\s*(kg|g|ml|litter|litre)/i);
+  if(match){return `${match[1]} ${match[2].toLowerCase()==='litter'?'litre':match[2].toLowerCase()}`;}
+  if(/egg/i.test(name)) return '12 pack';
+  if(/jam/i.test(name)) return '1 jar';
+  if(/ice|biscuit|chocolate|kitkat|mars|popcorn/i.test(name)) return '1 pack';
+  if(/apple|banana|orange|onion|potato/i.test(name)) return '1 kg';
+  if(/blueberries|strawberries|grapes|guava/i.test(name)) return '500g pack';
+  if(/avocado|dragonfruit|mango/i.test(name)) return 'each';
+  if(/papaya|pineapple|watermelon/i.test(name)) return 'whole';
+  return category==='fruit' || category==='veg' ? '1 pack' : '1 pack';
 }
-
-function stockText(stock) {
-  if (stock === 0) return 'Out of Stock';
-  if (stock < 10) return 'Low Stock';
-  return 'In Stock';
+function inferPrice(file,category,unit,index){
+  if(PRICE_OVERRIDES[file] != null) return PRICE_OVERRIDES[file];
+  let price={fruit:2.4,veg:1.9,dairy:3.7,bakery:3.4,drink:2.8,snack:2.2}[category];
+  if(/1\.5 litre/i.test(unit)) price+=1.6;
+  else if(/1 litre/i.test(unit)) price+=1.1;
+  else if(/900g|800g|1 kg/i.test(unit)) price+=1.8;
+  else if(/500g/i.test(unit)) price+=0.8;
+  else if(/400g/i.test(unit)) price+=0.6;
+  else if(/200g|170ml|100g/i.test(unit)) price+=0.1;
+  else if(/whole/i.test(unit)) price+=2;
+  price+=(index%6)*.23;
+  return Number(price.toFixed(2));
 }
-
-function stockInlineText(stock) {
-  if (stock === 0) return 'Sold out';
-  if (stock < 10) return `Only ${stock} left`;
-  return `${stock} in stock`;
+function inferStock(file,category,index){
+  if(STOCK_OVERRIDES[file] != null) return STOCK_OVERRIDES[file];
+  const base=((index*7)%28)+5;
+  if(category==='bakery') return Math.max(6,base-6);
+  if(category==='fruit' || category==='veg') return base+3;
+  return base;
 }
-
-function formatPrice(value) {
-  return `$${value.toFixed(2)}`;
+function inferBadge(file,category,stock,index){
+  if(BADGE_OVERRIDES[file]) return BADGE_OVERRIDES[file];
+  if(category==='fruit' || category==='veg') return 'fresh';
+  if(stock < 8) return 'sale';
+  if(index % 7 === 0) return 'best';
+  if(index % 9 === 0) return 'new';
+  return '';
 }
-
-function getProductById(id) {
-  return products.find((product) => product.id === Number(id));
+function inferExpiry(category,index){
+  const dates={fruit:['Apr 21','Apr 22','Apr 23','Apr 24'],veg:['Apr 20','Apr 21','Apr 22','Apr 23'],dairy:['Apr 26','Apr 28','May 02','May 04'],bakery:['Apr 19','Apr 20','Apr 21','Apr 22'],drink:['May 16','May 22','Jun 02','Jun 08'],snack:['Jun 10','Jun 22','Jul 08','Jul 21']};
+  return dates[category][index % dates[category].length];
 }
-
-function hydrateCart() {
-  const savedCart = loadJSON(STORAGE_KEYS.cart, []);
-  state.cart = savedCart.map((entry) => {
-    const product = getProductById(entry.id);
-    if (!product) return null;
-    return { id: product.id, qty: Math.max(1, Math.min(product.stock || 1, Number(entry.qty) || 1)) };
-  }).filter(Boolean);
-  state.favorites = loadJSON(STORAGE_KEYS.favorites, []).filter((id) => getProductById(id));
+function defaultDescription(product){
+  const categoryText={fruit:'Fresh handpicked fruit for healthy snacking and breakfast prep.',veg:'Daily vegetables for home cooking and kitchen staples.',dairy:'Chilled essentials and frozen treats for breakfast and dessert.',bakery:'Fresh bakery products suited for fast-moving daily orders.',drink:'Refreshing beverages for meals, gatherings, and quick hydration.',snack:'Treats and pantry comforts for everyday cravings.'}[product.category];
+  const stockMsg=product.stock===0?'Currently unavailable for ordering.':product.stock<10?'Limited inventory, so order soon.':'Ready for regular grocery orders.';
+  return `${categoryText} Packed as ${product.unit.toLowerCase()} and matched with ${CATEGORY_LABELS[product.category].toLowerCase()}. ${stockMsg}`;
 }
+function stockState(stock){if(stock===0) return 'out'; if(stock<10) return 'low'; return 'good';}
+function stockLabel(stock){if(stock===0) return 'Out of Stock'; if(stock<10) return 'Low Stock'; return 'In Stock';}
+function stockInline(stock){if(stock===0) return 'Sold out'; if(stock<10) return `Only ${stock} left`; return `${stock} in stock`;}
+function formatPrice(value){return `$${Number(value).toFixed(2)}`;}
+function save(key,value){localStorage.setItem(key,JSON.stringify(value));}
+function loadJSON(key,fallback){try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):fallback;}catch{return fallback;}}
+function uid(){return `FM-${Math.random().toString(36).slice(2,9).toUpperCase()}`;}
 
-function persistCart() {
-  saveState(STORAGE_KEYS.cart, state.cart);
-}
-
-function persistFavorites() {
-  saveState(STORAGE_KEYS.favorites, state.favorites);
-}
-
-function cartEntries() {
-  return state.cart.map((item) => {
-    const product = getProductById(item.id);
-    return product ? { ...product, qty: item.qty } : null;
-  }).filter(Boolean);
-}
-
-function cartTotals() {
-  const entries = cartEntries();
-  const itemCount = entries.reduce((sum, item) => sum + item.qty, 0);
-  const subtotal = entries.reduce((sum, item) => sum + item.qty * item.price, 0);
-  const delivery = entries.length ? 2.99 : 2.99;
-  return { entries, itemCount, subtotal, delivery, total: subtotal + delivery };
-}
-
-function sortedProducts(list) {
-  const copy = [...list];
-  switch (state.sortOrder) {
-    case 'price-asc':
-      return copy.sort((a, b) => a.price - b.price);
-    case 'price-desc':
-      return copy.sort((a, b) => b.price - a.price);
-    case 'name-asc':
-      return copy.sort((a, b) => a.name.localeCompare(b.name));
-    case 'popular':
-    default:
-      return copy.sort((a, b) => b.popularity - a.popularity);
-  }
-}
-
-function filteredProducts() {
-  return sortedProducts(products.filter((product) => {
-    const byCategory = state.activeCategory === 'all' || product.category === state.activeCategory;
-    const searchText = `${product.name} ${product.sku} ${CATEGORY_LABELS[product.category]}`.toLowerCase();
-    const bySearch = !state.shopSearch || searchText.includes(state.shopSearch);
-    return byCategory && bySearch;
-  }));
-}
-
-function filteredInventory() {
-  return products.filter((product) => {
-    const text = `${product.name} ${product.category} ${product.sku}`.toLowerCase();
-    const bySearch = !state.inventorySearch || text.includes(state.inventorySearch);
-    const byFilter = state.inventoryFilter === 'all'
-      || (state.inventoryFilter === 'low' && product.stock > 0 && product.stock < 10)
-      || (state.inventoryFilter === 'out' && product.stock === 0);
-    return bySearch && byFilter;
+function baseCatalog(){
+  return PRODUCT_FILES.map((file,index)=>{
+    const name=getName(file);
+    const category=inferCategory(name,file);
+    const unit=inferUnit(file,name,category);
+    const stock=inferStock(file,category,index);
+    const price=inferPrice(file,category,unit,index);
+    const rating=Number((4 + ((index % 7) * .12)).toFixed(1));
+    const reviewCount=18 + (index % 8) * 9;
+    const popularity=100-index+(stock>0?12:-10)+(BADGE_OVERRIDES[file]?8:0)+(category==='fruit'||category==='veg'?6:0);
+    const trendingScore=popularity + rating * 12 + (stock < 10 ? 6 : 0);
+    const product={
+      id:String(index+1),
+      sku:`FM-${String(index+1).padStart(3,'0')}`,
+      file,
+      name,
+      category,
+      unit,
+      price,
+      stock,
+      badge:inferBadge(file,category,stock,index),
+      expiry:inferExpiry(category,index),
+      image:imageUrl(file),
+      imageFocus:IMAGE_FOCUS_OVERRIDES[file] || {scale:1.14,position:'center'},
+      ratingBase:rating,
+      reviewCount,
+      popularity,
+      trendingScore,
+      description:'',
+      reviews:MOCK_REVIEWS.map((review,reviewIndex)=>({
+        name:review.name,
+        rating:Math.max(4, review.rating - (index + reviewIndex) % 2),
+        text:review.text
+      })),
+      createdAt:Date.now() - index * 3600 * 1000,
+      custom:false
+    };
+    product.description=defaultDescription(product);
+    return product;
   });
 }
 
-function favoriteProducts() {
-  return state.favorites.map((id) => getProductById(id)).filter(Boolean);
+function hydrateState(){
+  state.catalog=loadJSON(STORAGE_KEYS.catalog, baseCatalog());
+  state.cart=loadJSON(STORAGE_KEYS.cart, []);
+  state.favorites=loadJSON(STORAGE_KEYS.favorites, []).filter((id)=>state.catalog.some((product)=>product.id===id));
+  state.recent=loadJSON(STORAGE_KEYS.recent, []).filter((id)=>state.catalog.some((product)=>product.id===id));
+  state.ratings=loadJSON(STORAGE_KEYS.ratings, {});
+  state.couponCode=localStorage.getItem(STORAGE_KEYS.coupon) || '';
+  state.deliveryType='standard';
+}
+function persistCatalog(){save(STORAGE_KEYS.catalog,state.catalog);}
+function persistCart(){save(STORAGE_KEYS.cart,state.cart);}
+function persistFavorites(){save(STORAGE_KEYS.favorites,state.favorites);}
+function persistRecent(){save(STORAGE_KEYS.recent,state.recent);}
+function persistRatings(){save(STORAGE_KEYS.ratings,state.ratings);}
+function persistCoupon(){localStorage.setItem(STORAGE_KEYS.coupon,state.couponCode);}
+
+function getProductById(id){return state.catalog.find((product)=>product.id===String(id));}
+function isFavorite(id){return state.favorites.includes(String(id));}
+function getRating(product){
+  const userRatings=state.ratings[product.id] || [];
+  const total=product.ratingBase * product.reviewCount + userRatings.reduce((sum,value)=>sum+value,0);
+  const count=product.reviewCount + userRatings.length;
+  return Number((total / count).toFixed(1));
+}
+function getReviewCount(product){return product.reviewCount + (state.ratings[product.id] || []).length;}
+function cartEntries(){
+  return state.cart.map((entry)=>{
+    const product=getProductById(entry.id);
+    if(!product) return null;
+    return {...product, qty:Math.max(1,Math.min(product.stock || 1, Number(entry.qty) || 1))};
+  }).filter(Boolean);
+}
+function cartSubtotal(){return cartEntries().reduce((sum,item)=>sum+item.qty*item.price,0);}
+function getCouponMeta(subtotal){
+  const code=(state.couponCode || '').trim().toUpperCase();
+  if(!code || !COUPONS[code]) return {code:'',label:'',discount:0,valid:false,message:''};
+  const coupon=COUPONS[code];
+  if(subtotal < coupon.min){
+    return {code,label:coupon.label,discount:0,valid:false,message:`${code} requires a subtotal of ${formatPrice(coupon.min)}.`};
+  }
+  if(coupon.type==='percent'){
+    const discount=Number(Math.min(subtotal * coupon.value / 100, 12).toFixed(2));
+    return {code,label:coupon.label,discount,valid:true,message:`${code} applied successfully.`};
+  }
+  if(coupon.type==='flat'){
+    return {code,label:coupon.label,discount:Number(coupon.value.toFixed(2)),valid:true,message:`${code} applied successfully.`};
+  }
+  return {code,label:coupon.label,discount:0,valid:true,message:`${code} gives free delivery.`};
+}
+function deliveryBaseFee(subtotal){
+  if(subtotal >= 60) return 0;
+  if(subtotal >= 30) return 2.99;
+  return 5.99;
+}
+function pricingSummary(deliveryType = state.deliveryType){
+  const entries=cartEntries();
+  const itemCount=entries.reduce((sum,item)=>sum+item.qty,0);
+  const subtotal=entries.reduce((sum,item)=>sum+item.qty*item.price,0);
+  const couponMeta=getCouponMeta(subtotal);
+  const discount=couponMeta.discount;
+  const baseFee=deliveryBaseFee(subtotal);
+  const expressSurcharge=deliveryType==='express' && entries.length ? 4.5 : 0;
+  let delivery=baseFee + expressSurcharge;
+  if(couponMeta.code==='FREESHIP' && couponMeta.valid) delivery=0;
+  const deliverySavings=(couponMeta.code==='FREESHIP' && couponMeta.valid) ? baseFee + expressSurcharge : baseFee===0 && entries.length ? 5.99 : 0;
+  const totalSavings=discount + deliverySavings;
+  const total=Math.max(0, subtotal - discount + delivery);
+  return {entries,itemCount,subtotal,discount,delivery,deliveryType,totalSavings,total,couponMeta,expressSurcharge};
 }
 
-function isFavorite(id) {
-  return state.favorites.includes(Number(id));
+function filteredProducts(){
+  const search=state.shopSearch.toLowerCase();
+  const list=state.catalog.filter((product)=>{
+    const categoryMatch=state.activeCategory==='all' || product.category===state.activeCategory;
+    const text=`${product.name} ${product.sku} ${CATEGORY_LABELS[product.category]} ${product.unit}`.toLowerCase();
+    return categoryMatch && (!search || text.includes(search));
+  });
+  const sorted=[...list];
+  switch(state.sortOrder){
+    case 'price-asc': sorted.sort((a,b)=>a.price-b.price); break;
+    case 'price-desc': sorted.sort((a,b)=>b.price-a.price); break;
+    case 'rating': sorted.sort((a,b)=>getRating(b)-getRating(a)); break;
+    case 'trending': sorted.sort((a,b)=>b.trendingScore-a.trendingScore); break;
+    case 'name-asc': sorted.sort((a,b)=>a.name.localeCompare(b.name)); break;
+    default: sorted.sort((a,b)=>b.popularity-a.popularity);
+  }
+  return sorted;
+}
+function filteredInventory(){
+  const search=state.inventorySearch.toLowerCase();
+  return state.catalog.filter((product)=>{
+    const text=`${product.name} ${product.category} ${product.sku}`.toLowerCase();
+    const matchSearch=!search || text.includes(search);
+    const matchFilter=state.inventoryFilter==='all' || (state.inventoryFilter==='low' && product.stock>0 && product.stock<10) || (state.inventoryFilter==='out' && product.stock===0);
+    return matchSearch && matchFilter;
+  });
+}
+function recentProducts(){return state.recent.map((id)=>getProductById(id)).filter(Boolean);}
+function favoriteProducts(){return state.favorites.map((id)=>getProductById(id)).filter(Boolean);}
+function popularProducts(){return [...state.catalog].sort((a,b)=>b.popularity-a.popularity).slice(0,6);}
+function trendingProducts(){return [...state.catalog].sort((a,b)=>b.trendingScore-a.trendingScore).slice(0,6);}
+function lowStockProducts(){return state.catalog.filter((product)=>product.stock<10).sort((a,b)=>a.stock-b.stock).slice(0,8);}
+
+function setTheme(theme){
+  const dark=theme==='dark';
+  document.body.classList.toggle('dark-mode',dark);
+  localStorage.setItem(STORAGE_KEYS.theme,theme);
+  document.getElementById('theme-label').textContent=dark?'Light Mode':'Dark Mode';
+}
+function loadTheme(){
+  const stored=localStorage.getItem(STORAGE_KEYS.theme);
+  if(stored==='dark' || stored==='light'){setTheme(stored);return;}
+  setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
 }
 
-function setTheme(theme) {
-  const dark = theme === 'dark';
-  document.body.classList.toggle('dark-mode', dark);
-  localStorage.setItem(STORAGE_KEYS.theme, theme);
-  document.getElementById('theme-label').textContent = dark ? 'Light Mode' : 'Dark Mode';
+function badgeText(badge){return ({fresh:'Fresh Pick',sale:'Discount',organic:'Organic',new:'New Arrival',best:'Best Seller'})[badge] || badge;}
+function productCardMarkup(product){
+  const stateClass=stockState(product.stock);
+  return `
+    <article class="product-card" data-product-id="${product.id}">
+      <div class="product-media">
+        <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" width="360" height="360" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
+        ${product.badge ? `<div class="badge-stack"><span class="badge ${product.badge}">${badgeText(product.badge)}</span></div>` : ''}
+        <button class="favorite-btn pressable ${isFavorite(product.id)?'active':''}" type="button" data-action="favorite" data-product-id="${product.id}" aria-label="Toggle favorite">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="${isFavorite(product.id)?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="m12 21-1.1-1C5.1 14.8 2 12 2 8.5A4.5 4.5 0 0 1 6.5 4c1.7 0 3.4.8 4.5 2.1A6 6 0 0 1 15.5 4 4.5 4.5 0 0 1 20 8.5c0 3.5-3.1 6.3-8.9 11.5z"></path></svg>
+        </button>
+      </div>
+      <div class="product-body">
+        <div class="product-head">
+          <div>
+            <div class="category-tag">${CATEGORY_LABELS[product.category]}</div>
+            <strong>${product.name}</strong>
+          </div>
+          <span class="pill ${stateClass}">${stockLabel(product.stock)}</span>
+        </div>
+        <div class="product-rating">
+          <span class="star-row"><span class="star">★</span><b>${getRating(product).toFixed(1)}</b> <span>(${getReviewCount(product)})</span></span>
+          <span>${stockInline(product.stock)}</span>
+        </div>
+        <p class="product-copy">${product.description}</p>
+        <div class="product-footer">
+          <div class="price">${formatPrice(product.price)}<small>${product.unit} · ${product.sku}</small></div>
+          <div class="product-actions">
+            <button class="ghost-btn pressable" type="button" data-action="details" data-product-id="${product.id}">Details</button>
+            <button class="add-btn pressable" type="button" data-action="add" data-product-id="${product.id}" ${product.stock===0?'disabled':''}>${product.stock===0?'Sold Out':'Add'}</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  `;
 }
 
-function loadTheme() {
-  const stored = localStorage.getItem(STORAGE_KEYS.theme);
-  if (stored === 'dark' || stored === 'light') {
-    setTheme(stored);
+function renderProducts(){
+  const grid=document.getElementById('product-grid');
+  const skeleton=document.getElementById('product-skeleton');
+  if(!state.hasLoadedProducts){
+    skeleton.style.display='grid';
+    grid.style.display='none';
     return;
   }
-  setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-}
-
-function renderProducts() {
-  const list = filteredProducts();
-  const grid = document.getElementById('product-grid');
-  document.getElementById('product-count').textContent = `${list.length} products shown`;
-
-  if (!list.length) {
-    grid.innerHTML = `<div class="inventory-card" style="padding:24px;grid-column:1/-1"><strong>No matching products.</strong><p class="mini-note" style="margin-top:8px">Try a different search term or category filter.</p></div>`;
+  skeleton.style.display='none';
+  grid.style.display='grid';
+  const list=filteredProducts();
+  document.getElementById('product-count').textContent=`${list.length} product${list.length===1?'':'s'} shown`;
+  if(!list.length){
+    grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1"><strong>No products matched your search.</strong><p>Try a broader keyword, switch category, or clear filters to explore more FreshMart products.</p></div>`;
     return;
   }
+  grid.innerHTML=list.map(productCardMarkup).join('');
+}
 
-  grid.innerHTML = list.map((product, index) => {
-    const stateClass = stockState(product.stock);
+function renderDeals(){
+  document.getElementById('popular-row').innerHTML=popularProducts().map((product)=>{
+    const oldPrice=Number((product.price+0.9).toFixed(2));
     return `
-      <article class="product-card" data-product-id="${product.id}" style="animation-delay:${Math.min(index * 0.04, 0.48)}s">
-        <div class="product-media">
-          <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" width="360" height="360" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
-          ${product.badge ? `<div class="badge-stack"><span class="badge ${product.badge}">${({fresh:'Fresh',sale:'Discount',organic:'Organic',new:'New',best:'Best Seller'})[product.badge] || product.badge}</span></div>` : ''}
-          <button class="product-favorite pressable ${isFavorite(product.id) ? 'active' : ''}" type="button" data-action="favorite" data-product-id="${product.id}" aria-label="Save ${product.name}">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="${isFavorite(product.id) ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="m12 21-1.1-1C5.1 14.8 2 12 2 8.5A4.5 4.5 0 0 1 6.5 4c1.7 0 3.4.8 4.5 2.1A6 6 0 0 1 15.5 4 4.5 4.5 0 0 1 20 8.5c0 3.5-3.1 6.3-8.9 11.5z"></path></svg>
-          </button>
+      <article class="deal-card">
+        <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" width="260" height="160" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
+        <div>
+          <strong>${product.name}</strong>
+          <span>${CATEGORY_LABELS[product.category]} · ${product.unit}</span>
         </div>
-        <div class="product-body">
-          <div class="product-top">
-            <div>
-              <div class="category-tag">${CATEGORY_LABELS[product.category]}</div>
-              <strong>${product.name}</strong>
-            </div>
-            <span class="pill ${stateClass}">${stockText(product.stock)}</span>
-          </div>
-          <div class="meta">
-            <span>${product.unit}</span>
-            <span class="stock ${stateClass}">${stockInlineText(product.stock)}</span>
-          </div>
-          <p class="product-copy">${product.description}</p>
-          <div class="product-footer">
-            <div class="price">${formatPrice(product.price)}<small>${product.sku}</small></div>
-            <div class="product-actions">
-              <button class="details-btn pressable" type="button" data-action="details" data-product-id="${product.id}">Details</button>
-              <button class="add-btn pressable" type="button" data-action="add" data-product-id="${product.id}" ${product.stock === 0 ? 'disabled' : ''}>${product.stock === 0 ? 'Sold Out' : 'Add'}</button>
-            </div>
-          </div>
+        <div class="price-line"><b>${formatPrice(product.price)}</b><s>${formatPrice(oldPrice)}</s></div>
+        <span class="save-pill">Popular • ${getRating(product).toFixed(1)}★</span>
+      </article>
+    `;
+  }).join('');
+
+  document.getElementById('trending-row').innerHTML=trendingProducts().map((product)=>{
+    return `
+      <article class="deal-card">
+        <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" width="260" height="160" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
+        <div>
+          <strong>${product.name}</strong>
+          <span>${stockInline(product.stock)} · ${CATEGORY_LABELS[product.category]}</span>
         </div>
+        <div class="price-line"><b>${formatPrice(product.price)}</b><span class="star">★ ${getRating(product).toFixed(1)}</span></div>
+        <span class="save-pill">Trending Now</span>
       </article>
     `;
   }).join('');
 }
 
-function renderDeals() {
-  const row = document.getElementById('deal-row');
-  row.innerHTML = deals.map((product, index) => `
-    <article class="deal-card" style="animation-delay:${Math.min(index * 0.06, 0.36)}s">
-      <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" width="280" height="150" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
-      <div>
-        <strong>${product.name}</strong>
-        <span>${product.unit}</span>
-      </div>
-      <div class="deal-price">
-        <b>${formatPrice(product.price)}</b>
-        <s>${formatPrice(product.oldPrice)}</s>
-      </div>
-      <div class="deal-save">Save ${Math.round((1 - product.price / product.oldPrice) * 100)}%</div>
-    </article>
-  `).join('');
-}
-
-function renderInventory() {
-  const rows = filteredInventory();
-  const body = document.getElementById('inventory-body');
-  body.innerHTML = rows.map((product) => {
-    const stateClass = stockState(product.stock);
-    return `
-      <tr>
-        <td>
-          <div class="td-product">
-            <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" width="48" height="48" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
-            <div>
-              <strong>${product.name}</strong>
-              <div class="mini-note">${product.unit} · ${product.expiry}</div>
-            </div>
-          </div>
-        </td>
-        <td>${CATEGORY_LABELS[product.category]}</td>
-        <td>${formatPrice(product.price)}</td>
-        <td>${product.stock}</td>
-        <td><span class="status-pill ${stateClass}">${stockText(product.stock)}</span></td>
-        <td>${product.sku}</td>
-      </tr>
-    `;
-  }).join('');
-}
-
-function renderLowStock() {
-  const list = products.filter((product) => product.stock < 10).sort((a, b) => a.stock - b.stock).slice(0, 8);
-  const container = document.getElementById('low-stock-list');
-  container.innerHTML = list.map((product) => `
-    <article class="stock-item">
-      <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" width="56" height="56" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
-      <div>
-        <strong>${product.name}</strong>
-        <span>${CATEGORY_LABELS[product.category]} · ${product.unit}</span>
-      </div>
-      <span class="status-pill ${stockState(product.stock)}">${stockInlineText(product.stock)}</span>
-    </article>
-  `).join('');
-}
-
-function renderFavorites() {
-  const items = favoriteProducts();
-  const grid = document.getElementById('favorites-grid');
-  document.getElementById('favorite-count').textContent = items.length;
-  document.getElementById('hero-favorites').textContent = `${items.length} product${items.length === 1 ? '' : 's'} liked`;
-
-  if (!items.length) {
-    grid.innerHTML = `<div class="inventory-card" style="padding:24px;grid-column:1/-1"><strong>No favorites saved yet.</strong><p class="mini-note" style="margin-top:8px">Tap the heart on any product card to build your shortlist.</p></div>`;
+function renderRecent(){
+  const items=recentProducts();
+  document.getElementById('hero-recent-count').textContent=`${items.length} item${items.length===1?'':'s'}`;
+  const grid=document.getElementById('recent-grid');
+  if(!items.length){
+    grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1"><strong>No recently viewed products yet.</strong><p>Open any product details to build a quick-access history.</p></div>`;
     return;
   }
+  grid.innerHTML=items.map((product)=>`
+    <article class="recent-card panel">
+      <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" width="84" height="84" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
+      <div>
+        <strong>${product.name}</strong>
+        <p>${CATEGORY_LABELS[product.category]} · ${formatPrice(product.price)} · ${stockLabel(product.stock)}</p>
+      </div>
+      <button class="ghost-btn pressable" type="button" data-action="details" data-product-id="${product.id}">View</button>
+    </article>
+  `).join('');
+}
 
-  grid.innerHTML = items.map((product) => `
-    <article class="favorite-card">
+function renderFavorites(){
+  const items=favoriteProducts();
+  document.getElementById('favorite-count').textContent=items.length;
+  document.getElementById('hero-favorites').textContent=`${items.length} saved`;
+  const grid=document.getElementById('favorites-grid');
+  if(!items.length){
+    grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1"><strong>No favorites saved yet.</strong><p>Tap the heart on any product card to keep your regular grocery picks close.</p></div>`;
+    return;
+  }
+  grid.innerHTML=items.map((product)=>`
+    <article class="favorite-card panel">
       <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" width="84" height="84" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
       <div>
         <strong>${product.name}</strong>
         <p>${CATEGORY_LABELS[product.category]} · ${product.unit} · ${formatPrice(product.price)}</p>
       </div>
       <div style="display:grid;gap:8px">
-        <button class="details-btn pressable" type="button" data-action="details" data-product-id="${product.id}">View</button>
+        <button class="ghost-btn pressable" type="button" data-action="details" data-product-id="${product.id}">View</button>
         <button class="remove-btn pressable" type="button" data-action="favorite" data-product-id="${product.id}">Remove</button>
       </div>
     </article>
   `).join('');
 }
 
-function renderSummary() {
-  const productCount = products.length;
-  const categoryCount = new Set(products.map((product) => product.category)).size;
-  const lowCount = products.filter((product) => product.stock < 10).length;
-  const fruitVeg = products.filter((product) => product.category === 'fruit' || product.category === 'veg').length;
-  const dairy = products.filter((product) => product.category === 'dairy' || product.category === 'bakery').length;
-  const treats = products.filter((product) => product.category === 'drink' || product.category === 'snack').length;
-
-  document.getElementById('stat-products').textContent = productCount;
-  document.getElementById('stat-categories').textContent = categoryCount;
-  document.getElementById('stat-low').textContent = lowCount;
-  document.getElementById('summary-fruit').textContent = fruitVeg;
-  document.getElementById('summary-dairy').textContent = dairy;
-  document.getElementById('summary-drink').textContent = treats;
+function renderInventory(){
+  const rows=filteredInventory();
+  document.getElementById('inventory-body').innerHTML=rows.map((product)=>{
+    const stateClass=stockState(product.stock);
+    return `
+      <tr>
+        <td>
+          <div class="inventory-thumb">
+            <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" width="50" height="50" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
+            <div>
+              <strong>${product.name}</strong>
+              <div style="font-size:12px;color:var(--muted)">${product.unit} · ${product.expiry}</div>
+            </div>
+          </div>
+        </td>
+        <td>${CATEGORY_LABELS[product.category]}</td>
+        <td>${formatPrice(product.price)}</td>
+        <td>${product.stock}</td>
+        <td><span class="status-pill ${stateClass}">${stockLabel(product.stock)}</span></td>
+        <td>${product.sku}</td>
+      </tr>
+    `;
+  }).join('');
 }
 
-function renderCart() {
-  const { entries, itemCount, subtotal, delivery, total } = cartTotals();
-  const items = document.getElementById('cart-items');
-  document.getElementById('cart-count').textContent = itemCount;
-  document.getElementById('mobile-cart-count').textContent = itemCount;
-  document.getElementById('cart-items-label').textContent = `${itemCount} item${itemCount === 1 ? '' : 's'} selected`;
-  document.getElementById('cart-subtotal').textContent = formatPrice(subtotal);
-  document.getElementById('cart-delivery').textContent = formatPrice(delivery);
-  document.getElementById('cart-total').textContent = formatPrice(total);
-  document.getElementById('hero-cart-items').textContent = `${itemCount} item${itemCount === 1 ? '' : 's'} saved`;
-  document.getElementById('checkout-btn').disabled = !entries.length;
+function renderLowStock(){
+  document.getElementById('stock-list').innerHTML=lowStockProducts().map((product)=>`
+    <article class="stock-item">
+      <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" width="56" height="56" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
+      <div>
+        <strong>${product.name}</strong>
+        <span style="font-size:12px;color:var(--muted)">${CATEGORY_LABELS[product.category]} · ${product.unit}</span>
+      </div>
+      <span class="status-pill ${stockState(product.stock)}">${stockInline(product.stock)}</span>
+    </article>
+  `).join('');
+}
 
-  if (!entries.length) {
-    items.innerHTML = `<div class="cart-empty"><strong>Your cart is empty.</strong><p class="mini-note" style="margin-top:8px">Add products from the catalog to start an order.</p></div>`;
+function renderOverview(){
+  const fresh=state.catalog.filter((product)=>product.category==='fruit' || product.category==='veg').length;
+  const dairy=state.catalog.filter((product)=>product.category==='dairy' || product.category==='bakery').length;
+  const treats=state.catalog.filter((product)=>product.category==='drink' || product.category==='snack').length;
+  const low=state.catalog.filter((product)=>product.stock<10).length;
+  const avg=(state.catalog.reduce((sum,product)=>sum+getRating(product),0)/Math.max(state.catalog.length,1)).toFixed(1);
+  document.getElementById('stat-products').textContent=state.catalog.length;
+  document.getElementById('stat-categories').textContent=new Set(state.catalog.map((product)=>product.category)).size;
+  document.getElementById('stat-low').textContent=low;
+  document.getElementById('summary-fresh').textContent=fresh;
+  document.getElementById('summary-dairy').textContent=dairy;
+  document.getElementById('summary-treats').textContent=treats;
+  document.getElementById('summary-rated').textContent=avg;
+}
+
+function renderCart(){
+  const info=pricingSummary();
+  document.getElementById('cart-count').textContent=info.itemCount;
+  document.getElementById('mobile-cart-count').textContent=info.itemCount;
+  document.getElementById('hero-cart-items').textContent=`${info.itemCount} item${info.itemCount===1?'':'s'}`;
+  document.getElementById('cart-items-label').textContent=`${info.itemCount} item${info.itemCount===1?'':'s'} selected`;
+  document.getElementById('cart-subtotal').textContent=formatPrice(info.subtotal);
+  document.getElementById('cart-discount').textContent=`-${formatPrice(info.discount)}`;
+  document.getElementById('cart-delivery').textContent=formatPrice(info.delivery);
+  document.getElementById('cart-saved').textContent=formatPrice(info.totalSavings);
+  document.getElementById('cart-total').textContent=formatPrice(info.total);
+  document.getElementById('checkout-btn').disabled=!info.entries.length;
+  document.getElementById('coupon-input').value=state.couponCode;
+  document.getElementById('coupon-status').textContent=info.couponMeta.message || (state.couponCode ? 'Coupon not recognized.' : 'Use SAVE10, FRESH5, or FREESHIP.');
+
+  const container=document.getElementById('cart-items');
+  if(!info.entries.length){
+    container.innerHTML=`<div class="empty-state"><strong>Your cart is empty.</strong><p>Add products from the catalog, then use coupons and checkout options here like a real grocery app.</p></div>`;
     renderCheckoutSummary();
     return;
   }
-
-  items.innerHTML = entries.map((item) => `
+  container.innerHTML=info.entries.map((item)=>`
     <article class="cart-item">
       <img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async" width="64" height="64" style="--img-scale:${item.imageFocus.scale};--img-pos:${item.imageFocus.position};">
       <div>
         <div class="cart-item-top">
           <div>
             <strong>${item.name}</strong>
-            <div class="mini-note">${item.unit}</div>
+            <div style="font-size:12px;color:var(--muted)">${item.unit}</div>
           </div>
           <button class="remove-btn pressable" type="button" data-action="remove-cart" data-product-id="${item.id}">Remove</button>
         </div>
         <div class="qty">
-          <button class="qty-btn pressable" type="button" data-action="qty" data-delta="-1" data-product-id="${item.id}">−</button>
+          <button class="qty-btn pressable" type="button" data-action="qty" data-product-id="${item.id}" data-delta="-1">−</button>
           <span>${item.qty}</span>
-          <button class="qty-btn pressable" type="button" data-action="qty" data-delta="1" data-product-id="${item.id}" ${item.qty >= item.stock ? 'disabled' : ''}>+</button>
-          <span class="mini-note">${stockInlineText(item.stock)}</span>
+          <button class="qty-btn pressable" type="button" data-action="qty" data-product-id="${item.id}" data-delta="1" ${item.qty>=item.stock?'disabled':''}>+</button>
+          <span style="font-size:12px;color:var(--muted)">${stockInline(item.stock)}</span>
         </div>
       </div>
-      <strong style="font-family:'Playfair Display',serif;color:var(--brand)">${formatPrice(item.qty * item.price)}</strong>
+      <strong style="font-family:'Playfair Display',serif;color:var(--brand)">${formatPrice(item.qty*item.price)}</strong>
     </article>
   `).join('');
-
   renderCheckoutSummary();
 }
 
-function renderCheckoutSummary() {
-  const { entries, itemCount, subtotal, total } = cartTotals();
-  document.getElementById('checkout-items-label').textContent = `${itemCount} item${itemCount === 1 ? '' : 's'} selected`;
-  document.getElementById('checkout-subtotal').textContent = formatPrice(subtotal);
-  document.getElementById('checkout-total').textContent = formatPrice(total);
-  const list = document.getElementById('checkout-order-list');
-
-  if (!entries.length) {
-    list.innerHTML = `<div class="empty-state"><strong>No items in cart.</strong><p class="mini-note" style="margin-top:8px">Add products before opening checkout.</p></div>`;
+function renderCheckoutSummary(){
+  const deliveryType=document.getElementById('delivery-type')?.value || state.deliveryType;
+  const info=pricingSummary(deliveryType);
+  document.getElementById('checkout-items-label').textContent=`${info.itemCount} item${info.itemCount===1?'':'s'} selected`;
+  document.getElementById('checkout-subtotal').textContent=formatPrice(info.subtotal);
+  document.getElementById('checkout-discount').textContent=`-${formatPrice(info.discount)}`;
+  document.getElementById('checkout-delivery').textContent=formatPrice(info.delivery);
+  document.getElementById('checkout-saved').textContent=formatPrice(info.totalSavings);
+  document.getElementById('checkout-total').textContent=formatPrice(info.total);
+  const list=document.getElementById('checkout-order-list');
+  if(!info.entries.length){
+    list.innerHTML=`<div class="empty-state"><strong>No items ready for checkout.</strong><p>Add products to your cart to preview the full order summary here.</p></div>`;
     return;
   }
-
-  list.innerHTML = entries.map((item) => `
+  list.innerHTML=info.entries.map((item)=>`
     <div class="order-line">
       <div>
         <strong>${item.name}</strong>
         <small>${item.qty} × ${formatPrice(item.price)}</small>
       </div>
-      <strong>${formatPrice(item.qty * item.price)}</strong>
+      <strong>${formatPrice(item.qty*item.price)}</strong>
     </div>
   `).join('');
 }
 
-function renderProductModal() {
-  const product = getProductById(state.selectedProductId);
-  const card = document.getElementById('product-modal-card');
-  if (!product) {
-    card.innerHTML = '';
-    return;
-  }
-  const stateClass = stockState(product.stock);
-  card.innerHTML = `
+function renderProductModal(){
+  const product=getProductById(state.selectedProductId);
+  const card=document.getElementById('product-modal-card');
+  if(!product){card.innerHTML='';return;}
+  const ratingValue=getRating(product);
+  const reviews=product.reviews.slice(0,3);
+  const priceBreakdown=`${formatPrice(product.price)} each`;
+  card.innerHTML=`
     <div class="section-head" style="margin-bottom:18px">
       <div>
         <h3 style="font-size:30px">${product.name}</h3>
@@ -1699,318 +1494,439 @@ function renderProductModal() {
     </div>
     <div class="product-modal-layout">
       <div class="modal-visual">
-        <img src="${product.image}" alt="${product.name}" loading="eager" decoding="async" width="500" height="500" style="--img-scale:${Math.max(product.imageFocus.scale - 0.02, 1.08)};--img-pos:${product.imageFocus.position};">
+        <img src="${product.image}" alt="${product.name}" loading="eager" decoding="async" width="500" height="500" style="--img-scale:${Math.max(product.imageFocus.scale-.02,1.08)};--img-pos:${product.imageFocus.position};">
       </div>
       <div class="modal-body">
-        <div class="modal-meta">
-          ${product.badge ? `<span class="badge ${product.badge}">${({fresh:'Fresh Pick',sale:'Discount',organic:'Organic',new:'New Arrival',best:'Best Seller'})[product.badge] || product.badge}</span>` : ''}
-          <span class="pill ${stateClass}">${stockText(product.stock)}</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          ${product.badge ? `<span class="badge ${product.badge}">${badgeText(product.badge)}</span>` : ''}
+          <span class="pill ${stockState(product.stock)}">${stockLabel(product.stock)}</span>
         </div>
-        <div class="price">${formatPrice(product.price)}<small>${product.unit}</small></div>
+        <div class="price">${formatPrice(product.price)}<small>${priceBreakdown}</small></div>
+        <div class="product-rating" style="justify-content:flex-start">
+          <span class="star-row"><span class="star">★</span><b>${ratingValue.toFixed(1)}</b> <span>(${getReviewCount(product)} reviews)</span></span>
+        </div>
         <p class="modal-copy">${product.description}</p>
-        <div class="modal-summary">
-          <article class="hero-mini-card"><strong>Stock</strong><span>${product.stock}</span></article>
-          <article class="hero-mini-card"><strong>Expiry</strong><span>${product.expiry}</span></article>
-          <article class="hero-mini-card"><strong>Popularity</strong><span>#${Math.max(1, 101 - product.popularity)}</span></article>
+        <div class="detail-grid">
+          <div class="detail-item"><strong>Unit</strong><span>${product.unit}</span></div>
+          <div class="detail-item"><strong>Stock</strong><span>${product.stock}</span></div>
+          <div class="detail-item"><strong>Est. Expiry</strong><span>${product.expiry}</span></div>
         </div>
-        <div class="modal-action-row">
-          <button class="add-btn pressable" type="button" data-action="add" data-product-id="${product.id}" ${product.stock === 0 ? 'disabled' : ''}>${product.stock === 0 ? 'Sold Out' : 'Add to Cart'}</button>
-          <button class="ghost-btn pressable" type="button" data-action="favorite" data-product-id="${product.id}">${isFavorite(product.id) ? 'Remove Favorite' : 'Save to Favorites'}</button>
+        <div class="detail-item">
+          <strong>Rate This Product</strong>
+          <div class="rating-actions" style="margin-top:10px">
+            ${[1,2,3,4,5].map((star)=>`<button class="star-btn pressable" type="button" data-action="rate" data-product-id="${product.id}" data-value="${star}">${star<=Math.round(ratingValue)?'★':'☆'}</button>`).join('')}
+            <span style="font-size:13px;color:var(--muted)">Tap a star to add your rating.</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="add-btn pressable" type="button" data-action="add" data-product-id="${product.id}" ${product.stock===0?'disabled':''}>${product.stock===0?'Sold Out':'Add to Cart'}</button>
+          <button class="ghost-btn pressable" type="button" data-action="favorite" data-product-id="${product.id}">${isFavorite(product.id)?'Remove Favorite':'Save to Favorites'}</button>
+        </div>
+        <div>
+          <strong style="display:block;margin-bottom:10px">Customer Reviews</strong>
+          <div class="reviews">
+            ${reviews.map((review)=>`
+              <article class="review">
+                <strong>${review.name} · ${'★'.repeat(review.rating)}</strong>
+                <p>${review.text}</p>
+              </article>
+            `).join('')}
+          </div>
         </div>
       </div>
     </div>
   `;
 }
 
-function renderAll() {
-  renderSummary();
+function renderAdmin(){
+  const grid=document.getElementById('admin-grid');
+  const items=[...state.catalog].sort((a,b)=>b.createdAt-a.createdAt).slice(0,9);
+  grid.innerHTML=items.map((product)=>`
+    <article class="admin-item panel">
+      <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" width="72" height="72" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
+      <div>
+        <strong>${product.name}</strong>
+        <p>${CATEGORY_LABELS[product.category]} · ${formatPrice(product.price)} · ${product.stock} units · ${product.custom?'Custom':'Catalog'}</p>
+      </div>
+      <div class="admin-actions">
+        <button class="ghost-btn pressable" type="button" data-action="edit-admin" data-product-id="${product.id}">Edit</button>
+        <button class="remove-btn pressable" type="button" data-action="delete-admin" data-product-id="${product.id}">Delete</button>
+      </div>
+    </article>
+  `).join('');
+}
+
+function renderSuggestions(){
+  const box=document.getElementById('search-suggestions');
+  const term=state.shopSearch.trim().toLowerCase();
+  if(!term){box.classList.remove('open');box.innerHTML='';return;}
+  const suggestions=state.catalog.filter((product)=>{
+    const haystack=`${product.name} ${product.sku} ${CATEGORY_LABELS[product.category]}`.toLowerCase();
+    return haystack.includes(term);
+  }).slice(0,5);
+  if(!suggestions.length){box.classList.remove('open');box.innerHTML='';return;}
+  box.classList.add('open');
+  box.innerHTML=suggestions.map((product)=>`
+    <button class="suggestion-item pressable" type="button" data-action="suggestion" data-product-id="${product.id}">
+      <img src="${product.image}" alt="${product.name}" width="42" height="42" style="--img-scale:${product.imageFocus.scale};--img-pos:${product.imageFocus.position};">
+      <div style="text-align:left">
+        <strong>${product.name}</strong>
+        <span>${CATEGORY_LABELS[product.category]} · ${formatPrice(product.price)}</span>
+      </div>
+    </button>
+  `).join('');
+}
+
+function renderAll(){
+  renderOverview();
   renderDeals();
   renderProducts();
+  renderRecent();
+  renderFavorites();
   renderInventory();
   renderLowStock();
-  renderFavorites();
   renderCart();
   renderProductModal();
+  renderAdmin();
+  renderSuggestions();
 }
 
-function showOverlay(id, open) {
-  const overlay = document.getElementById(id);
-  overlay.classList.toggle('open', open);
-  overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+function toggleOverlay(id,open){
+  const overlay=document.getElementById(id);
+  overlay.classList.toggle('open',open);
+  overlay.setAttribute('aria-hidden',open?'false':'true');
 }
-
-function toggleCart(forceOpen) {
-  const overlay = document.getElementById('cart-overlay');
-  const open = typeof forceOpen === 'boolean' ? forceOpen : !overlay.classList.contains('open');
-  showOverlay('cart-overlay', open);
+function toggleCart(forceOpen){
+  const open=typeof forceOpen==='boolean'?forceOpen:!document.getElementById('cart-overlay').classList.contains('open');
+  toggleOverlay('cart-overlay',open);
 }
-
-function openProductModal(id) {
-  state.selectedProductId = Number(id);
-  renderProductModal();
-  showOverlay('product-modal-overlay', true);
-}
-
-function closeProductModal() {
-  state.selectedProductId = null;
-  showOverlay('product-modal-overlay', false);
-}
-
-function openCheckout() {
-  const { entries } = cartTotals();
-  if (!entries.length) {
-    showToast('Add items to the cart first', 'warn');
-    return;
-  }
+function openCheckout(){
+  if(!pricingSummary().entries.length){showToast('Add items to the cart first','warn');return;}
   renderCheckoutSummary();
-  showOverlay('checkout-modal-overlay', true);
+  toggleOverlay('checkout-overlay',true);
 }
-
-function closeCheckout() {
-  showOverlay('checkout-modal-overlay', false);
-}
-
-function showToast(message, type = 'success') {
-  const stack = document.getElementById('toast-stack');
-  const toast = document.createElement('div');
-  toast.className = `toast ${type}`;
-  toast.innerHTML = `<span>${message}</span><button class="pressable" type="button" aria-label="Dismiss notification" style="color:inherit;cursor:pointer">✕</button>`;
-  stack.appendChild(toast);
-  const remove = () => {
-    toast.style.opacity = '0';
-    toast.style.transform = 'translateY(10px)';
-    setTimeout(() => toast.remove(), 180);
-  };
-  toast.querySelector('button').addEventListener('click', remove);
-  setTimeout(remove, 2400);
-}
-
-function bumpCartUI() {
-  document.querySelectorAll('.cart-btn, .mobile-bottom-btn#open-cart-mobile').forEach((el) => {
-    el.classList.remove('cart-bump');
-    void el.offsetWidth;
-    el.classList.add('cart-bump');
-  });
-}
-
-function animateToCart(productId, triggerEl) {
-  const product = getProductById(productId);
-  const cartTarget = document.getElementById('open-cart');
-  if (!product || !triggerEl || !cartTarget) return;
-  const source = triggerEl.closest('.product-card, .favorite-card, .modal-card')?.querySelector('img');
-  if (!source) return;
-  const sourceRect = source.getBoundingClientRect();
-  const targetRect = cartTarget.getBoundingClientRect();
-  const thumb = document.createElement('img');
-  thumb.src = product.image;
-  thumb.alt = '';
-  thumb.className = 'flying-thumb';
-  thumb.style.left = `${sourceRect.left}px`;
-  thumb.style.top = `${sourceRect.top}px`;
-  thumb.style.setProperty('--fly-x', `${targetRect.left - sourceRect.left + 20}px`);
-  thumb.style.setProperty('--fly-y', `${targetRect.top - sourceRect.top}px`);
-  document.body.appendChild(thumb);
-  setTimeout(() => thumb.remove(), 700);
-}
-
-function addToCart(id, triggerEl) {
-  const product = getProductById(id);
-  if (!product || product.stock === 0) return;
-  const existing = state.cart.find((item) => item.id === product.id);
-  if (existing) {
-    if (existing.qty >= product.stock) {
-      showToast(`Only ${product.stock} available for ${product.name}`, 'warn');
-      return;
-    }
-    existing.qty += 1;
+function closeCheckout(){toggleOverlay('checkout-overlay',false);}
+function openProductModal(id){
+  state.selectedProductId=String(id);
+  if(!state.recent.includes(String(id))){
+    state.recent.unshift(String(id));
   } else {
-    state.cart.push({ id: product.id, qty: 1 });
+    state.recent=[String(id), ...state.recent.filter((item)=>item!==String(id))];
+  }
+  state.recent=state.recent.slice(0,6);
+  persistRecent();
+  renderRecent();
+  renderProductModal();
+  toggleOverlay('product-modal-overlay',true);
+}
+function closeProductModal(){
+  state.selectedProductId=null;
+  toggleOverlay('product-modal-overlay',false);
+}
+
+function showToast(message,type='success'){
+  const stack=document.getElementById('toast-stack');
+  const toast=document.createElement('div');
+  toast.className=`toast ${type}`;
+  toast.innerHTML=`<span>${message}</span><button class="pressable" type="button" style="color:inherit;cursor:pointer">✕</button>`;
+  stack.appendChild(toast);
+  const remove=()=>{toast.style.opacity='0';toast.style.transform='translateY(8px)';setTimeout(()=>toast.remove(),180);};
+  toast.querySelector('button').addEventListener('click',remove);
+  setTimeout(remove,2400);
+}
+function bumpCartUI(){
+  document.querySelectorAll('.cart-btn,#open-cart-mobile').forEach((el)=>{el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump');});
+}
+function animateToCart(productId,trigger){
+  const product=getProductById(productId);
+  const target=document.getElementById('open-cart');
+  const source=trigger?.closest('.product-card,.favorite-card,.modal-card,.recent-card')?.querySelector('img');
+  if(!product || !target || !source) return;
+  const sr=source.getBoundingClientRect();
+  const tr=target.getBoundingClientRect();
+  const thumb=document.createElement('img');
+  thumb.src=product.image;
+  thumb.alt='';
+  thumb.className='flying-thumb';
+  thumb.style.left=`${sr.left}px`;
+  thumb.style.top=`${sr.top}px`;
+  thumb.style.setProperty('--fx',`${tr.left-sr.left+18}px`);
+  thumb.style.setProperty('--fy',`${tr.top-sr.top}px`);
+  document.body.appendChild(thumb);
+  setTimeout(()=>thumb.remove(),700);
+}
+
+function addToCart(id,trigger){
+  const product=getProductById(id);
+  if(!product || product.stock===0) return;
+  const existing=state.cart.find((entry)=>entry.id===String(id));
+  if(existing){
+    if(existing.qty>=product.stock){showToast(`Only ${product.stock} available for ${product.name}`,'warn');return;}
+    existing.qty+=1;
+  } else {
+    state.cart.push({id:String(id),qty:1});
   }
   persistCart();
   renderCart();
   bumpCartUI();
-  animateToCart(product.id, triggerEl);
-  const card = document.querySelector(`[data-product-id="${id}"]`);
-  if (card) {
-    card.classList.remove('card-pop');
-    void card.offsetWidth;
-    card.classList.add('card-pop');
-  }
-  showToast(`${product.name} added to cart`, 'success');
+  animateToCart(id,trigger);
+  const card=document.querySelector(`[data-product-id="${id}"]`);
+  if(card){card.classList.remove('flash');void card.offsetWidth;card.classList.add('flash');}
+  showToast(`${product.name} added to cart`,'success');
 }
-
-function updateQty(id, delta) {
-  const product = getProductById(id);
-  const item = state.cart.find((entry) => entry.id === Number(id));
-  if (!product || !item) return;
-  const nextQty = Math.max(0, Math.min(product.stock, item.qty + Number(delta)));
-  if (nextQty === 0) {
-    removeFromCart(id, false);
-    return;
-  }
-  item.qty = nextQty;
+function updateQty(id,delta){
+  const product=getProductById(id);
+  const entry=state.cart.find((item)=>item.id===String(id));
+  if(!product || !entry) return;
+  const next=Math.max(0,Math.min(product.stock,entry.qty+Number(delta)));
+  if(next===0){removeFromCart(id,false);return;}
+  entry.qty=next;
   persistCart();
   renderCart();
 }
-
-function removeFromCart(id, notify = true) {
-  const product = getProductById(id);
-  state.cart = state.cart.filter((item) => item.id !== Number(id));
+function removeFromCart(id,notify=true){
+  const product=getProductById(id);
+  state.cart=state.cart.filter((item)=>item.id!==String(id));
   persistCart();
   renderCart();
-  if (notify && product) showToast(`${product.name} removed from cart`, 'info');
+  if(notify && product) showToast(`${product.name} removed from cart`,'info');
 }
-
-function toggleFavorite(id) {
-  const product = getProductById(id);
-  if (!product) return;
-  if (isFavorite(id)) {
-    state.favorites = state.favorites.filter((favoriteId) => favoriteId !== Number(id));
-    showToast(`${product.name} removed from favorites`, 'info');
+function toggleFavorite(id){
+  const product=getProductById(id);
+  if(!product) return;
+  if(isFavorite(id)){
+    state.favorites=state.favorites.filter((item)=>item!==String(id));
+    showToast(`${product.name} removed from favorites`,'info');
   } else {
-    state.favorites.unshift(Number(id));
-    showToast(`${product.name} saved to favorites`, 'success');
+    state.favorites.unshift(String(id));
+    showToast(`${product.name} saved to favorites`,'success');
   }
   persistFavorites();
-  renderProducts();
   renderFavorites();
+  renderProducts();
   renderProductModal();
 }
+function applyCoupon(){
+  state.couponCode=document.getElementById('coupon-input').value.trim().toUpperCase();
+  persistCoupon();
+  renderCart();
+}
+function rateProduct(id,value){
+  if(!state.ratings[String(id)]) state.ratings[String(id)]=[];
+  state.ratings[String(id)].push(Number(value));
+  persistRatings();
+  renderAll();
+  showToast('Thanks for rating this product','success');
+}
 
-function syncShopSearch(value) {
-  state.shopSearch = value.trim().toLowerCase();
-  const desktop = document.getElementById('shop-search');
-  const mobile = document.getElementById('shop-search-mobile');
-  if (desktop.value !== value) desktop.value = value;
-  if (mobile.value !== value) mobile.value = value;
+function goToSection(targetSelector){
+  document.querySelectorAll('.nav-link').forEach((link)=>link.classList.toggle('active',link.dataset.target===targetSelector));
+  document.querySelectorAll('.mobile-bottom-btn[data-target]').forEach((button)=>button.classList.toggle('active',button.dataset.target===targetSelector));
+  document.querySelector('.nav').classList.remove('open');
+  document.getElementById('mobile-menu-toggle').setAttribute('aria-expanded','false');
+  document.querySelector(targetSelector)?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function syncSearch(value){
+  state.shopSearch=value.trim();
+  const desktop=document.getElementById('shop-search');
+  const mobile=document.getElementById('shop-search-mobile');
+  if(desktop.value!==value) desktop.value=value;
+  if(mobile.value!==value) mobile.value=value;
+  renderSuggestions();
   renderProducts();
 }
 
-function setActiveNav(targetSelector) {
-  document.querySelectorAll('.nav-link').forEach((link) => link.classList.toggle('active', link.dataset.target === targetSelector));
-  document.querySelectorAll('.mobile-bottom-btn[data-target]').forEach((button) => button.classList.toggle('active', button.dataset.target === targetSelector));
+function prepareAdminForm(product){
+  document.getElementById('admin-product-id').value=product?.id || '';
+  document.getElementById('admin-name').value=product?.name || '';
+  document.getElementById('admin-category').value=product?.category || 'fruit';
+  document.getElementById('admin-price').value=product?.price ?? '';
+  document.getElementById('admin-unit').value=product?.unit || '';
+  document.getElementById('admin-stock').value=product?.stock ?? '';
+  document.getElementById('admin-image').value=product?.custom ? product.image : '';
+  document.getElementById('admin-description').value=product?.description || '';
+  document.getElementById('admin-save-btn').textContent=product ? 'Update Product' : 'Add Product';
+  state.editingProductId=product?.id || null;
 }
-
-function goToSection(targetSelector) {
-  setActiveNav(targetSelector);
-  const target = document.querySelector(targetSelector);
-  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  document.querySelector('.nav').classList.remove('open');
-  document.getElementById('mobile-menu-toggle').setAttribute('aria-expanded', 'false');
+function resetAdminForm(){prepareAdminForm(null);}
+function deleteProduct(id){
+  const product=getProductById(id);
+  if(!product) return;
+  state.catalog=state.catalog.filter((item)=>item.id!==String(id));
+  state.cart=state.cart.filter((item)=>item.id!==String(id));
+  state.favorites=state.favorites.filter((item)=>item!==String(id));
+  state.recent=state.recent.filter((item)=>item!==String(id));
+  delete state.ratings[String(id)];
+  persistCatalog();persistCart();persistFavorites();persistRecent();persistRatings();
+  renderAll();
+  resetAdminForm();
+  showToast(`${product.name} deleted from catalog`,'info');
 }
-
-function handleGlobalAction(event) {
-  const button = event.target.closest('[data-action]');
-  if (!button) return;
-  const { action, productId, delta } = button.dataset;
-  if (action === 'add') addToCart(productId, button);
-  if (action === 'details') openProductModal(productId);
-  if (action === 'favorite') toggleFavorite(productId);
-  if (action === 'qty') updateQty(productId, delta);
-  if (action === 'remove-cart') removeFromCart(productId);
-  if (action === 'close-product') closeProductModal();
-}
-
-function handleCheckoutSubmit(event) {
+function saveAdminProduct(event){
   event.preventDefault();
-  const { entries, itemCount } = cartTotals();
-  if (!entries.length) {
-    showToast('Your cart is empty', 'warn');
-    return;
+  const id=document.getElementById('admin-product-id').value || uid();
+  const name=document.getElementById('admin-name').value.trim();
+  const category=document.getElementById('admin-category').value;
+  const price=Number(document.getElementById('admin-price').value);
+  const unit=document.getElementById('admin-unit').value.trim();
+  const stock=Math.max(0,Number(document.getElementById('admin-stock').value));
+  const imageInput=document.getElementById('admin-image').value.trim();
+  const description=document.getElementById('admin-description').value.trim();
+  if(!name || !unit || Number.isNaN(price) || price<0){showToast('Please complete the admin form correctly','warn');return;}
+  const existing=getProductById(id);
+  const nextProduct={
+    id,
+    sku:existing?.sku || uid(),
+    file:existing?.file || name,
+    name,
+    category,
+    unit,
+    price:Number(price.toFixed(2)),
+    stock,
+    badge:stock===0?'sale':stock<10?'sale':'',
+    expiry:existing?.expiry || 'Fresh Stock',
+    image:imageInput || existing?.image || imageUrl(PRODUCT_FILES[0]),
+    imageFocus:existing?.imageFocus || {scale:1.1,position:'center'},
+    ratingBase:existing?.ratingBase || 4.2,
+    reviewCount:existing?.reviewCount || 8,
+    popularity:existing?.popularity || 88,
+    trendingScore:existing?.trendingScore || 94,
+    description:description || defaultDescription({category,unit,stock}),
+    reviews:existing?.reviews || MOCK_REVIEWS,
+    createdAt:existing?.createdAt || Date.now(),
+    custom:true
+  };
+  if(existing){
+    state.catalog=state.catalog.map((item)=>item.id===id?nextProduct:item);
+    showToast(`${name} updated successfully`,'success');
+  } else {
+    state.catalog.unshift(nextProduct);
+    showToast(`${name} added to catalog`,'success');
   }
-  const form = new FormData(event.currentTarget);
-  const name = String(form.get('name') || '').trim();
-  const address = String(form.get('address') || '').trim();
-  const phone = String(form.get('phone') || '').trim();
-  if (!name || !address || !phone) {
-    showToast('Please complete all checkout fields', 'warn');
-    return;
-  }
-  state.cart = [];
-  persistCart();
-  renderCart();
-  closeCheckout();
-  toggleCart(false);
-  event.currentTarget.reset();
-  showToast(`Order placed for ${name} with ${itemCount} item${itemCount === 1 ? '' : 's'}`, 'success');
+  persistCatalog();
+  renderAll();
+  resetAdminForm();
 }
 
-function bindEvents() {
-  document.addEventListener('click', handleGlobalAction);
+function handleGlobalAction(event){
+  const button=event.target.closest('[data-action]');
+  if(!button) return;
+  const {action,productId,delta,value}=button.dataset;
+  if(action==='add') addToCart(productId,button);
+  if(action==='details') openProductModal(productId);
+  if(action==='favorite') toggleFavorite(productId);
+  if(action==='qty') updateQty(productId,delta);
+  if(action==='remove-cart') removeFromCart(productId);
+  if(action==='close-product') closeProductModal();
+  if(action==='rate') rateProduct(productId,value);
+  if(action==='suggestion'){closeSuggestions();openProductModal(productId);}
+  if(action==='edit-admin'){prepareAdminForm(getProductById(productId));goToSection('#admin');}
+  if(action==='delete-admin') deleteProduct(productId);
+}
+function closeSuggestions(){document.getElementById('search-suggestions').classList.remove('open');}
 
-  document.getElementById('shop-search').addEventListener('input', (event) => syncShopSearch(event.target.value));
-  document.getElementById('shop-search-mobile').addEventListener('input', (event) => syncShopSearch(event.target.value));
-  document.getElementById('inventory-search').addEventListener('input', (event) => {
-    state.inventorySearch = event.target.value.trim().toLowerCase();
-    renderInventory();
-  });
-  document.getElementById('sort-select').addEventListener('change', (event) => {
-    state.sortOrder = event.target.value;
-    renderProducts();
-  });
-  document.getElementById('category-filters').addEventListener('click', (event) => {
-    const button = event.target.closest('[data-category]');
-    if (!button) return;
-    state.activeCategory = button.dataset.category;
-    document.querySelectorAll('#category-filters .chip').forEach((chip) => chip.classList.remove('active'));
+function bindEvents(){
+  document.addEventListener('click',handleGlobalAction);
+
+  document.getElementById('shop-search').addEventListener('input',(event)=>syncSearch(event.target.value));
+  document.getElementById('shop-search-mobile').addEventListener('input',(event)=>syncSearch(event.target.value));
+  document.getElementById('inventory-search').addEventListener('input',(event)=>{state.inventorySearch=event.target.value.trim();renderInventory();});
+  document.getElementById('sort-select').addEventListener('change',(event)=>{state.sortOrder=event.target.value;renderProducts();});
+  document.getElementById('category-filters').addEventListener('click',(event)=>{
+    const button=event.target.closest('[data-category]');
+    if(!button) return;
+    state.activeCategory=button.dataset.category;
+    document.querySelectorAll('#category-filters .chip').forEach((chip)=>chip.classList.remove('active'));
     button.classList.add('active');
     renderProducts();
   });
-  document.querySelector('.inventory-toolbar').addEventListener('click', (event) => {
-    const button = event.target.closest('[data-stock-filter]');
-    if (!button) return;
-    state.inventoryFilter = button.dataset.stockFilter;
-    document.querySelectorAll('[data-stock-filter]').forEach((chip) => chip.classList.remove('active'));
+  document.querySelector('.inventory-toolbar').addEventListener('click',(event)=>{
+    const button=event.target.closest('[data-stock-filter]');
+    if(!button) return;
+    state.inventoryFilter=button.dataset.stockFilter;
+    document.querySelectorAll('[data-stock-filter]').forEach((chip)=>chip.classList.remove('active'));
     button.classList.add('active');
     renderInventory();
   });
 
-  document.querySelectorAll('.nav-link').forEach((button) => button.addEventListener('click', () => goToSection(button.dataset.target)));
-  document.querySelectorAll('.mobile-bottom-btn[data-target]').forEach((button) => button.addEventListener('click', () => goToSection(button.dataset.target)));
-  document.getElementById('favorites-open-shop').addEventListener('click', () => goToSection('#shop'));
-  document.getElementById('open-favorites-top').addEventListener('click', () => goToSection('#favorites'));
+  document.querySelectorAll('.nav-link').forEach((button)=>button.addEventListener('click',()=>goToSection(button.dataset.target)));
+  document.querySelectorAll('.mobile-bottom-btn[data-target]').forEach((button)=>button.addEventListener('click',()=>goToSection(button.dataset.target)));
+  document.getElementById('favorites-open-shop').addEventListener('click',()=>goToSection('#shop'));
+  document.getElementById('open-favorites-top').addEventListener('click',()=>goToSection('#favorites'));
 
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  mobileMenuToggle.addEventListener('click', () => {
-    const nav = document.querySelector('.nav');
+  const mobileToggle=document.getElementById('mobile-menu-toggle');
+  mobileToggle.addEventListener('click',()=>{
+    const nav=document.querySelector('.nav');
     nav.classList.toggle('open');
-    mobileMenuToggle.setAttribute('aria-expanded', nav.classList.contains('open') ? 'true' : 'false');
+    mobileToggle.setAttribute('aria-expanded',nav.classList.contains('open')?'true':'false');
   });
 
-  document.getElementById('theme-toggle').addEventListener('click', () => {
-    setTheme(document.body.classList.contains('dark-mode') ? 'light' : 'dark');
+  document.getElementById('theme-toggle').addEventListener('click',()=>setTheme(document.body.classList.contains('dark-mode')?'light':'dark'));
+  document.getElementById('open-cart').addEventListener('click',()=>toggleCart(true));
+  document.getElementById('open-cart-mobile').addEventListener('click',()=>toggleCart(true));
+  document.getElementById('close-cart').addEventListener('click',()=>toggleCart(false));
+  document.getElementById('checkout-btn').addEventListener('click',openCheckout);
+  document.getElementById('hero-open-checkout').addEventListener('click',openCheckout);
+  document.getElementById('close-checkout').addEventListener('click',closeCheckout);
+  document.getElementById('apply-coupon').addEventListener('click',applyCoupon);
+  document.getElementById('coupon-input').addEventListener('keydown',(event)=>{if(event.key==='Enter'){event.preventDefault();applyCoupon();}});
+  document.getElementById('checkout-form').addEventListener('submit',(event)=>{
+    event.preventDefault();
+    const info=pricingSummary(document.getElementById('delivery-type').value);
+    if(!info.entries.length){showToast('Your cart is empty','warn');return;}
+    const form=new FormData(event.currentTarget);
+    const name=String(form.get('name') || '').trim();
+    const address=String(form.get('address') || '').trim();
+    const phone=String(form.get('phone') || '').trim();
+    const slot=String(form.get('slot') || '');
+    const deliveryType=String(form.get('deliveryType') || 'standard');
+    if(!name || !address || !phone){showToast('Please complete all checkout fields','warn');return;}
+    state.deliveryType=deliveryType;
+    state.cart=[];
+    persistCart();
+    renderCart();
+    event.currentTarget.reset();
+    closeCheckout();
+    toggleCart(false);
+    showToast(`Order placed for ${name} • ${deliveryType} • ${slot}`,'success');
   });
+  document.getElementById('delivery-type').addEventListener('change',(event)=>{state.deliveryType=event.target.value;renderCheckoutSummary();});
+  document.getElementById('admin-form').addEventListener('submit',saveAdminProduct);
+  document.getElementById('admin-reset-btn').addEventListener('click',resetAdminForm);
 
-  document.getElementById('open-cart').addEventListener('click', () => toggleCart(true));
-  document.getElementById('open-cart-mobile').addEventListener('click', () => toggleCart(true));
-  document.getElementById('close-cart').addEventListener('click', () => toggleCart(false));
-  document.getElementById('checkout-btn').addEventListener('click', openCheckout);
-  document.getElementById('hero-open-checkout').addEventListener('click', openCheckout);
-  document.getElementById('close-checkout').addEventListener('click', closeCheckout);
-  document.getElementById('checkout-form').addEventListener('submit', handleCheckoutSubmit);
-
-  ['cart-overlay', 'product-modal-overlay', 'checkout-modal-overlay'].forEach((id) => {
-    document.getElementById(id).addEventListener('click', (event) => {
-      if (event.target.id !== id) return;
-      if (id === 'cart-overlay') toggleCart(false);
-      if (id === 'product-modal-overlay') closeProductModal();
-      if (id === 'checkout-modal-overlay') closeCheckout();
+  ['cart-overlay','product-modal-overlay','checkout-overlay'].forEach((id)=>{
+    document.getElementById(id).addEventListener('click',(event)=>{
+      if(event.target.id!==id) return;
+      if(id==='cart-overlay') toggleCart(false);
+      if(id==='product-modal-overlay') closeProductModal();
+      if(id==='checkout-overlay') closeCheckout();
     });
   });
 
-  document.addEventListener('keydown', (event) => {
-    if (event.key !== 'Escape') return;
+  document.addEventListener('click',(event)=>{
+    const searchShell=document.querySelector('.search-shell');
+    if(searchShell && !searchShell.contains(event.target)) closeSuggestions();
+  });
+  document.addEventListener('keydown',(event)=>{
+    if(event.key!=='Escape') return;
     toggleCart(false);
     closeProductModal();
     closeCheckout();
+    closeSuggestions();
   });
 }
 
-hydrateCart();
+hydrateState();
 loadTheme();
 bindEvents();
 renderAll();
+resetAdminForm();
 renderCheckoutSummary();
+setTimeout(()=>{
+  state.hasLoadedProducts=true;
+  renderProducts();
+},550);
 </script>
 </body>
 </html>
