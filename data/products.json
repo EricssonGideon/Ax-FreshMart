@@ -1,0 +1,3036 @@
+[
+  {
+    "id": "1",
+    "sku": "FM-001",
+    "file": "Aged Cheddar.jpg",
+    "name": "Aged Cheddar",
+    "category": "dairy",
+    "unit": "200g block",
+    "price": 3.8,
+    "stock": 5,
+    "badge": "new",
+    "expiry": "Apr 26",
+    "image": "images/Aged%20Cheddar.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4,
+    "reviewCount": 18,
+    "popularity": 120,
+    "trendingScore": 174,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 200g block and matched with dairy. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776588802860,
+    "custom": false
+  },
+  {
+    "id": "2",
+    "sku": "FM-002",
+    "file": "Anchor-MilkPowder-1kg.jpg",
+    "name": "Anchor Milkpowder",
+    "category": "dairy",
+    "unit": "1 kg pack",
+    "price": 5.73,
+    "stock": 12,
+    "badge": "",
+    "expiry": "Apr 28",
+    "image": "images/Anchor-MilkPowder-1kg.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.1,
+    "reviewCount": 27,
+    "popularity": 111,
+    "trendingScore": 160.2,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 kg pack and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776585202860,
+    "custom": false
+  },
+  {
+    "id": "3",
+    "sku": "FM-003",
+    "file": "Anchor-MilkPowder-200g.jpeg",
+    "name": "Anchor Milkpowder",
+    "category": "dairy",
+    "unit": "200g pack",
+    "price": 4.26,
+    "stock": 19,
+    "badge": "",
+    "expiry": "May 02",
+    "image": "images/Anchor-MilkPowder-200g.jpeg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.2,
+    "reviewCount": 36,
+    "popularity": 110,
+    "trendingScore": 160.4,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 200g pack and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776581602860,
+    "custom": false
+  },
+  {
+    "id": "4",
+    "sku": "FM-004",
+    "file": "Anchor-MilkPowder-400g.webp",
+    "name": "Anchor Milkpowder",
+    "category": "dairy",
+    "unit": "400g pack",
+    "price": 4.99,
+    "stock": 26,
+    "badge": "",
+    "expiry": "May 04",
+    "image": "images/Anchor-MilkPowder-400g.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.4,
+    "reviewCount": 45,
+    "popularity": 109,
+    "trendingScore": 161.8,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 400g pack and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776578002860,
+    "custom": false
+  },
+  {
+    "id": "5",
+    "sku": "FM-005",
+    "file": "Baby Carrots.jpg",
+    "name": "Baby Carrots",
+    "category": "veg",
+    "unit": "500g pack",
+    "price": 2.4,
+    "stock": 8,
+    "badge": "fresh",
+    "expiry": "Apr 20",
+    "image": "images/Baby%20Carrots.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.5,
+    "reviewCount": 54,
+    "popularity": 122,
+    "trendingScore": 182,
+    "description": "Daily vegetables for home cooking and kitchen staples. Packed as 500g pack and matched with vegetables. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776574402860,
+    "custom": false
+  },
+  {
+    "id": "6",
+    "sku": "FM-006",
+    "file": "Broccoli Crown.webp",
+    "name": "Broccoli Crown",
+    "category": "veg",
+    "unit": "1 crown",
+    "price": 2.9,
+    "stock": 15,
+    "badge": "fresh",
+    "expiry": "Apr 21",
+    "image": "images/Broccoli%20Crown.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.6,
+    "reviewCount": 63,
+    "popularity": 121,
+    "trendingScore": 176.2,
+    "description": "Daily vegetables for home cooking and kitchen staples. Packed as 1 crown and matched with vegetables. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776570802861,
+    "custom": false
+  },
+  {
+    "id": "7",
+    "sku": "FM-007",
+    "file": "Butter Croissants.jpg",
+    "name": "Butter Croissants",
+    "category": "bakery",
+    "unit": "4 pack",
+    "price": 3.6,
+    "stock": 9,
+    "badge": "best",
+    "expiry": "Apr 21",
+    "image": "images/Butter%20Croissants.jpg",
+    "imageFocus": {
+      "scale": 1.22,
+      "position": "center"
+    },
+    "ratingBase": 4.7,
+    "reviewCount": 72,
+    "popularity": 114,
+    "trendingScore": 176.4,
+    "description": "Fresh bakery products suited for fast-moving daily orders. Packed as 4 pack and matched with bakery. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776567202861,
+    "custom": false
+  },
+  {
+    "id": "8",
+    "sku": "FM-008",
+    "file": "Cavendish Bananas.jpeg",
+    "name": "Cavendish Bananas",
+    "category": "fruit",
+    "unit": "1 kg",
+    "price": 2.3,
+    "stock": 29,
+    "badge": "fresh",
+    "expiry": "Apr 24",
+    "image": "images/Cavendish%20Bananas.jpeg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4,
+    "reviewCount": 81,
+    "popularity": 111,
+    "trendingScore": 159,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as 1 kg and matched with fruits. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776563602861,
+    "custom": false
+  },
+  {
+    "id": "9",
+    "sku": "FM-009",
+    "file": "Cherry Tomatoes.webp",
+    "name": "Cherry Tomatoes",
+    "category": "veg",
+    "unit": "250g punnet",
+    "price": 2.5,
+    "stock": 8,
+    "badge": "fresh",
+    "expiry": "Apr 20",
+    "image": "images/Cherry%20Tomatoes.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.1,
+    "reviewCount": 18,
+    "popularity": 118,
+    "trendingScore": 173.2,
+    "description": "Daily vegetables for home cooking and kitchen staples. Packed as 250g punnet and matched with vegetables. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776560002861,
+    "custom": false
+  },
+  {
+    "id": "10",
+    "sku": "FM-010",
+    "file": "ChocoIce-1litter.png",
+    "name": "Chocoice",
+    "category": "dairy",
+    "unit": "1 litre",
+    "price": 5.49,
+    "stock": 12,
+    "badge": "new",
+    "expiry": "Apr 28",
+    "image": "images/ChocoIce-1litter.png",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.2,
+    "reviewCount": 27,
+    "popularity": 103,
+    "trendingScore": 153.4,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 litre and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776556402861,
+    "custom": false
+  },
+  {
+    "id": "11",
+    "sku": "FM-011",
+    "file": "CocaCola-1litter.jpg",
+    "name": "Coca-Cola",
+    "category": "drink",
+    "unit": "1 litre",
+    "price": 4.82,
+    "stock": 19,
+    "badge": "",
+    "expiry": "Jun 02",
+    "image": "images/CocaCola-1litter.jpg",
+    "imageFocus": {
+      "scale": 1.18,
+      "position": "center top"
+    },
+    "ratingBase": 4.4,
+    "reviewCount": 36,
+    "popularity": 102,
+    "trendingScore": 154.8,
+    "description": "Refreshing beverages for meals, gatherings, and quick hydration. Packed as 1 litre and matched with drinks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776552802861,
+    "custom": false
+  },
+  {
+    "id": "12",
+    "sku": "FM-012",
+    "file": "Dairymilk_chocho.jpg",
+    "name": "Dairy Milk Chocolate",
+    "category": "snack",
+    "unit": "1 pack",
+    "price": 3.35,
+    "stock": 26,
+    "badge": "",
+    "expiry": "Jul 21",
+    "image": "images/Dairymilk_chocho.jpg",
+    "imageFocus": {
+      "scale": 1.2,
+      "position": "center"
+    },
+    "ratingBase": 4.5,
+    "reviewCount": 45,
+    "popularity": 101,
+    "trendingScore": 155,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 1 pack and matched with snacks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776549202861,
+    "custom": false
+  },
+  {
+    "id": "13",
+    "sku": "FM-013",
+    "file": "Dragonfruit.jpg",
+    "name": "Dragonfruit",
+    "category": "fruit",
+    "unit": "each",
+    "price": 2.8,
+    "stock": 4,
+    "badge": "fresh",
+    "expiry": "Apr 21",
+    "image": "images/Dragonfruit.jpg",
+    "imageFocus": {
+      "scale": 1.18,
+      "position": "center"
+    },
+    "ratingBase": 4.6,
+    "reviewCount": 54,
+    "popularity": 106,
+    "trendingScore": 167.2,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as each and matched with fruits. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776545602861,
+    "custom": false
+  },
+  {
+    "id": "14",
+    "sku": "FM-014",
+    "file": "Elephant House-Necto-1.5litter.jpeg",
+    "name": "Elephant House Necto",
+    "category": "drink",
+    "unit": "1.5 litre",
+    "price": 4.63,
+    "stock": 12,
+    "badge": "",
+    "expiry": "May 22",
+    "image": "images/Elephant%20House-Necto-1.5litter.jpeg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.7,
+    "reviewCount": 63,
+    "popularity": 99,
+    "trendingScore": 155.4,
+    "description": "Refreshing beverages for meals, gatherings, and quick hydration. Packed as 1.5 litre and matched with drinks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776542002861,
+    "custom": false
+  },
+  {
+    "id": "15",
+    "sku": "FM-015",
+    "file": "Free Range Eggs.webp",
+    "name": "Free Range Eggs",
+    "category": "dairy",
+    "unit": "12 pack",
+    "price": 4.2,
+    "stock": 22,
+    "badge": "best",
+    "expiry": "May 02",
+    "image": "images/Free%20Range%20Eggs.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4,
+    "reviewCount": 72,
+    "popularity": 106,
+    "trendingScore": 154,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 12 pack and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776538402861,
+    "custom": false
+  },
+  {
+    "id": "16",
+    "sku": "FM-016",
+    "file": "Grapes.jpg",
+    "name": "Grapes",
+    "category": "fruit",
+    "unit": "500g pack",
+    "price": 3.89,
+    "stock": 29,
+    "badge": "fresh",
+    "expiry": "Apr 24",
+    "image": "images/Grapes.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.1,
+    "reviewCount": 81,
+    "popularity": 103,
+    "trendingScore": 152.2,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as 500g pack and matched with fruits. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776534802861,
+    "custom": false
+  },
+  {
+    "id": "17",
+    "sku": "FM-017",
+    "file": "Kist-AloeVera-Juice-500ml.webp",
+    "name": "Kist Aloe Vera Juice",
+    "category": "drink",
+    "unit": "500 ml",
+    "price": 3.72,
+    "stock": 5,
+    "badge": "sale",
+    "expiry": "May 16",
+    "image": "images/Kist-AloeVera-Juice-500ml.webp",
+    "imageFocus": {
+      "scale": 1.17,
+      "position": "center top"
+    },
+    "ratingBase": 4.2,
+    "reviewCount": 18,
+    "popularity": 96,
+    "trendingScore": 152.4,
+    "description": "Refreshing beverages for meals, gatherings, and quick hydration. Packed as 500 ml and matched with drinks. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776531202861,
+    "custom": false
+  },
+  {
+    "id": "18",
+    "sku": "FM-018",
+    "file": "Kist-GraanApple-Juice-1litter.jpeg",
+    "name": "Kist Green Apple Juice",
+    "category": "drink",
+    "unit": "1 litre",
+    "price": 5.05,
+    "stock": 12,
+    "badge": "",
+    "expiry": "May 22",
+    "image": "images/Kist-GraanApple-Juice-1litter.jpeg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.4,
+    "reviewCount": 27,
+    "popularity": 95,
+    "trendingScore": 147.8,
+    "description": "Refreshing beverages for meals, gatherings, and quick hydration. Packed as 1 litre and matched with drinks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776527602861,
+    "custom": false
+  },
+  {
+    "id": "19",
+    "sku": "FM-019",
+    "file": "Kist-Grape-Juicce-1litter.png",
+    "name": "Kist Grape Juice",
+    "category": "drink",
+    "unit": "1 litre",
+    "price": 3.9,
+    "stock": 19,
+    "badge": "new",
+    "expiry": "Jun 02",
+    "image": "images/Kist-Grape-Juicce-1litter.png",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.5,
+    "reviewCount": 36,
+    "popularity": 94,
+    "trendingScore": 148,
+    "description": "Refreshing beverages for meals, gatherings, and quick hydration. Packed as 1 litre and matched with drinks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776524002861,
+    "custom": false
+  },
+  {
+    "id": "20",
+    "sku": "FM-020",
+    "file": "Kist-Mango-Jam-510g.webp",
+    "name": "Kist Mango Jam",
+    "category": "snack",
+    "unit": "510 g",
+    "price": 2.43,
+    "stock": 26,
+    "badge": "",
+    "expiry": "Jul 21",
+    "image": "images/Kist-Mango-Jam-510g.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.6,
+    "reviewCount": 45,
+    "popularity": 93,
+    "trendingScore": 148.2,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 510 g and matched with snacks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776520402861,
+    "custom": false
+  },
+  {
+    "id": "21",
+    "sku": "FM-021",
+    "file": "Kist-MixedFruit-Juice.jpeg",
+    "name": "Kist Mixed Fruit Juice",
+    "category": "drink",
+    "unit": "1 pack",
+    "price": 3.26,
+    "stock": 5,
+    "badge": "sale",
+    "expiry": "May 16",
+    "image": "images/Kist-MixedFruit-Juice.jpeg",
+    "imageFocus": {
+      "scale": 1.17,
+      "position": "center top"
+    },
+    "ratingBase": 4.7,
+    "reviewCount": 54,
+    "popularity": 92,
+    "trendingScore": 154.4,
+    "description": "Refreshing beverages for meals, gatherings, and quick hydration. Packed as 1 pack and matched with drinks. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776516802861,
+    "custom": false
+  },
+  {
+    "id": "22",
+    "sku": "FM-022",
+    "file": "Kist-Mixedfruit-Jam-300g.jpeg",
+    "name": "Kist Mixed Fruit Jam",
+    "category": "snack",
+    "unit": "300 g",
+    "price": 2.89,
+    "stock": 12,
+    "badge": "best",
+    "expiry": "Jun 22",
+    "image": "images/Kist-Mixedfruit-Jam-300g.jpeg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4,
+    "reviewCount": 63,
+    "popularity": 91,
+    "trendingScore": 139,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 300 g and matched with snacks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776513202861,
+    "custom": false
+  },
+  {
+    "id": "23",
+    "sku": "FM-023",
+    "file": "Kist-Strawberry-Jam-500g.jpeg",
+    "name": "Kist Strawberry Jam",
+    "category": "snack",
+    "unit": "500 g",
+    "price": 3.12,
+    "stock": 19,
+    "badge": "",
+    "expiry": "Jul 08",
+    "image": "images/Kist-Strawberry-Jam-500g.jpeg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.1,
+    "reviewCount": 72,
+    "popularity": 90,
+    "trendingScore": 139.2,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 500 g and matched with snacks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776509602861,
+    "custom": false
+  },
+  {
+    "id": "24",
+    "sku": "FM-024",
+    "file": "Kist-WoodApple-Juice.webp",
+    "name": "Kist Wood Apple Juice",
+    "category": "drink",
+    "unit": "1 pack",
+    "price": 3.95,
+    "stock": 26,
+    "badge": "",
+    "expiry": "Jun 08",
+    "image": "images/Kist-WoodApple-Juice.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.2,
+    "reviewCount": 81,
+    "popularity": 89,
+    "trendingScore": 139.4,
+    "description": "Refreshing beverages for meals, gatherings, and quick hydration. Packed as 1 pack and matched with drinks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776506002861,
+    "custom": false
+  },
+  {
+    "id": "25",
+    "sku": "FM-025",
+    "file": "Kist-Woodapple-Jam-510g.webp",
+    "name": "Kist Wood Apple Jam",
+    "category": "snack",
+    "unit": "510 g",
+    "price": 2.2,
+    "stock": 5,
+    "badge": "sale",
+    "expiry": "Jun 10",
+    "image": "images/Kist-Woodapple-Jam-510g.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.4,
+    "reviewCount": 18,
+    "popularity": 88,
+    "trendingScore": 146.8,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 510 g and matched with snacks. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776502402861,
+    "custom": false
+  },
+  {
+    "id": "26",
+    "sku": "FM-026",
+    "file": "Kotamale-Curd-900g.jpg",
+    "name": "Kotmale Curd",
+    "category": "dairy",
+    "unit": "900 g",
+    "price": 3.93,
+    "stock": 12,
+    "badge": "",
+    "expiry": "Apr 28",
+    "image": "images/Kotamale-Curd-900g.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.5,
+    "reviewCount": 27,
+    "popularity": 87,
+    "trendingScore": 141,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 900 g and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776498802861,
+    "custom": false
+  },
+  {
+    "id": "27",
+    "sku": "FM-027",
+    "file": "Kotmale-Butter.jpeg",
+    "name": "Kotmale Butter",
+    "category": "dairy",
+    "unit": "250g pack",
+    "price": 4.16,
+    "stock": 7,
+    "badge": "sale",
+    "expiry": "May 02",
+    "image": "images/Kotmale-Butter.jpeg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.6,
+    "reviewCount": 36,
+    "popularity": 86,
+    "trendingScore": 147.2,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 250g pack and matched with dairy. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776495202861,
+    "custom": false
+  },
+  {
+    "id": "28",
+    "sku": "FM-028",
+    "file": "Kotmale-Chocolate-Milk-1litter.webp",
+    "name": "Kotmale Chocolate Milk",
+    "category": "dairy",
+    "unit": "1 litre",
+    "price": 5.49,
+    "stock": 26,
+    "badge": "new",
+    "expiry": "May 04",
+    "image": "images/Kotmale-Chocolate-Milk-1litter.webp",
+    "imageFocus": {
+      "scale": 1.18,
+      "position": "center top"
+    },
+    "ratingBase": 4.7,
+    "reviewCount": 45,
+    "popularity": 85,
+    "trendingScore": 141.4,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 litre and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776491602861,
+    "custom": false
+  },
+  {
+    "id": "29",
+    "sku": "FM-029",
+    "file": "Kotmale-Faluda-Milk-1litter.webp",
+    "name": "Kotmale Faluda Milk",
+    "category": "dairy",
+    "unit": "1 litre",
+    "price": 5.72,
+    "stock": 5,
+    "badge": "sale",
+    "expiry": "Apr 26",
+    "image": "images/Kotmale-Faluda-Milk-1litter.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4,
+    "reviewCount": 54,
+    "popularity": 84,
+    "trendingScore": 138,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 litre and matched with dairy. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776488002861,
+    "custom": false
+  },
+  {
+    "id": "30",
+    "sku": "FM-030",
+    "file": "Kotmale-FreshCream-Mil-1litter.jpg",
+    "name": "Kotmale Fresh Cream Milk",
+    "category": "dairy",
+    "unit": "1 litre",
+    "price": 5.95,
+    "stock": 12,
+    "badge": "",
+    "expiry": "Apr 28",
+    "image": "images/Kotmale-FreshCream-Mil-1litter.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.1,
+    "reviewCount": 63,
+    "popularity": 83,
+    "trendingScore": 132.2,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 litre and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776484402861,
+    "custom": false
+  },
+  {
+    "id": "31",
+    "sku": "FM-031",
+    "file": "Kotmale-Vanilla-Milk-170ml.jpg",
+    "name": "Kotmale Vanilla Milk",
+    "category": "dairy",
+    "unit": "170 ml",
+    "price": 3.7,
+    "stock": 19,
+    "badge": "",
+    "expiry": "May 02",
+    "image": "images/Kotmale-Vanilla-Milk-170ml.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.2,
+    "reviewCount": 72,
+    "popularity": 82,
+    "trendingScore": 132.4,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 170 ml and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776480802861,
+    "custom": false
+  },
+  {
+    "id": "32",
+    "sku": "FM-032",
+    "file": "Kotmale-Vanilla-Milk-1litter.webp",
+    "name": "Kotmale Vanilla Milk",
+    "category": "dairy",
+    "unit": "1 litre",
+    "price": 5.03,
+    "stock": 26,
+    "badge": "",
+    "expiry": "May 04",
+    "image": "images/Kotmale-Vanilla-Milk-1litter.webp",
+    "imageFocus": {
+      "scale": 1.18,
+      "position": "center top"
+    },
+    "ratingBase": 4.4,
+    "reviewCount": 81,
+    "popularity": 81,
+    "trendingScore": 133.8,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 litre and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776477202861,
+    "custom": false
+  },
+  {
+    "id": "33",
+    "sku": "FM-033",
+    "file": "Kotmale-strawberry-milk-170ml.webp",
+    "name": "Kotmale Strawberry Milk",
+    "category": "dairy",
+    "unit": "170 ml",
+    "price": 4.16,
+    "stock": 5,
+    "badge": "sale",
+    "expiry": "Apr 26",
+    "image": "images/Kotmale-strawberry-milk-170ml.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.5,
+    "reviewCount": 18,
+    "popularity": 80,
+    "trendingScore": 140,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 170 ml and matched with dairy. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776473602861,
+    "custom": false
+  },
+  {
+    "id": "34",
+    "sku": "FM-034",
+    "file": "Kulfi-Ice.jpg",
+    "name": "Kulfi Ice",
+    "category": "dairy",
+    "unit": "1 pack",
+    "price": 4.39,
+    "stock": 12,
+    "badge": "",
+    "expiry": "Apr 28",
+    "image": "images/Kulfi-Ice.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.6,
+    "reviewCount": 27,
+    "popularity": 79,
+    "trendingScore": 134.2,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 pack and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776470002861,
+    "custom": false
+  },
+  {
+    "id": "35",
+    "sku": "FM-035",
+    "file": "Malibam_chochoalate-biscut.jpeg",
+    "name": "Maliban Chocolate Biscuit",
+    "category": "snack",
+    "unit": "1 pack",
+    "price": 3.12,
+    "stock": 19,
+    "badge": "",
+    "expiry": "Jul 08",
+    "image": "images/Malibam_chochoalate-biscut.jpeg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.7,
+    "reviewCount": 36,
+    "popularity": 78,
+    "trendingScore": 134.4,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 1 pack and matched with snacks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776466402861,
+    "custom": false
+  },
+  {
+    "id": "36",
+    "sku": "FM-036",
+    "file": "Maliban-Chocolate-Puff-Biscuit.png",
+    "name": "Maliban Chocolate Puff Biscuit",
+    "category": "snack",
+    "unit": "1 pack",
+    "price": 3.35,
+    "stock": 26,
+    "badge": "best",
+    "expiry": "Jul 21",
+    "image": "images/Maliban-Chocolate-Puff-Biscuit.png",
+    "imageFocus": {
+      "scale": 1.18,
+      "position": "center"
+    },
+    "ratingBase": 4,
+    "reviewCount": 45,
+    "popularity": 77,
+    "trendingScore": 125,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 1 pack and matched with snacks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776462802861,
+    "custom": false
+  },
+  {
+    "id": "37",
+    "sku": "FM-037",
+    "file": "Maliban-chrisco-busicut.webp",
+    "name": "Maliban Chrisco Biscuit",
+    "category": "snack",
+    "unit": "1 pack",
+    "price": 2.2,
+    "stock": 5,
+    "badge": "sale",
+    "expiry": "Jun 10",
+    "image": "images/Maliban-chrisco-busicut.webp",
+    "imageFocus": {
+      "scale": 1.18,
+      "position": "center"
+    },
+    "ratingBase": 4.1,
+    "reviewCount": 54,
+    "popularity": 76,
+    "trendingScore": 131.2,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 1 pack and matched with snacks. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776459202861,
+    "custom": false
+  },
+  {
+    "id": "38",
+    "sku": "FM-038",
+    "file": "Maliban-goldmarie-buscuit.jpeg",
+    "name": "Maliban Gold Marie Biscuit",
+    "category": "snack",
+    "unit": "1 pack",
+    "price": 2.43,
+    "stock": 12,
+    "badge": "",
+    "expiry": "Jun 22",
+    "image": "images/Maliban-goldmarie-buscuit.jpeg",
+    "imageFocus": {
+      "scale": 1.18,
+      "position": "center"
+    },
+    "ratingBase": 4.2,
+    "reviewCount": 63,
+    "popularity": 75,
+    "trendingScore": 125.4,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 1 pack and matched with snacks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776455602861,
+    "custom": false
+  },
+  {
+    "id": "39",
+    "sku": "FM-039",
+    "file": "Mango\\.jpg",
+    "name": "Mango",
+    "category": "fruit",
+    "unit": "each",
+    "price": 2.4,
+    "stock": 22,
+    "badge": "fresh",
+    "expiry": "Apr 23",
+    "image": "images/Mango%5C.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.4,
+    "reviewCount": 72,
+    "popularity": 80,
+    "trendingScore": 132.8,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as each and matched with fruits. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776452002861,
+    "custom": false
+  },
+  {
+    "id": "40",
+    "sku": "FM-040",
+    "file": "Milo-ChocholateDrinkPowder-400g.jpg",
+    "name": "Milo Chocolate Drink Powder",
+    "category": "dairy",
+    "unit": "400 g",
+    "price": 4.39,
+    "stock": 26,
+    "badge": "",
+    "expiry": "May 04",
+    "image": "images/Milo-ChocholateDrinkPowder-400g.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.5,
+    "reviewCount": 81,
+    "popularity": 73,
+    "trendingScore": 127,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 400 g and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776448402861,
+    "custom": false
+  },
+  {
+    "id": "41",
+    "sku": "FM-041",
+    "file": "Nestomalt-Milkpowder-400g.jpeg",
+    "name": "Nestomalt Milk Powder",
+    "category": "dairy",
+    "unit": "400 g",
+    "price": 4.62,
+    "stock": 5,
+    "badge": "sale",
+    "expiry": "Apr 26",
+    "image": "images/Nestomalt-Milkpowder-400g.jpeg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.6,
+    "reviewCount": 18,
+    "popularity": 72,
+    "trendingScore": 133.2,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 400 g and matched with dairy. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776444802861,
+    "custom": false
+  },
+  {
+    "id": "42",
+    "sku": "FM-042",
+    "file": "Nestomalt-Milkpowder-800g.jpg",
+    "name": "Nestomalt Milk Powder",
+    "category": "dairy",
+    "unit": "800 g",
+    "price": 4.85,
+    "stock": 12,
+    "badge": "",
+    "expiry": "Apr 28",
+    "image": "images/Nestomalt-Milkpowder-800g.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.7,
+    "reviewCount": 27,
+    "popularity": 71,
+    "trendingScore": 127.4,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 800 g and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776441202861,
+    "custom": false
+  },
+  {
+    "id": "43",
+    "sku": "FM-043",
+    "file": "Oat Milk.jpg",
+    "name": "Oat Milk",
+    "category": "dairy",
+    "unit": "1 litre",
+    "price": 4.5,
+    "stock": 0,
+    "badge": "sale",
+    "expiry": "May 02",
+    "image": "images/Oat%20Milk.jpg",
+    "imageFocus": {
+      "scale": 1.16,
+      "position": "center top"
+    },
+    "ratingBase": 4,
+    "reviewCount": 36,
+    "popularity": 48,
+    "trendingScore": 102,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 litre and matched with dairy. Currently unavailable for ordering.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776437602861,
+    "custom": false
+  },
+  {
+    "id": "44",
+    "sku": "FM-044",
+    "file": "Orange Juice.webp",
+    "name": "Orange Juice",
+    "category": "drink",
+    "unit": "1 pack",
+    "price": 3.03,
+    "stock": 26,
+    "badge": "",
+    "expiry": "Jun 08",
+    "image": "images/Orange%20Juice.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.1,
+    "reviewCount": 45,
+    "popularity": 69,
+    "trendingScore": 118.19999999999999,
+    "description": "Refreshing beverages for meals, gatherings, and quick hydration. Packed as 1 pack and matched with drinks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776434002861,
+    "custom": false
+  },
+  {
+    "id": "45",
+    "sku": "FM-045",
+    "file": "Orange.webp",
+    "name": "Orange",
+    "category": "fruit",
+    "unit": "1 kg",
+    "price": 2.7,
+    "stock": 8,
+    "badge": "fresh",
+    "expiry": "Apr 21",
+    "image": "images/Orange.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.2,
+    "reviewCount": 54,
+    "popularity": 74,
+    "trendingScore": 130.4,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as 1 kg and matched with fruits. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776430402861,
+    "custom": false
+  },
+  {
+    "id": "46",
+    "sku": "FM-046",
+    "file": "Organic Avocado.webp",
+    "name": "Organic Avocado",
+    "category": "fruit",
+    "unit": "each",
+    "price": 1.99,
+    "stock": 8,
+    "badge": "organic",
+    "expiry": "Apr 22",
+    "image": "images/Organic%20Avocado.webp",
+    "imageFocus": {
+      "scale": 1.22,
+      "position": "center"
+    },
+    "ratingBase": 4.4,
+    "reviewCount": 63,
+    "popularity": 81,
+    "trendingScore": 139.8,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as each and matched with fruits. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776426802861,
+    "custom": false
+  },
+  {
+    "id": "47",
+    "sku": "FM-047",
+    "file": "Pink Lady Apples.jpg",
+    "name": "Pink Lady Apples",
+    "category": "fruit",
+    "unit": "1 kg",
+    "price": 3.5,
+    "stock": 22,
+    "badge": "fresh",
+    "expiry": "Apr 23",
+    "image": "images/Pink%20Lady%20Apples.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.5,
+    "reviewCount": 72,
+    "popularity": 80,
+    "trendingScore": 134,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as 1 kg and matched with fruits. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776423202861,
+    "custom": false
+  },
+  {
+    "id": "48",
+    "sku": "FM-048",
+    "file": "Richlife-Cheese-100g.jpeg",
+    "name": "Richlife Cheese",
+    "category": "dairy",
+    "unit": "100 g",
+    "price": 4.85,
+    "stock": 26,
+    "badge": "",
+    "expiry": "May 04",
+    "image": "images/Richlife-Cheese-100g.jpeg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.6,
+    "reviewCount": 81,
+    "popularity": 65,
+    "trendingScore": 120.19999999999999,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 100 g and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776419602861,
+    "custom": false
+  },
+  {
+    "id": "49",
+    "sku": "FM-049",
+    "file": "Richlife-Cheese-120g.webp",
+    "name": "Richlife Cheese",
+    "category": "dairy",
+    "unit": "120 g",
+    "price": 3.7,
+    "stock": 5,
+    "badge": "sale",
+    "expiry": "Apr 26",
+    "image": "images/Richlife-Cheese-120g.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.7,
+    "reviewCount": 18,
+    "popularity": 64,
+    "trendingScore": 126.4,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 120 g and matched with dairy. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776416002861,
+    "custom": false
+  },
+  {
+    "id": "50",
+    "sku": "FM-050",
+    "file": "Richlife-cheesepanerr-200g.jpg",
+    "name": "Richlife Cheese Paneer",
+    "category": "dairy",
+    "unit": "200 g",
+    "price": 3.93,
+    "stock": 12,
+    "badge": "best",
+    "expiry": "Apr 28",
+    "image": "images/Richlife-cheesepanerr-200g.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4,
+    "reviewCount": 27,
+    "popularity": 63,
+    "trendingScore": 111,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 200 g and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776412402861,
+    "custom": false
+  },
+  {
+    "id": "51",
+    "sku": "FM-051",
+    "file": "Sea Salt Popcorn.jpeg",
+    "name": "Sea Salt Popcorn",
+    "category": "snack",
+    "unit": "100g bag",
+    "price": 1.8,
+    "stock": 5,
+    "badge": "sale",
+    "expiry": "Jul 08",
+    "image": "images/Sea%20Salt%20Popcorn.jpeg",
+    "imageFocus": {
+      "scale": 1.2,
+      "position": "center"
+    },
+    "ratingBase": 4.1,
+    "reviewCount": 36,
+    "popularity": 70,
+    "trendingScore": 125.19999999999999,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 100g bag and matched with snacks. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776408802861,
+    "custom": false
+  },
+  {
+    "id": "52",
+    "sku": "FM-052",
+    "file": "Sourdough Loaf.jpg",
+    "name": "Sourdough Loaf",
+    "category": "bakery",
+    "unit": "800g loaf",
+    "price": 5.2,
+    "stock": 11,
+    "badge": "best",
+    "expiry": "Apr 22",
+    "image": "images/Sourdough%20Loaf.jpg",
+    "imageFocus": {
+      "scale": 1.18,
+      "position": "center"
+    },
+    "ratingBase": 4.2,
+    "reviewCount": 45,
+    "popularity": 69,
+    "trendingScore": 119.4,
+    "description": "Fresh bakery products suited for fast-moving daily orders. Packed as 800g loaf and matched with bakery. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776405202861,
+    "custom": false
+  },
+  {
+    "id": "53",
+    "sku": "FM-053",
+    "file": "Sprite-1.5Litter.jpg",
+    "name": "Sprite",
+    "category": "drink",
+    "unit": "1.5 litre",
+    "price": 5.32,
+    "stock": 5,
+    "badge": "sale",
+    "expiry": "May 16",
+    "image": "images/Sprite-1.5Litter.jpg",
+    "imageFocus": {
+      "scale": 1.18,
+      "position": "center top"
+    },
+    "ratingBase": 4.4,
+    "reviewCount": 54,
+    "popularity": 60,
+    "trendingScore": 118.80000000000001,
+    "description": "Refreshing beverages for meals, gatherings, and quick hydration. Packed as 1.5 litre and matched with drinks. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776401602861,
+    "custom": false
+  },
+  {
+    "id": "54",
+    "sku": "FM-054",
+    "file": "StrawberryIce1litter.webp",
+    "name": "Strawberry Ice Cream",
+    "category": "dairy",
+    "unit": "1 litre",
+    "price": 5.95,
+    "stock": 12,
+    "badge": "",
+    "expiry": "Apr 28",
+    "image": "images/StrawberryIce1litter.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.5,
+    "reviewCount": 63,
+    "popularity": 59,
+    "trendingScore": 113,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 litre and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776398002861,
+    "custom": false
+  },
+  {
+    "id": "55",
+    "sku": "FM-055",
+    "file": "Sunquick-Blackcurrant-juice-700ml.jpg",
+    "name": "Sunquick Blackcurrant Juice",
+    "category": "drink",
+    "unit": "700 ml",
+    "price": 2.8,
+    "stock": 19,
+    "badge": "new",
+    "expiry": "Jun 02",
+    "image": "images/Sunquick-Blackcurrant-juice-700ml.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.6,
+    "reviewCount": 72,
+    "popularity": 58,
+    "trendingScore": 113.19999999999999,
+    "description": "Refreshing beverages for meals, gatherings, and quick hydration. Packed as 700 ml and matched with drinks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776394402861,
+    "custom": false
+  },
+  {
+    "id": "56",
+    "sku": "FM-056",
+    "file": "Sunquick-Orange-Juice-700ml.jpg",
+    "name": "Sunquick Orange Juice",
+    "category": "drink",
+    "unit": "700 ml",
+    "price": 3.03,
+    "stock": 26,
+    "badge": "",
+    "expiry": "Jun 08",
+    "image": "images/Sunquick-Orange-Juice-700ml.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.7,
+    "reviewCount": 81,
+    "popularity": 57,
+    "trendingScore": 113.4,
+    "description": "Refreshing beverages for meals, gatherings, and quick hydration. Packed as 700 ml and matched with drinks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776390802861,
+    "custom": false
+  },
+  {
+    "id": "57",
+    "sku": "FM-057",
+    "file": "Sweet Onions.webp",
+    "name": "Sweet Onions",
+    "category": "veg",
+    "unit": "1 kg",
+    "price": 2.1,
+    "stock": 8,
+    "badge": "fresh",
+    "expiry": "Apr 20",
+    "image": "images/Sweet%20Onions.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4,
+    "reviewCount": 18,
+    "popularity": 70,
+    "trendingScore": 124,
+    "description": "Daily vegetables for home cooking and kitchen staples. Packed as 1 kg and matched with vegetables. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776387202861,
+    "custom": false
+  },
+  {
+    "id": "58",
+    "sku": "FM-058",
+    "file": "VERRY_BERRY_ICE_CREAM_1litter.jpg",
+    "name": "Very Berry Ice Cream",
+    "category": "dairy",
+    "unit": "1 litre",
+    "price": 5.49,
+    "stock": 12,
+    "badge": "",
+    "expiry": "Apr 28",
+    "image": "images/VERRY_BERRY_ICE_CREAM_1litter.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.1,
+    "reviewCount": 27,
+    "popularity": 55,
+    "trendingScore": 104.19999999999999,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 litre and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776383602861,
+    "custom": false
+  },
+  {
+    "id": "59",
+    "sku": "FM-059",
+    "file": "Vanila_Ice-cream1litter.png",
+    "name": "Vanilla Ice Cream",
+    "category": "dairy",
+    "unit": "1 litre",
+    "price": 5.72,
+    "stock": 19,
+    "badge": "",
+    "expiry": "May 02",
+    "image": "images/Vanila_Ice-cream1litter.png",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.2,
+    "reviewCount": 36,
+    "popularity": 54,
+    "trendingScore": 104.4,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 litre and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776380002861,
+    "custom": false
+  },
+  {
+    "id": "60",
+    "sku": "FM-060",
+    "file": "Wild Blueberries.jpg",
+    "name": "Wild Blueberries",
+    "category": "fruit",
+    "unit": "250g punnet",
+    "price": 3.2,
+    "stock": 29,
+    "badge": "fresh",
+    "expiry": "Apr 24",
+    "image": "images/Wild%20Blueberries.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.4,
+    "reviewCount": 45,
+    "popularity": 67,
+    "trendingScore": 119.80000000000001,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as 250g punnet and matched with fruits. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776376402861,
+    "custom": false
+  },
+  {
+    "id": "61",
+    "sku": "FM-061",
+    "file": "cadbury-dairy-milk-silk-valentine-special-gift-pack-heart-pop.jpg.webp",
+    "name": "Cadbury Dairy Milk Silk Gift Pack",
+    "category": "snack",
+    "unit": "1 pack",
+    "price": 2.2,
+    "stock": 5,
+    "badge": "sale",
+    "expiry": "Jun 10",
+    "image": "images/cadbury-dairy-milk-silk-valentine-special-gift-pack-heart-pop.jpg.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.5,
+    "reviewCount": 54,
+    "popularity": 52,
+    "trendingScore": 112,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 1 pack and matched with snacks. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776372802861,
+    "custom": false
+  },
+  {
+    "id": "62",
+    "sku": "FM-062",
+    "file": "corn-ice.png",
+    "name": "Corn Ice Cream",
+    "category": "dairy",
+    "unit": "1 pack",
+    "price": 3.93,
+    "stock": 12,
+    "badge": "",
+    "expiry": "Apr 28",
+    "image": "images/corn-ice.png",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.6,
+    "reviewCount": 63,
+    "popularity": 51,
+    "trendingScore": 106.19999999999999,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 pack and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776369202861,
+    "custom": false
+  },
+  {
+    "id": "63",
+    "sku": "FM-063",
+    "file": "cup-ice.png",
+    "name": "Cup Ice Cream",
+    "category": "dairy",
+    "unit": "1 pack",
+    "price": 4.16,
+    "stock": 19,
+    "badge": "",
+    "expiry": "May 02",
+    "image": "images/cup-ice.png",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.7,
+    "reviewCount": 72,
+    "popularity": 50,
+    "trendingScore": 106.4,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 pack and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776365602861,
+    "custom": false
+  },
+  {
+    "id": "64",
+    "sku": "FM-064",
+    "file": "fresh-potato-.png.webp",
+    "name": "Fresh Potato",
+    "category": "veg",
+    "unit": "1 kg",
+    "price": 1.85,
+    "stock": 6,
+    "badge": "fresh",
+    "expiry": "Apr 23",
+    "image": "images/fresh-potato-.png.webp",
+    "imageFocus": {
+      "scale": 1.16,
+      "position": "center"
+    },
+    "ratingBase": 4,
+    "reviewCount": 81,
+    "popularity": 55,
+    "trendingScore": 109,
+    "description": "Daily vegetables for home cooking and kitchen staples. Packed as 1 kg and matched with vegetables. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776362002861,
+    "custom": false
+  },
+  {
+    "id": "65",
+    "sku": "FM-065",
+    "file": "guavafruits.jpg.webp",
+    "name": "Guava Fruits",
+    "category": "fruit",
+    "unit": "500g pack",
+    "price": 4.12,
+    "stock": 8,
+    "badge": "fresh",
+    "expiry": "Apr 21",
+    "image": "images/guavafruits.jpg.webp",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.1,
+    "reviewCount": 18,
+    "popularity": 54,
+    "trendingScore": 109.19999999999999,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as 500g pack and matched with fruits. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776358402861,
+    "custom": false
+  },
+  {
+    "id": "66",
+    "sku": "FM-066",
+    "file": "kitkat_new.png.webp",
+    "name": "KitKat",
+    "category": "snack",
+    "unit": "1 pack",
+    "price": 3.35,
+    "stock": 12,
+    "badge": "",
+    "expiry": "Jun 22",
+    "image": "images/kitkat_new.png.webp",
+    "imageFocus": {
+      "scale": 1.2,
+      "position": "center"
+    },
+    "ratingBase": 4.2,
+    "reviewCount": 27,
+    "popularity": 47,
+    "trendingScore": 97.4,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 1 pack and matched with snacks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776354802861,
+    "custom": false
+  },
+  {
+    "id": "67",
+    "sku": "FM-067",
+    "file": "kotmale-chocolate-milk-170ml.jpg",
+    "name": "Kotmale Chocolate Milk",
+    "category": "dairy",
+    "unit": "170 ml",
+    "price": 3.7,
+    "stock": 19,
+    "badge": "",
+    "expiry": "May 02",
+    "image": "images/kotmale-chocolate-milk-170ml.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.4,
+    "reviewCount": 36,
+    "popularity": 46,
+    "trendingScore": 98.80000000000001,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 170 ml and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776351202861,
+    "custom": false
+  },
+  {
+    "id": "68",
+    "sku": "FM-068",
+    "file": "maliban-lemonpuff-busicuit.jpeg",
+    "name": "Maliban Lemon Puff Biscuit",
+    "category": "snack",
+    "unit": "1 pack",
+    "price": 2.43,
+    "stock": 26,
+    "badge": "",
+    "expiry": "Jul 21",
+    "image": "images/maliban-lemonpuff-busicuit.jpeg",
+    "imageFocus": {
+      "scale": 1.18,
+      "position": "center"
+    },
+    "ratingBase": 4.5,
+    "reviewCount": 45,
+    "popularity": 45,
+    "trendingScore": 99,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 1 pack and matched with snacks. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776347602861,
+    "custom": false
+  },
+  {
+    "id": "69",
+    "sku": "FM-069",
+    "file": "mars_chocholate.jpg",
+    "name": "Mars Chocolate",
+    "category": "snack",
+    "unit": "1 pack",
+    "price": 2.66,
+    "stock": 5,
+    "badge": "sale",
+    "expiry": "Jun 10",
+    "image": "images/mars_chocholate.jpg",
+    "imageFocus": {
+      "scale": 1.2,
+      "position": "center"
+    },
+    "ratingBase": 4.6,
+    "reviewCount": 54,
+    "popularity": 44,
+    "trendingScore": 105.19999999999999,
+    "description": "Treats and pantry comforts for everyday cravings. Packed as 1 pack and matched with snacks. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776344002861,
+    "custom": false
+  },
+  {
+    "id": "70",
+    "sku": "FM-070",
+    "file": "papayajpg.jpg",
+    "name": "Papaya",
+    "category": "fruit",
+    "unit": "whole",
+    "price": 5.09,
+    "stock": 15,
+    "badge": "fresh",
+    "expiry": "Apr 22",
+    "image": "images/papayajpg.jpg",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.7,
+    "reviewCount": 63,
+    "popularity": 49,
+    "trendingScore": 105.4,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as whole and matched with fruits. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776340402861,
+    "custom": false
+  },
+  {
+    "id": "71",
+    "sku": "FM-071",
+    "file": "pineaple.png",
+    "name": "Pineapple",
+    "category": "fruit",
+    "unit": "whole",
+    "price": 3.4,
+    "stock": 22,
+    "badge": "fresh",
+    "expiry": "Apr 23",
+    "image": "images/pineaple.png",
+    "imageFocus": {
+      "scale": 1.2,
+      "position": "center"
+    },
+    "ratingBase": 4,
+    "reviewCount": 72,
+    "popularity": 48,
+    "trendingScore": 96,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as whole and matched with fruits. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776336802861,
+    "custom": false
+  },
+  {
+    "id": "72",
+    "sku": "FM-072",
+    "file": "strawberries.png",
+    "name": "Strawberries",
+    "category": "fruit",
+    "unit": "250g punnet",
+    "price": 3.55,
+    "stock": 29,
+    "badge": "fresh",
+    "expiry": "Apr 24",
+    "image": "images/strawberries.png",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.1,
+    "reviewCount": 81,
+    "popularity": 47,
+    "trendingScore": 96.19999999999999,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as 250g punnet and matched with fruits. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776333202861,
+    "custom": false
+  },
+  {
+    "id": "73",
+    "sku": "FM-073",
+    "file": "watermeloen_2.jpg",
+    "name": "Watermelon",
+    "category": "fruit",
+    "unit": "whole",
+    "price": 5.9,
+    "stock": 8,
+    "badge": "fresh",
+    "expiry": "Apr 21",
+    "image": "images/watermeloen_2.jpg",
+    "imageFocus": {
+      "scale": 1.22,
+      "position": "center"
+    },
+    "ratingBase": 4.2,
+    "reviewCount": 18,
+    "popularity": 46,
+    "trendingScore": 102.4,
+    "description": "Fresh handpicked fruit for healthy snacking and breakfast prep. Packed as whole and matched with fruits. Limited inventory, so order soon.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 5,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 5,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776329602861,
+    "custom": false
+  },
+  {
+    "id": "74",
+    "sku": "FM-074",
+    "file": "wonder_bar_vanila-lice.png",
+    "name": "Wonder Bar Vanilla Ice",
+    "category": "dairy",
+    "unit": "1 pack",
+    "price": 3.93,
+    "stock": 12,
+    "badge": "",
+    "expiry": "Apr 28",
+    "image": "images/wonder_bar_vanila-lice.png",
+    "imageFocus": {
+      "scale": 1.14,
+      "position": "center"
+    },
+    "ratingBase": 4.4,
+    "reviewCount": 27,
+    "popularity": 39,
+    "trendingScore": 91.80000000000001,
+    "description": "Chilled essentials and frozen treats for breakfast and dessert. Packed as 1 pack and matched with dairy. Ready for regular grocery orders.",
+    "reviews": [
+      {
+        "name": "Nimal",
+        "rating": 4,
+        "text": "Fresh quality and arrived neatly packed. Great for weekly grocery restocks."
+      },
+      {
+        "name": "Kasuni",
+        "rating": 4,
+        "text": "Good value and consistent quality. Delivery-friendly packaging."
+      },
+      {
+        "name": "Amal",
+        "rating": 4,
+        "text": "Looks premium and feels like a supermarket app favorite item."
+      }
+    ],
+    "createdAt": 1776326002861,
+    "custom": false
+  }
+]

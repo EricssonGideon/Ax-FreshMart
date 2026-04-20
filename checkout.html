@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreshMart | Checkout</title>
+<meta name="description" content="FreshMart checkout page with delivery form, order summary, total calculation, and place-order simulation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="checkout">
+  <header class="site-header" id="site-header"></header>
+  <main class="shell">
+    <section class="page-header">
+      <div class="page-title">
+        <h2>Checkout</h2>
+        <p>Frontend simulation with delivery choices, slot selection, and full order summary.</p>
+      </div>
+    </section>
+
+    <section class="checkout-layout">
+      <form class="checkout-form panel" id="checkout-form" style="padding:20px">
+        <div class="field"><label for="customer-name">Name</label><input id="customer-name" name="name" type="text" placeholder="Enter full name" required></div>
+        <div class="field"><label for="customer-email">Email</label><input id="customer-email" name="email" type="email" placeholder="name@example.com" required></div>
+        <div class="field"><label for="customer-address">Address</label><textarea id="customer-address" name="address" placeholder="Delivery address" required></textarea></div>
+        <div class="field"><label for="customer-phone">Phone Number</label><input id="customer-phone" name="phone" type="tel" placeholder="07X XXX XXXX" required></div>
+        <div class="field"><label for="delivery-type">Delivery Type</label>
+          <select id="delivery-type" name="deliveryType">
+            <option value="standard">Standard Delivery</option>
+            <option value="express">Express Delivery</option>
+          </select>
+        </div>
+        <div class="field"><label for="delivery-slot">Delivery Time Slot</label>
+          <select id="delivery-slot" name="slot">
+            <option value="8:00 AM - 10:00 AM">8:00 AM - 10:00 AM</option>
+            <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM</option>
+            <option value="1:00 PM - 3:00 PM">1:00 PM - 3:00 PM</option>
+            <option value="5:00 PM - 7:00 PM">5:00 PM - 7:00 PM</option>
+          </select>
+        </div>
+        <p class="helper">This order flow now saves customer details, line items, totals, and timestamps into Firebase Firestore when checkout succeeds.</p>
+        <button class="checkout-btn pressable" type="submit">Place Order</button>
+      </form>
+
+      <aside class="checkout-summary panel" style="padding:20px">
+        <div class="section-head" style="margin-bottom:14px">
+          <div>
+            <h3 style="font-size:24px">Order Summary</h3>
+            <p>Shared cart totals and coupon state are reused here.</p>
+          </div>
+        </div>
+        <div id="checkout-summary-root"></div>
+      </aside>
+    </section>
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
