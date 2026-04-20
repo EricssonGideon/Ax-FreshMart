@@ -8,6 +8,9 @@
     catalog: "freshmart_catalog_v5",
     coupon: "freshmart_coupon_v5"
   };
+  const SESSION_KEYS = {
+    catalog: "freshmart_catalog_session_v1"
+  };
 
   const COUPONS = {
     SAVE10: { type: "percent", value: 10, min: 20, label: "10% off orders above $20" },
@@ -31,16 +34,31 @@
     cartSubscription: null,
     productSubscription: null,
     syncingCart: false,
-    cartSyncTimer: null
+    cartSyncTimer: null,
+    globalEventsBound: false,
+    headerEventsBound: false
   };
 
   function saveJSON(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
   }
 
+  function saveSessionJSON(key, value) {
+    sessionStorage.setItem(key, JSON.stringify(value));
+  }
+
   function loadJSON(key, fallback) {
     try {
       const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch {
+      return fallback;
+    }
+  }
+
+  function loadSessionJSON(key, fallback) {
+    try {
+      const raw = sessionStorage.getItem(key);
       return raw ? JSON.parse(raw) : fallback;
     } catch {
       return fallback;
@@ -68,14 +86,10 @@
   async function loadCatalog() {
     if (state.catalog) return state.catalog;
 
-    const firebase = getFirebase();
-    if (firebase) {
-      const products = await firebase.fetchProducts();
-      if (products.length) {
-        state.catalog = normalizeCatalog(products);
-        saveJSON(STORAGE_KEYS.catalog, state.catalog);
-        return state.catalog;
-      }
+    const sessionCatalog = loadSessionJSON(SESSION_KEYS.catalog, null);
+    if (sessionCatalog && Array.isArray(sessionCatalog) && sessionCatalog.length) {
+      state.catalog = normalizeCatalog(sessionCatalog);
+      return state.catalog;
     }
 
     const override = loadJSON(STORAGE_KEYS.catalog, null);
@@ -84,20 +98,34 @@
       return state.catalog;
     }
 
+    const firebase = getFirebase();
+    if (firebase) {
+      const products = await firebase.fetchProducts();
+      if (products.length) {
+        state.catalog = normalizeCatalog(products);
+        saveJSON(STORAGE_KEYS.catalog, state.catalog);
+        saveSessionJSON(SESSION_KEYS.catalog, state.catalog);
+        return state.catalog;
+      }
+    }
+
     const response = await fetch("data/products.json");
     const products = await response.json();
     state.catalog = normalizeCatalog(products);
+    saveSessionJSON(SESSION_KEYS.catalog, state.catalog);
     return state.catalog;
   }
 
   function persistCatalog(products) {
     state.catalog = normalizeCatalog(products);
     saveJSON(STORAGE_KEYS.catalog, state.catalog);
+    saveSessionJSON(SESSION_KEYS.catalog, state.catalog);
     emitStoreUpdate();
   }
 
   function clearCatalogCache() {
     localStorage.removeItem(STORAGE_KEYS.catalog);
+    sessionStorage.removeItem(SESSION_KEYS.catalog);
     state.catalog = null;
   }
 
@@ -191,7 +219,7 @@
       setTheme(stored);
       return;
     }
-    setTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    setTheme("light");
   }
 
   function toggleTheme() {
@@ -327,7 +355,7 @@
       setTimeout(() => toast.remove(), 180);
     };
     toast.querySelector("button").addEventListener("click", remove);
-    setTimeout(remove, 2400);
+    setTimeout(remove, 2000);
   }
 
   function addToCart(id, quantity = 1, options = {}) {
@@ -772,6 +800,7 @@
       if (!products.length) return;
       state.catalog = normalizeCatalog(products);
       saveJSON(STORAGE_KEYS.catalog, state.catalog);
+      saveSessionJSON(SESSION_KEYS.catalog, state.catalog);
       document.dispatchEvent(new CustomEvent("freshmart:catalog-updated"));
       emitStoreUpdate();
     });
@@ -789,6 +818,8 @@
   }
 
   function bindGlobalEvents() {
+    if (state.globalEventsBound) return;
+    state.globalEventsBound = true;
     document.addEventListener("click", async (event) => {
       const actionNode = event.target.closest("[data-action]");
       if (actionNode) {
@@ -848,6 +879,8 @@
   }
 
   function bindHeaderEvents() {
+    if (state.headerEventsBound) return;
+    state.headerEventsBound = true;
     const menuToggle = document.getElementById("menu-toggle");
     const navSearchInput = document.getElementById("nav-search-input");
     const navSearchForm = document.getElementById("nav-search-form");
@@ -893,6 +926,7 @@
     await syncCartWithUser();
     await watchRemoteCatalog();
     showFlashMessage();
+    requestAnimationFrame(() => document.body.classList.add("page-ready"));
   }
 
   window.FreshMart = {

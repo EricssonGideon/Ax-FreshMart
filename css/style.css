@@ -48,6 +48,7 @@ body.dark-mode{
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+html,body{max-width:100%;overflow-x:clip}
 body{
   min-height:100vh;
   font-family:'Outfit',sans-serif;
@@ -57,7 +58,11 @@ body{
     radial-gradient(circle at 80% 8%,rgba(243,223,183,.5),transparent 18%),
     linear-gradient(180deg,var(--bg-soft),var(--bg));
   overflow-x:hidden;
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity .24s ease,transform .24s ease;
 }
+body.page-ready{opacity:1;transform:none}
 a{text-decoration:none;color:inherit}
 button,input,select,textarea{font:inherit;border:none;background:none}
 img{display:block;max-width:100%}
@@ -337,7 +342,10 @@ body.dark-mode .search,body.dark-mode .tool-select,body.dark-mode .theme-toggle,
 .page-header,.toolbar{display:grid;gap:14px;margin-top:28px;margin-bottom:18px}
 .page-title{display:grid;gap:8px}
 .toolbar-top,.toolbar-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.filters{display:flex;gap:10px;flex-wrap:wrap}
+.filters{display:flex;gap:10px;flex-wrap:wrap;max-width:100%;min-width:0}
+.filters .chip{flex:0 0 auto}
+.page-title,.section-head div,.product-head>div{min-width:0}
+.page-title h2,.page-title p,.section-head h3,.section-head p,.product-head strong,.product-copy,.detail-item span{overflow-wrap:anywhere}
 
 .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .favorites-grid,.recent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -588,6 +596,20 @@ th{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)
 .order-item-line:last-child,.order-line:last-child{border-bottom:none}
 .section-mini-head strong{font-size:15px}
 .profile-layout .inventory-card:last-child{min-height:100%}
+.profile-summary-card{
+  display:grid;
+  gap:12px;
+  padding:8px 0;
+}
+.profile-summary-line{
+  display:grid;
+  gap:6px;
+  padding:14px 16px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.58);
+}
+.profile-summary-line strong{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .skeleton-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .skeleton-card{
   padding:16px;

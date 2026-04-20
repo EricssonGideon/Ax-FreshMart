@@ -32,7 +32,8 @@
   .hero-copy h2{font-size:34px}
   .hero-copy p{font-size:14px}
   .hero-actions{display:grid;grid-template-columns:1fr}
-  .mini-grid,.summary-grid,.detail-grid,.product-grid,.skeleton-grid,.metrics-grid,.admin-stats-grid{grid-template-columns:1fr}
+  .mini-grid,.summary-grid,.detail-grid,.metrics-grid,.admin-stats-grid{grid-template-columns:1fr}
+  .product-grid,.skeleton-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .section{margin-top:26px}
   .section-head{flex-direction:column;align-items:flex-start}
   .section-head h3,.page-title h2{font-size:26px}
@@ -41,7 +42,7 @@
   .product-actions{display:grid;grid-template-columns:1fr}
   .mobile-filter-trigger{display:inline-flex}
   .toolbar-filters-desktop{display:none}
-  .filters{gap:8px;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
+  .filters{gap:8px;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;width:100%;max-width:100%;-webkit-overflow-scrolling:touch}
   .filters::-webkit-scrollbar{display:none}
   .chip{white-space:nowrap}
   .recent-card,.favorite-card,.cart-item,.admin-item{grid-template-columns:56px 1fr}
@@ -78,4 +79,5 @@
   .product-copy{font-size:13px}
   .product-actions .ghost-btn{display:none}
   .add-btn,.btn-primary,.btn-secondary,.checkout-btn,.tool-btn,.cart-btn,.theme-toggle,.chip{min-height:44px}
+  .page-title p{font-size:13px}
 }

@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   let latestOrders = [];
   let unsubscribe = null;
+  let editing = !Boolean(authState.profile?.name || authState.profile?.address || authState.profile?.phone);
 
   function statusClass(status) {
     return status === "delivered" ? "good" : status === "processing" ? "low" : "out";
@@ -40,14 +41,27 @@ document.addEventListener("DOMContentLoaded", async () => {
               <h3 style="font-size:24px">Profile Details</h3>
               <p>Saved to Firestore and reused in checkout.</p>
             </div>
+            ${editing ? "" : `<button class="btn-secondary pressable" type="button" id="edit-profile-btn">Edit</button>`}
           </div>
-          <form id="profile-form" class="checkout-form">
-            <div class="field"><label for="profile-name">Name</label><input id="profile-name" name="name" type="text" value="${FM.escapeHtml(profile.name || authState.user.displayName || "")}" required></div>
-            <div class="field"><label for="profile-email">Email</label><input id="profile-email" name="email" type="email" value="${FM.escapeHtml(profile.email || authState.user.email || "")}" required></div>
-            <div class="field"><label for="profile-phone">Phone</label><input id="profile-phone" name="phone" type="tel" value="${FM.escapeHtml(profile.phone || "")}"></div>
-            <div class="field"><label for="profile-address">Address</label><textarea id="profile-address" name="address" placeholder="Delivery address">${FM.escapeHtml(profile.address || "")}</textarea></div>
-            <button class="checkout-btn pressable" type="submit">Save Profile</button>
-          </form>
+          ${editing ? `
+            <form id="profile-form" class="checkout-form">
+              <div class="field"><label for="profile-name">Name</label><input id="profile-name" name="name" type="text" value="${FM.escapeHtml(profile.name || authState.user.displayName || "")}" required></div>
+              <div class="field"><label for="profile-email">Email</label><input id="profile-email" name="email" type="email" value="${FM.escapeHtml(profile.email || authState.user.email || "")}" required></div>
+              <div class="field"><label for="profile-phone">Phone</label><input id="profile-phone" name="phone" type="tel" value="${FM.escapeHtml(profile.phone || "")}"></div>
+              <div class="field"><label for="profile-address">Address</label><textarea id="profile-address" name="address" placeholder="Delivery address">${FM.escapeHtml(profile.address || "")}</textarea></div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                <button class="checkout-btn pressable" type="submit">Save Profile</button>
+                ${authState.profile ? `<button class="btn-secondary pressable" type="button" id="cancel-profile-edit">Cancel</button>` : ""}
+              </div>
+            </form>
+          ` : `
+            <div class="profile-summary-card">
+              <div class="profile-summary-line"><strong>Name</strong><span>${FM.escapeHtml(profile.name || authState.user.displayName || "Not set")}</span></div>
+              <div class="profile-summary-line"><strong>Email</strong><span>${FM.escapeHtml(profile.email || authState.user.email || "Not set")}</span></div>
+              <div class="profile-summary-line"><strong>Phone</strong><span>${FM.escapeHtml(profile.phone || "Not set")}</span></div>
+              <div class="profile-summary-line"><strong>Address</strong><span>${FM.escapeHtml(profile.address || "Not set")}</span></div>
+            </div>
+          `}
         </article>
 
         <article class="inventory-card">
@@ -101,6 +115,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         phone: String(data.get("phone") || "").trim(),
         address: String(data.get("address") || "").trim()
       });
+      editing = false;
       FM.showToast("Profile updated", "success");
       render();
     } catch (error) {
@@ -110,6 +125,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   document.addEventListener("click", (event) => {
+    if (event.target.id === "edit-profile-btn") {
+      editing = true;
+      render();
+      return;
+    }
+
+    if (event.target.id === "cancel-profile-edit") {
+      editing = false;
+      render();
+      return;
+    }
+
     const button = event.target.closest("[data-reorder-id]");
     if (!button) return;
     const order = latestOrders.find((entry) => entry.id === button.dataset.reorderId);
